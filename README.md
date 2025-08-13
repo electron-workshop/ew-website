@@ -1,14 +1,9 @@
-# Eleventy + Bootstrap Starter (Updated Offerings)
+# Eleventy + Bootstrap (No Contact)
 
-## Quick start
-```bash
-npm install
-npm run dev
-```
+## Build on Render
+- Build command: `npm ci && npm run build`
+- Publish directory: `_site`
 
 ## Edit content
 - Home cards: `src/_data/homeCards.json`
-- Offering cards: `src/_data/offerings.json`
-
-## Netlify Forms
-Deployed on Netlify, Forms will capture submissions automatically.
+- Offerings: `src/_data/offerings.json`
