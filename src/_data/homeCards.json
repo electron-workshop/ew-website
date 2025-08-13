@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Our Offerings",
+    "text": "Join our shared infrastructure\u2014newsletters, docs, analytics\u2014all in one place.",
+    "href": "/offering/",
+    "button": "Explore offerings",
+    "icon": "bi-box-seam"
+  },
+  {
+    "title": "Contact Us",
+    "text": "Want to join the network or have questions? Say hello.",
+    "href": "/contact/",
+    "button": "Go to contact",
+    "icon": "bi-envelope"
+  }
+]

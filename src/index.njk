@@ -1,0 +1,35 @@
+---
+layout: base.njk
+title: Home — {{ site.title }}
+permalink: "/"
+---
+<section class="mb-4">
+  <div class="row align-items-center g-4">
+    <div class="col-12 col-lg-7">
+      <h1 class="display-5 fw-bold mb-3">Shared infrastructure for community groups</h1>
+      <p class="lead text-secondary">Stop re‑inventing the wheel. Join Electron Workshop’s network and use our maintained stack for newsletters, documents, and analytics.</p>
+    </div>
+    <div class="col-12 col-lg-5 text-center">
+      <img src="/assets/images/logo.jpg" class="img-fluid rounded-4 shadow-sm" alt="Logo">
+    </div>
+  </div>
+</section>
+
+<section class="mt-4">
+  <div class="row g-4">
+    {% for card in homeCards %}
+    <div class="col-12 col-md-6">
+      <div class="card h-100 border-0 shadow-sm hover-card">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h2 class="h4 mb-0">{{ card.title }}</h2>
+            {% if card.icon %}<i class="bi {{ card.icon }} fs-3"></i>{% endif %}
+          </div>
+          <p class="mb-4">{{ card.text }}</p>
+          <a href="{{ card.href }}" class="btn btn-primary">{{ card.button }}</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

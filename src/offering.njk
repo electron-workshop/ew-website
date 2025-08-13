@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: Offering — {{ site.title }}
+permalink: "/offering/"
+---
+<h1 class="mb-4">What you get by joining</h1>
+<p class="text-secondary mb-4">Small groups shouldn’t have to manage servers, SaaS bills, and tool sprawl. Join our network and use our maintained, privacy‑respecting stack. Each group gets their own login for the services below.</p>
+
+<div class="row g-4">
+  {% for item in offerings %}
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card h-100 border-0 shadow-sm hover-card">
+        <div class="card-body d-flex flex-column">
+          <h2 class="h5">{{ item.title }}</h2>
+          <p class="flex-grow-1">{{ item.text }}</p>
+          <a href="/contact/" class="stretched-link visually-hidden-focusable">Contact</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="text-center mt-5">
+  <a href="/contact/" class="btn btn-lg btn-primary">Join the network</a>
+  <p class="small text-secondary mt-2">We’ll set you up with logins and help migrate your content.</p>
+</div>
