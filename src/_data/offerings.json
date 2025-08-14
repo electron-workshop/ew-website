@@ -1,26 +1,38 @@
 [
   {
-    "title": "Mautic \u2014 Email & Journeys",
-    "text": "Run newsletters and segmented campaigns with an open-source, GDPR-friendly stack. Your group gets its own login and can manage subscribers, templates, and automations\u2014no SaaS lock-in."
+    "title": "Mautic — Email & Journeys",
+    "slug": "mautic",
+    "logo": "/assets/images/logos/mautic.svg",
+    "text": "Run newsletters and segmented campaigns with an open‑source, GDPR‑friendly stack. Your group gets its own login and can manage subscribers, templates, and automations—no SaaS lock‑in."
   },
   {
-    "title": "Nextcloud \u2014 Files & Collaboration",
-    "text": "Secure cloud storage, document sharing, calendars, and team spaces. Collaborate on docs and keep track of assets in a privacy-respecting home for your group."
+    "title": "Nextcloud — Files & Collaboration",
+    "slug": "nextcloud",
+    "logo": "/assets/images/logos/nextcloud.svg",
+    "text": "Secure cloud storage, document sharing, calendars, and team spaces. Collaborate on docs and keep track of assets in a privacy‑respecting home for your group."
   },
   {
-    "title": "Matomo \u2014 Privacy-First Analytics",
-    "text": "Understand your website traffic without handing data to third parties. Configured for consent-aware, responsible insights across your pages."
+    "title": "Matomo — Privacy‑First Analytics",
+    "slug": "matomo",
+    "logo": "/assets/images/logos/matomo.svg",
+    "text": "Understand your website traffic without handing data to third parties. Configured for consent‑aware, responsible insights across your pages."
   },
   {
     "title": "Shared Hosting & Maintenance",
-    "text": "Skip the overhead. We host, patch, and monitor the stack so small groups don\u2019t have to. You focus on your mission\u2014we handle the boring parts."
+    "slug": "hosting",
+    "logo": "",
+    "text": "Skip the overhead. We host, patch, and monitor the stack so small groups don’t have to. You focus on your mission—we handle the boring parts."
   },
   {
     "title": "Onboarding & Support",
+    "slug": "onboarding",
+    "logo": "",
     "text": "We help you migrate lists, import files, and get your first campaigns and spaces set up. Friendly support when you need it."
   },
   {
     "title": "Community Network Benefits",
-    "text": "Be part of a federation of like-minded groups\u2014shared knowledge, co-learning, and optional cross-promotion opportunities."
+    "slug": "community-network",
+    "logo": "",
+    "text": "Be part of a federation of like‑minded groups—shared knowledge, co‑learning, and optional cross‑promotion opportunities."
   }
 ]

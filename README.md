@@ -1,4 +1,4 @@
-# Eleventy + Bootstrap (No Contact)
+# Eleventy + Bootstrap
 
 ## Build on Render
 - Build command: `npm ci && npm run build`
