@@ -1,0 +1,113 @@
+name: Notify Telegram on GitHub Events
+
+on:
+  pull_request:
+    types: [opened, closed, reopened, review_requested, review_request_removed]
+  pull_request_review:
+    types: [submitted, edited, dismissed]
+  issues:
+    types: [opened, closed, reopened]
+  issue_comment:
+    types: [created]
+  push:
+    branches: [main]
+  release:
+    types: [published]
+  watch:
+    types: [started]
+  fork:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram Message
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+          EVENT_NAME: ${{ github.event_name }}
+          ACTION: ${{ github.event.action }}
+          ACTOR: ${{ github.actor }}
+          REPO: ${{ github.repository }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          REVIEW_STATE: ${{ github.event.review.state }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          COMMENT_URL: ${{ github.event.comment.html_url }}
+          PUSH_REF: ${{ github.ref }}
+          PUSH_COMMIT: ${{ github.sha }}
+          RELEASE_NAME: ${{ github.event.release.name }}
+          RELEASE_URL: ${{ github.event.release.html_url }}
+        run: |
+          echo "🔔 GitHub Event: $EVENT_NAME - $ACTION"
+
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            if [ "$ACTION" = "opened" ]; then
+              TEXT="🆕 [PR] $PR_AUTHOR opened *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+            elif [ "$ACTION" = "closed" ] && [ "${{ github.event.pull_request.merged }}" = "true" ]; then
+              TEXT="✅ [PR] *Merged* by $ACTOR: *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+            elif [ "$ACTION" = "closed" ]; then
+              TEXT="❌ [PR] *Closed* by $ACTOR: *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+            elif [ "$ACTION" = "reopened" ]; then
+              TEXT="♻️ [PR] *Reopened* $PR_TITLE in $REPO%0A🔗 $PR_URL"
+            elif [ "$ACTION" = "review_requested" ]; then
+              TEXT="👀 [PR] Review requested for *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+            elif [ "$ACTION" = "review_request_removed" ]; then
+              TEXT="🚫 [PR] Review request removed for *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+            fi
+
+          elif [ "$EVENT_NAME" = "pull_request_review" ]; then
+            if [ "$REVIEW_STATE" = "approved" ]; then
+              TEXT="👍 [PR Review] $ACTOR *approved* PR: *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+            elif [ "$REVIEW_STATE" = "changes_requested" ]; then
+              TEXT="🔄 [PR Review] $ACTOR *requested changes* on: *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+            elif [ "$REVIEW_STATE" = "commented" ]; then
+              TEXT="💬 [PR Review] $ACTOR *commented* on: *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+            fi
+
+          elif [ "$EVENT_NAME" = "issues" ]; then
+            if [ "$ACTION" = "opened" ]; then
+              TEXT="📝 [Issue] $ISSUE_AUTHOR opened *$ISSUE_TITLE* in $REPO%0A🔗 $ISSUE_URL"
+            elif [ "$ACTION" = "closed" ]; then
+              TEXT="✅ [Issue] *Closed* by $ACTOR: *$ISSUE_TITLE* in $REPO%0A🔗 $ISSUE_URL"
+            elif [ "$ACTION" = "reopened" ]; then
+              TEXT="♻️ [Issue] *Reopened* $ISSUE_TITLE in $REPO%0A🔗 $ISSUE_URL"
+            fi
+
+          elif [ "$EVENT_NAME" = "issue_comment" ]; then
+            SHORT_BODY=$(echo "$COMMENT_BODY" | head -c 150)
+            TEXT="💬 [Issue] $COMMENT_AUTHOR commented in $REPO:%0A${SHORT_BODY}%0A🔗 $COMMENT_URL"
+
+          elif [ "$EVENT_NAME" = "push" ]; then
+            TEXT="📦 [Push] $ACTOR pushed to *$PUSH_REF* in $REPO%0ACommit: $PUSH_COMMIT%0A🔗 https://github.com/$REPO/commit/$PUSH_COMMIT"
+
+          elif [ "$EVENT_NAME" = "release" ]; then
+            TEXT="🏷️ [Release] *$RELEASE_NAME* published in $REPO%0A🔗 $RELEASE_URL"
+
+          elif [ "$EVENT_NAME" = "watch" ]; then
+            TEXT="⭐ $REPO starred by $ACTOR"
+
+          elif [ "$EVENT_NAME" = "fork" ]; then
+            TEXT="🍴 $REPO forked by $ACTOR"
+
+          else
+            echo "⚠️ Unsupported event: $EVENT_NAME"
+            exit 0
+          fi
+
+          THREAD_ARG="-d message_thread_id=$TELEGRAM_THREAD_ID"
+
+          RESPONSE=$(curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+            -d chat_id="$TELEGRAM_CHAT_ID" \
+            $THREAD_ARG \
+            -d disable_web_page_preview=true \
+            -d text="$TEXT" \
+            -d parse_mode=Markdown)
+
+          echo "📨 Telegram API Response: $RESPONSE"
