@@ -41,7 +41,6 @@ jobs:
           COMMENT_BODY: ${{ github.event.comment.body }}
           COMMENT_URL: ${{ github.event.comment.html_url }}
           PUSH_REF: ${{ github.ref }}
-          PUSH_COMMIT: ${{ github.sha }}
           RELEASE_NAME: ${{ github.event.release.name }}
           RELEASE_URL: ${{ github.event.release.html_url }}
         run: |
@@ -49,46 +48,49 @@ jobs:
 
           if [ "$EVENT_NAME" = "pull_request" ]; then
             if [ "$ACTION" = "opened" ]; then
-              TEXT="🆕 [PR] $PR_AUTHOR opened *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+              TEXT="🆕 [PR] $PR_AUTHOR opened *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
             elif [ "$ACTION" = "closed" ] && [ "${{ github.event.pull_request.merged }}" = "true" ]; then
-              TEXT="✅ [PR] *Merged* by $ACTOR: *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+              TEXT="✅ [PR] *Merged* by $ACTOR: *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
             elif [ "$ACTION" = "closed" ]; then
-              TEXT="❌ [PR] *Closed* by $ACTOR: *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+              TEXT="❌ [PR] *Closed* by $ACTOR: *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
             elif [ "$ACTION" = "reopened" ]; then
-              TEXT="♻️ [PR] *Reopened* $PR_TITLE in $REPO%0A🔗 $PR_URL"
+              TEXT="♻️ [PR] *Reopened* $PR_TITLE in $REPO%0A[View on GitHub]($PR_URL)"
             elif [ "$ACTION" = "review_requested" ]; then
-              TEXT="👀 [PR] Review requested for *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+              TEXT="👀 [PR] Review requested for *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
             elif [ "$ACTION" = "review_request_removed" ]; then
-              TEXT="🚫 [PR] Review request removed for *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+              TEXT="🚫 [PR] Review request removed for *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
             fi
 
           elif [ "$EVENT_NAME" = "pull_request_review" ]; then
             if [ "$REVIEW_STATE" = "approved" ]; then
-              TEXT="👍 [PR Review] $ACTOR *approved* PR: *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+              TEXT="👍 [PR Review] $ACTOR *approved* PR: *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
             elif [ "$REVIEW_STATE" = "changes_requested" ]; then
-              TEXT="🔄 [PR Review] $ACTOR *requested changes* on: *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+              TEXT="🔄 [PR Review] $ACTOR *requested changes* on: *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
             elif [ "$REVIEW_STATE" = "commented" ]; then
-              TEXT="💬 [PR Review] $ACTOR *commented* on: *$PR_TITLE* in $REPO%0A🔗 $PR_URL"
+              TEXT="💬 [PR Review] $ACTOR *commented* on: *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
             fi
 
           elif [ "$EVENT_NAME" = "issues" ]; then
             if [ "$ACTION" = "opened" ]; then
-              TEXT="📝 [Issue] $ISSUE_AUTHOR opened *$ISSUE_TITLE* in $REPO%0A🔗 $ISSUE_URL"
+              TEXT="📝 [Issue] $ISSUE_AUTHOR opened *$ISSUE_TITLE* in $REPO%0A[View on GitHub]($ISSUE_URL)"
             elif [ "$ACTION" = "closed" ]; then
-              TEXT="✅ [Issue] *Closed* by $ACTOR: *$ISSUE_TITLE* in $REPO%0A🔗 $ISSUE_URL"
+              TEXT="✅ [Issue] *Closed* by $ACTOR: *$ISSUE_TITLE* in $REPO%0A[View on GitHub]($ISSUE_URL)"
             elif [ "$ACTION" = "reopened" ]; then
-              TEXT="♻️ [Issue] *Reopened* $ISSUE_TITLE in $REPO%0A🔗 $ISSUE_URL"
+              TEXT="♻️ [Issue] *Reopened* $ISSUE_TITLE in $REPO%0A[View on GitHub]($ISSUE_URL)"
             fi
 
           elif [ "$EVENT_NAME" = "issue_comment" ]; then
             SHORT_BODY=$(echo "$COMMENT_BODY" | head -c 150)
-            TEXT="💬 [Issue] $COMMENT_AUTHOR commented in $REPO:%0A${SHORT_BODY}%0A🔗 $COMMENT_URL"
+            TEXT="💬 [Issue] $COMMENT_AUTHOR commented in $REPO:%0A${SHORT_BODY}%0A[View on GitHub]($COMMENT_URL)"
 
           elif [ "$EVENT_NAME" = "push" ]; then
-            TEXT="📦 [Push] $ACTOR pushed to *$PUSH_REF* in $REPO%0ACommit: $PUSH_COMMIT%0A🔗 https://github.com/$REPO/commit/$PUSH_COMMIT"
+            BRANCH=$(echo "$PUSH_REF" | sed 's|refs/heads/||')
+            COMMIT_MSG=$(git log -1 --pretty=%B)
+            COMMIT_URL="https://github.com/$REPO/commit/${{ github.sha }}"
+            TEXT="📦 [Push] $ACTOR pushed to *$BRANCH* in $REPO%0A\"$COMMIT_MSG\"%0A[View on GitHub]($COMMIT_URL)"
 
           elif [ "$EVENT_NAME" = "release" ]; then
-            TEXT="🏷️ [Release] *$RELEASE_NAME* published in $REPO%0A🔗 $RELEASE_URL"
+            TEXT="🏷️ [Release] *$RELEASE_NAME* published in $REPO%0A[View on GitHub]($RELEASE_URL)"
 
           elif [ "$EVENT_NAME" = "watch" ]; then
             TEXT="⭐ $REPO starred by $ACTOR"
