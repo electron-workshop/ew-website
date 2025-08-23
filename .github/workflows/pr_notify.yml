@@ -85,9 +85,10 @@ jobs:
 
           elif [ "$EVENT_NAME" = "push" ]; then
             BRANCH=$(echo "$PUSH_REF" | sed 's|refs/heads/||')
-            COMMIT_MSG=$(git log -1 --pretty=%B)
-            COMMIT_URL="https://github.com/$REPO/commit/${{ github.sha }}"
+            COMMIT_MSG="${{ github.event.head_commit.message }}"
+            COMMIT_URL="${{ github.event.head_commit.url }}"
             TEXT="📦 [Push] $ACTOR pushed to *$BRANCH* in $REPO%0A\"$COMMIT_MSG\"%0A[View on GitHub]($COMMIT_URL)"
+
 
           elif [ "$EVENT_NAME" = "release" ]; then
             TEXT="🏷️ [Release] *$RELEASE_NAME* published in $REPO%0A[View on GitHub]($RELEASE_URL)"
