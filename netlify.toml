@@ -1,0 +1,15 @@
+[build]
+  publish = "_site"
+  command = "npx @11ty/eleventy && npx pagefind --site _site"
+
+[functions]
+  directory = "netlify/functions"
+
+# (optional but handy)
+[build.environment]
+  NODE_VERSION = "20"
+
+[dev]
+  command = "npx @11ty/eleventy --serve"
+  targetPort = 8080
+  port = 8888
