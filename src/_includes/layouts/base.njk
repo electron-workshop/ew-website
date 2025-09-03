@@ -58,13 +58,13 @@
 
     <div data-pagefind-body>
       <span class="visually-hidden">
-        {{ title | default(site.title) }} {% if not description %} — {{ content
+        {{ title | default(site.title) }} {{ description | default(site.description) }} {% if not description %} — {{ content
         | striptags | replace("\n", " ") | truncate(240, true, "") }} {% endif
         %}
       </span>
     </div>
 
-    <main class="py-5">
+    <main class="pt-3 pt-md-5 pb-5">
       <div class="container">{{ content | safe }}</div>
     </main>
 

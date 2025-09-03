@@ -24,7 +24,9 @@ permalink: "/"
 
 {# Regular cards section for whatsOnEcosystem or other types #}
 <section class="mt-4">
-  <h1 class="fs-2 fw-semibold mb-3">What's on In the Ecosystem</h1>
+  
+  <h1 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">What's On In The Ecosystem</h2>
+
   <div class="row g-4">
     {% for card in homeCards %}
       {% if card.cardType == "whatsOnEcosystem" %}
@@ -32,7 +34,7 @@ permalink: "/"
           <div class="card h-100 border-primary border-opacity-25 shadow-sm border-primary-hover">
             <div class="card-body">
               <div class="d-flex align-items-center justify-content-between mb-2">
-                <h2 class="h4 mb-0">{{ card.title }}</h2>
+                <p class="h4 mb-0">{{ card.title }}</p>
                 {% if card.icon %}<i class="bi {{ card.icon }} fs-3"></i>{% endif %}
               </div>
               <p class="mb-4">{{ card.text }}</p>
@@ -47,20 +49,33 @@ permalink: "/"
   </div>
 </section>
 
-{# Volunteer Call block #}
+{# Engage cards #}
 <section class="mt-5">
-  <div class="row">
-    <div class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4 card border-primary border-opacity-25 shadow-sm border-primary-hover">
-      <p class="fs-5">
-        Linux Victoria is a team effort, we actively look for new ideas, ways to connect
-        to other organisations and help in running current activities.
-      </p>
-      <p class="fs-5">
-        Stay tuned and reach out if we could help or if you have an offer for the group.
-      </p>
-      <div>
-        <a href="/engage/" class="btn btn-outline-primary stretched-link">Engage or Volunteer</a>
-      </div>
-    </div>
+  
+  <h2 class="fs-3 fw-normal mb-3 border-bottom border-2 border-primary d-inline-block">Engage with Us</h2>
+
+  <div class="row g-4">
+    {% for card in homeCards %}
+      {% if card.cardType == "engage" %}
+        <div class="col-12 col-md-6">
+          <div class="card h-100 bg-light border-primary border-opacity-25 shadow-sm border-primary-hover">
+            <div class="card-body text-primary text-center">
+              <div class="mb-2 d-flex align-items-center {% if card.icon %}justify-content-between{% else %}justify-content-center{% endif %}">
+                <p class="h4 mb-0 {% if card.icon %}text-start me-3 flex-grow-1{% else %}text-center{% endif %}">
+                  {{ card.title }}
+                </p>
+                {% if card.icon %}
+                  <i class="bi {{ card.icon }} fs-3"></i>
+                {% endif %}
+              </div>
+              <p class="mb-4 fs-5 text-preline">{{ card.text }}</p>
+              {% if card.href and card.button %}
+                <a href="{{ card.href }}" class="btn btn-outline-primary stretched-link">{{ card.button }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>

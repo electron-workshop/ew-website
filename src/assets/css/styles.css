@@ -50,3 +50,5 @@ body {
 .border-primary-hover:hover {
   border-color: rgba(var(--bs-primary-rgb), 1) !important;
 }
+
+.text-preline { white-space: pre-line; }
