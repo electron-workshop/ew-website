@@ -7,42 +7,60 @@ permalink: "/"
 {# Top section cards with cardType: "top" #}
 <section class="mb-4">
   <div class="row">
-    {% for card in homeCards %} {% if card.cardType == "top" %}
-    <div class="col-12 col-md-6">
-      <p class="fs-5 fw-semibold mb-3">{{ card.title }}</p>
-      <p class="lead text-secondary">{{ card.text }}</p>
+    {% for card in homeCards %}
+      {% if card.cardType == "top" %}
+        <div class="col-12 col-md-6">
+          <p class="fs-5 fw-semibold mb-3">{{ card.title }}</p>
+          <p class="lead text-secondary">{{ card.text }}</p>
 
-      {% if card.href and card.button %}
-      <a href="{{ card.href }}" class="btn btn-primary">{{ card.button }}</a>
-      {% endif %}
-    </div>
-    {% endif %} {% endfor %}
-  </div>
-</section>
-{# Regular cards section for whatsOnEcosystem or other types #}
-<section class="mt-4">
-
-  <h1 class="fs-2 fw-semibold mb-3">What's on In the Ecosystem</h1>
-  <div class="row g-4">
-    {% for card in homeCards %} {% if card.cardType == "whatsOnEcosystem" %}
-    <div class="col-12 col-md-4">
-      <div
-        class="card h-100 border-primary border-opacity-25 shadow-sm border-primary-hover"
-      >
-        <div class="card-body">
-          <div class="d-flex align-items-center justify-content-between mb-2">
-            <h2 class="h4 mb-0">{{ card.title }}</h2>
-            {% if card.icon %}<i class="bi {{ card.icon }} fs-3"></i>{% endif %}
-          </div>
-          <p class="mb-4">{{ card.text }}</p>
           {% if card.href and card.button %}
-          <a href="{{ card.href }}" class="btn btn-primary"
-            >{{ card.button }}</a
-          >
+            <a href="{{ card.href }}" class="btn btn-primary">{{ card.button }}</a>
           {% endif %}
         </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{# Regular cards section for whatsOnEcosystem or other types #}
+<section class="mt-4">
+  <h1 class="fs-2 fw-semibold mb-3">What's on In the Ecosystem</h1>
+  <div class="row g-4">
+    {% for card in homeCards %}
+      {% if card.cardType == "whatsOnEcosystem" %}
+        <div class="col-12 col-md-4">
+          <div class="card h-100 border-primary border-opacity-25 shadow-sm border-primary-hover">
+            <div class="card-body">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <h2 class="h4 mb-0">{{ card.title }}</h2>
+                {% if card.icon %}<i class="bi {{ card.icon }} fs-3"></i>{% endif %}
+              </div>
+              <p class="mb-4">{{ card.text }}</p>
+              {% if card.href and card.button %}
+                <a href="{{ card.href }}" class="btn btn-primary  stretched-link">{{ card.button }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{# Volunteer Call block #}
+<section class="mt-5">
+  <div class="row">
+    <div class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4 card border-primary border-opacity-25 shadow-sm border-primary-hover">
+      <p class="fs-5">
+        Linux Victoria is a team effort, we actively look for new ideas, ways to connect
+        to other organisations and help in running current activities.
+      </p>
+      <p class="fs-5">
+        Stay tuned and reach out if we could help or if you have an offer for the group.
+      </p>
+      <div>
+        <a href="/engage/" class="btn btn-outline-primary stretched-link">Engage or Volunteer</a>
       </div>
     </div>
-    {% endif %} {% endfor %}
   </div>
 </section>
