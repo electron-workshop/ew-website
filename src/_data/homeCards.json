@@ -1,9 +1,42 @@
 [
   {
+    "cardType": "top",
+    "title": "Shared infrastructure for community groups",
+    "text": "Stop re‑inventing the wheel. Join Electron Workshop's network and use our maintained stack for newsletters, documents, and analytics.",
+    "href": "",
+    "button": "",
+    "icon": ""
+  },
+  {
+    "cardType": "top",
+    "title": "Shared infrastructure for community groups",
+    "text": "Stop re‑inventing the wheel. Join Electron Workshop's network and use our maintained stack for newsletters, documents, and analytics.",
+    "href": "",
+    "button": "",
+    "icon": ""
+  },
+  {
+    "cardType": "whatsOnEcosystem",
     "title": "Our Offerings",
-    "text": "Join our shared infrastructure\u2014newsletters, docs, and analytics\u2014all maintained for you.",
+    "text": "Join our shared infrastructure—newsletters, docs, and analytics—all maintained for you.",
     "href": "/offering/",
     "button": "Explore offerings",
     "icon": "bi-box-seam"
+  },
+  {
+    "cardType": "whatsOnEcosystem",
+    "title": "Next Card",
+    "text": "Description for this card",
+    "href": "/offering/",
+    "button": "Find out",
+    "icon": ""
+  },
+  {
+    "cardType": "whatsOnEcosystem",
+    "title": "Another One!",
+    "text": "Woah, check out these cool cards",
+    "href": "/offering/",
+    "button": "Read",
+    "icon": ""
   }
 ]

@@ -3,33 +3,46 @@ layout: base.njk
 title: Home — {{ site.title }}
 permalink: "/"
 ---
+
+{# Top section cards with cardType: "top" #}
 <section class="mb-4">
-  <div class="row align-items-center g-4">
-    <div class="col-12 col-lg-7">
-      <h1 class="display-5 fw-bold mb-3">Shared infrastructure for community groups</h1>
-      <p class="lead text-secondary">Stop re‑inventing the wheel. Join Electron Workshop’s network and use our maintained stack for newsletters, documents, and analytics.</p>
+  <div class="row">
+    {% for card in homeCards %} {% if card.cardType == "top" %}
+    <div class="col-12 col-md-6">
+      <p class="fs-5 fw-semibold mb-3">{{ card.title }}</p>
+      <p class="lead text-secondary">{{ card.text }}</p>
+
+      {% if card.href and card.button %}
+      <a href="{{ card.href }}" class="btn btn-primary">{{ card.button }}</a>
+      {% endif %}
     </div>
-    <div class="col-12 col-lg-5 text-center">
-      <img src="/assets/images/logo.jpg" class="img-fluid rounded-4 shadow-sm" alt="Logo">
-    </div>
+    {% endif %} {% endfor %}
   </div>
 </section>
-
+{# Regular cards section for whatsOnEcosystem or other types #}
 <section class="mt-4">
+
+  <h1 class="fs-2 fw-semibold mb-3">What's on In the Ecosystem</h1>
   <div class="row g-4">
-    {% for card in homeCards %}
-    <div class="col-12 col-md-6">
-      <div class="card h-100 border-0 shadow-sm hover-card">
+    {% for card in homeCards %} {% if card.cardType == "whatsOnEcosystem" %}
+    <div class="col-12 col-md-4">
+      <div
+        class="card h-100 border-primary border-opacity-25 shadow-sm hover-card"
+      >
         <div class="card-body">
           <div class="d-flex align-items-center justify-content-between mb-2">
             <h2 class="h4 mb-0">{{ card.title }}</h2>
             {% if card.icon %}<i class="bi {{ card.icon }} fs-3"></i>{% endif %}
           </div>
           <p class="mb-4">{{ card.text }}</p>
-          <a href="{{ card.href }}" class="btn btn-primary">{{ card.button }}</a>
+          {% if card.href and card.button %}
+          <a href="{{ card.href }}" class="btn btn-primary"
+            >{{ card.button }}</a
+          >
+          {% endif %}
         </div>
       </div>
     </div>
-    {% endfor %}
+    {% endif %} {% endfor %}
   </div>
 </section>
