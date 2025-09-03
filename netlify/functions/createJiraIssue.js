@@ -1,5 +1,5 @@
-// createJiraIssue.js
-// Support Areas + Group (multi-select), with honeypot + time-trap anti-spam
+// netlify/functions/createJiraIssue.js
+// Support Areas + Group (multi-select), Source labels (env), with honeypot + time-trap anti-spam
 
 exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
@@ -7,11 +7,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const headers = {
-      "Content-Type": "application/json",
-      // CORS is usually not needed for same-origin POSTs; add if calling cross-origin:
-      // "Access-Control-Allow-Origin": "*",
-    };
+    const headers = { "Content-Type": "application/json" };
 
     // ---- Parse body (x-www-form-urlencoded or JSON) ----
     const contentType = (event.headers["content-type"] || event.headers["Content-Type"] || "").toLowerCase();
@@ -21,6 +17,7 @@ exports.handler = async (event) => {
     if (contentType.includes("application/json")) {
       formData = JSON.parse(event.body || "{}");
     } else {
+      // Default Eleventy/Netlify forms: x-www-form-urlencoded
       paramsForSpamCheck = new URLSearchParams(event.body || "");
       for (const [key, value] of paramsForSpamCheck.entries()) {
         if (key === "supportAreas") {
@@ -45,9 +42,7 @@ exports.handler = async (event) => {
         (typeof formData[hp] === "string" ? formData[hp] : "");
       return (v || "").trim() !== "";
     });
-    if (hpTripped) {
-      return { statusCode: 204, body: "" }; // silently drop
-    }
+    if (hpTripped) return { statusCode: 204, body: "" }; // silently drop
 
     const formTsRaw =
       (paramsForSpamCheck && paramsForSpamCheck.get("form_ts")) ??
@@ -58,20 +53,15 @@ exports.handler = async (event) => {
     }
 
     // ---- Pull common fields ----
-    const name   = formData.name   || "New Volunteer";
-    const email  = formData.email  || "";
-    const skills = formData.skills || "";
+    const name   = (formData.name || "New Volunteer").toString();
+    const email  = (formData.email || "").toString();
+    const skills = (formData.skills || "").toString();
 
     const supportAreas = Array.isArray(formData.supportAreas) ? formData.supportAreas : [];
-
-    // Optional groups from the form (group or groups)
     const groupsFromForm = Array.isArray(formData.group)
       ? formData.group
       : (formData.group ? [formData.group] : []);
-    // If someone used "groups" instead:
-    if (Array.isArray(formData.groups)) {
-      groupsFromForm.push(...formData.groups);
-    }
+    if (Array.isArray(formData.groups)) groupsFromForm.push(...formData.groups);
 
     // ---- Env vars ----
     const jiraUrl               = process.env.JIRA_URL;
@@ -81,13 +71,14 @@ exports.handler = async (event) => {
     const emailFieldId          = process.env.JIRA_EMAIL_FIELD_ID || "customfield_10053";
     const supportAreasFieldId   = process.env.JIRA_SUPPORT_AREAS_FIELD_ID;
     const groupFieldId          = process.env.JIRA_GROUP_FIELD_ID;
-    const groupValuesEnvCsv     = process.env.JIRA_GROUP_VALUES || ""; // "Electron Workshop, Another Group"
+    const groupValuesEnvCsv     = process.env.JIRA_GROUP_VALUES || "";
 
-    // Resolve Group values: env (preferred) + form (fallback/extra)
-    const groupsFromEnv = groupValuesEnvCsv
-      .split(",")
-      .map((s) => s.trim())
-      .filter(Boolean);
+    // NEW: Source labels (labels-type) from env (preserve capitalization)
+    const sourceFieldId         = process.env.JIRA_SOURCE_FIELD_ID;        // e.g., "labels" or "customfield_10218"
+    const sourceValueCsv        = process.env.JIRA_SOURCE_VALUE || "";     // e.g., "FormSubmission,ElectronWorkshopWebsite"
+
+    // ---- Resolve groups (env + form) ----
+    const groupsFromEnv = groupValuesEnvCsv.split(",").map(s => s.trim()).filter(Boolean);
     const groupValues = Array.from(new Set([...groupsFromEnv, ...groupsFromForm])).filter(Boolean);
 
     // ---- Human-readable description (Atlassian document format) ----
@@ -120,7 +111,7 @@ exports.handler = async (event) => {
     // Email -> custom field
     if (emailFieldId) fields[emailFieldId] = email;
 
-    // Support Areas -> multi-select
+    // Support Areas -> multi-select (array of { value })
     if (supportAreasFieldId && supportAreas.length) {
       fields[supportAreasFieldId] = supportAreas.map((v) => ({ value: v }));
     }
@@ -130,15 +121,40 @@ exports.handler = async (event) => {
       fields[groupFieldId] = groupValues.map((v) => ({ value: v }));
     }
 
+    // ---- Source labels (labels-type) from env, preserving capitalization ----
+    // Jira labels can't contain spaces → replace spaces with hyphens; remove illegal chars; keep case.
+    function toLabelPreserveCase(s) {
+      return String(s || "")
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/[^A-Za-z0-9-_]/g, "");
+    }
+
+    const sourceLabels = Array.from(
+      new Set(
+        sourceValueCsv
+          .split(",")
+          .map(s => toLabelPreserveCase(s))
+          .filter(Boolean)
+      )
+    );
+
+    if (sourceFieldId && sourceLabels.length) {
+      if (sourceFieldId === "labels") {
+        // System labels field
+        fields.labels = Array.from(new Set([...(fields.labels || []), ...sourceLabels]));
+      } else {
+        // Custom Labels field (array of strings)
+        fields[sourceFieldId] = sourceLabels;
+      }
+    }
+
     const payload = { fields };
 
     // ---- Send to Jira ----
     const response = await fetch(jiraUrl, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": jiraAuth,
-      },
+      headers: { "Content-Type": "application/json", "Authorization": jiraAuth },
       body: JSON.stringify(payload),
     });
 
@@ -146,7 +162,7 @@ exports.handler = async (event) => {
 
     if (!response.ok) {
       const msg = data?.errorMessages?.join(", ") ||
-                  data?.errors && JSON.stringify(data.errors) ||
+                  (data?.errors && JSON.stringify(data.errors)) ||
                   "Jira issue creation failed";
       throw new Error(msg);
     }
