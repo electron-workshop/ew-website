@@ -26,7 +26,7 @@
       rel="stylesheet"
     />
     <link href="/assets/css/styles.css" rel="stylesheet" />
-    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <meta property="og:title" content="Electron Workshop — Our Offerings" />
     <meta
       property="og:description"
@@ -58,13 +58,13 @@
 
     <div data-pagefind-body>
       <span class="visually-hidden">
-        {{ title | default(site.title) }} {% if not description %} — {{ content
+        {{ title | default(site.title) }} {{ description | default(site.description) }} {% if not description %} — {{ content
         | striptags | replace("\n", " ") | truncate(240, true, "") }} {% endif
         %}
       </span>
     </div>
 
-    <main class="py-5">
+    <main class="pt-3 pt-md-5">
       <div class="container">{{ content | safe }}</div>
     </main>
 

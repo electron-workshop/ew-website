@@ -7,42 +7,85 @@ permalink: "/"
 {# Top section cards with cardType: "top" #}
 <section class="mb-4">
   <div class="row">
-    {% for card in homeCards %} {% if card.cardType == "top" %}
-    <div class="col-12 col-md-6">
-      <p class="fs-5 fw-semibold mb-3">{{ card.title }}</p>
-      <p class="lead text-secondary">{{ card.text }}</p>
+    {% for card in homeCards %}
+      {% if card.cardType == "top" %}
+        <div class="col-12 col-md-6">
+          <p class="fs-5 fw-semibold mb-3">{{ card.title }}</p>
+          <p class="lead text-secondary">{{ card.text }}</p>
 
-      {% if card.href and card.button %}
-      <a href="{{ card.href }}" class="btn btn-primary">{{ card.button }}</a>
-      {% endif %}
-    </div>
-    {% endif %} {% endfor %}
-  </div>
-</section>
-{# Regular cards section for whatsOnEcosystem or other types #}
-<section class="mt-4">
-
-  <h1 class="fs-2 fw-semibold mb-3">What's on In the Ecosystem</h1>
-  <div class="row g-4">
-    {% for card in homeCards %} {% if card.cardType == "whatsOnEcosystem" %}
-    <div class="col-12 col-md-4">
-      <div
-        class="card h-100 border-primary border-opacity-25 shadow-sm border-primary-hover"
-      >
-        <div class="card-body">
-          <div class="d-flex align-items-center justify-content-between mb-2">
-            <h2 class="h4 mb-0">{{ card.title }}</h2>
-            {% if card.icon %}<i class="bi {{ card.icon }} fs-3"></i>{% endif %}
-          </div>
-          <p class="mb-4">{{ card.text }}</p>
           {% if card.href and card.button %}
-          <a href="{{ card.href }}" class="btn btn-primary"
-            >{{ card.button }}</a
-          >
+            <a href="{{ card.href }}" class="btn btn-primary">{{ card.button }}</a>
           {% endif %}
         </div>
-      </div>
-    </div>
-    {% endif %} {% endfor %}
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
+
+{# Regular cards section for whatsOnEcosystem or other types #}
+<section class="mt-4">
+  
+  <h1 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">What's On In The Ecosystem</h2>
+
+  <div class="row g-4">
+    {% for card in homeCards %}
+      {% if card.cardType == "whatsOnEcosystem" %}
+        <div class="col-12 col-md-4">
+          <div class="card h-100 border-primary border-opacity-25 shadow-sm border-primary-hover">
+            <div class="card-body">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <p class="h4 mb-0">{{ card.title }}</p>
+                {% if card.icon %}<i class="bi {{ card.icon }} fs-3"></i>{% endif %}
+              </div>
+              <p class="mb-4">{{ card.text }}</p>
+              {% if card.href and card.button %}
+                <a href="{{ card.href }}" class="btn btn-primary  stretched-link">{{ card.button }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+</div> {# Close the container from base.njk #}
+
+<!-- Gear Divider -->
+<div class="gear-transition"></div>
+
+
+{# Engage cards with orange background - full width #}
+<section class="py-5" style="background-color: #d9532b;">
+  
+  <div class="container mt-5">
+    <h2 class="fs-3 fw-normal mb-4 border-bottom border-2 border-white d-inline-block text-white">Engage with Us</h2>
+
+    <div class="row g-4">
+      {% for card in homeCards %}
+        {% if card.cardType == "engage" %}
+          <div class="col-12 col-md-6">
+            <div class="card h-100 bg-white border-0 shadow-sm">
+              <div class="card-body text-primary text-center">
+                <div class="mb-2 d-flex align-items-center {% if card.icon %}justify-content-between{% else %}justify-content-center{% endif %}">
+                  <p class="h4 mb-0 {% if card.icon %}text-start me-3 flex-grow-1{% else %}text-center{% endif %}">
+                    {{ card.title }}
+                  </p>
+                  {% if card.icon %}
+                    <i class="bi {{ card.icon }} fs-3"></i>
+                  {% endif %}
+                </div>
+                <p class="mb-4 fs-5 text-preline">{{ card.text }}</p>
+                {% if card.href and card.button %}
+                  <a href="{{ card.href }}" class="btn btn-outline-primary stretched-link">{{ card.button }}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<div class="container"> {# Reopen the container for any content that follows #}

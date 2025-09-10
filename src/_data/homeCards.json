@@ -38,5 +38,13 @@
     "href": "/offering/",
     "button": "Read",
     "icon": ""
+  },
+  {
+    "cardType": "engage",
+    "title": "",
+    "text": "Electron Workshop is a team effort, we actively look for new ideas, ways to connect to other organisations and help in running current activities. \n\nStay tuned and reach out if we could help or if you have an offer for the group.",
+    "href": "/engage/",
+    "button": "Engage or Volunteer",
+    "icon": ""
   }
 ]
