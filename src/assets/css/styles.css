@@ -52,3 +52,50 @@ body {
 }
 
 .text-preline { white-space: pre-line; }
+
+
+
+
+.gear-transition {
+  --gear-url: url('/assets/ew-gear-transition.svg');
+  position: relative;
+  background: var(--bs-body-bg, var(--surface));
+  overflow-x: clip;
+  overflow-y: visible;
+  z-index: 3;
+  isolation: isolate;
+}
+
+/* Keep aspect ratio: 177 / 1440 = 12.2916667% */
+.gear-transition::before {
+  content: "";
+  display: block;
+  padding-bottom: 9%;
+}
+
+/* Desktop: show full width (no zoom) */
+.gear-transition::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 100%;              /* ← full width on desktop */
+  min-width: 0;             /* ← remove forced zoom */
+  background-image: var(--gear-url);
+  background-repeat: ;
+  background-position: center top;
+  background-size: auto 100%;
+  transform: translate(-50%, 50%); /* overlap 50% into next section */
+  pointer-events: none;
+}
+
+/* 📱 Mobile: keep the big gears */
+@media (max-width: 576px) {
+  .gear-transition::before {
+    padding-bottom: 36.875%; /* 12.2916667% × 3 */
+  }
+  .gear-transition::after {
+    width: 300%;            /* ← zoom the width on mobile */
+  }
+}
