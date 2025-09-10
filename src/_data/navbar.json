@@ -14,5 +14,9 @@
   {
     "title": "Contact",
     "href": "/contact/"
+  },
+  {
+    "title": "Calendar",
+    "href": "https://electronworkshop.com.au/goto/calendar/?r=ew"
   }
 ]
