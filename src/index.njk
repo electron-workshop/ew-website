@@ -25,7 +25,7 @@ permalink: "/"
 {# Regular cards section for whatsOnEcosystem or other types #}
 <section class="mt-4">
   
-  <h1 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">What's On In The Ecosystem</h2>
+  <h1 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">What's On In The Ecosystem</h1>
 
   <div class="row g-4">
     {% for card in homeCards %}
@@ -47,6 +47,12 @@ permalink: "/"
       {% endif %}
     {% endfor %}
   </div>
+
+                    <div class="text-center mt-4">
+                        <a href="/events-and-posts" class="btn btn-outline-primary">
+                            Checkout our calendar to see all ecosystem events <i class="bi bi-arrow-right me-2"></i>
+                        </a>
+                    </div>
 </section>
 
 </div> {# Close the container from base.njk #}

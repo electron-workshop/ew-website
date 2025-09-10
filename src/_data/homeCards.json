@@ -17,27 +17,27 @@
   },
   {
     "cardType": "whatsOnEcosystem",
-    "title": "Our Offerings",
-    "text": "Join our shared infrastructure—newsletters, docs, and analytics—all maintained for you.",
-    "href": "/offering/",
-    "button": "Explore offerings",
-    "icon": "bi-box-seam"
+    "title": "auIGF 2025",
+    "text": "Australia's Internet Governance Forum in Adelaide | 23–24 Sept 2025 (hybrid).",
+    "href": "https://auigf.au/",
+    "button": "Learn more",
+    "icon": "bi-globe"
   },
   {
     "cardType": "whatsOnEcosystem",
-    "title": "Next Card",
-    "text": "Description for this card",
-    "href": "/offering/",
-    "button": "Find out",
-    "icon": ""
+    "title": "Software Freedom Day",
+    "text": "Celebrate open-source and digital freedom | Saturday 20th Sept 2025.",
+    "href": "https://digitalfreedoms.org/en/sfd",
+    "button": "Get involved",
+    "icon": "bi-code-slash"
   },
   {
     "cardType": "whatsOnEcosystem",
-    "title": "Another One!",
-    "text": "Woah, check out these cool cards",
-    "href": "/offering/",
-    "button": "Read",
-    "icon": ""
+    "title": "SXSW Sydney 2025",
+    "text": "Creative industries festival | 13–19 Oct 2025 in Sydney.",
+    "href": "https://www.sxswsydney.com/",
+    "button": "Explore event",
+    "icon": "bi-arrow-down-left-square"
   },
   {
     "cardType": "engage",
