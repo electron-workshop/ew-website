@@ -34,11 +34,11 @@
   },
   {
     "cardType": "whatsOnEcosystem",
-    "title": "SXSW Sydney 2025",
-    "text": "Creative industries festival | 13–19 Oct 2025 in Sydney.",
-    "href": "https://www.sxswsydney.com/",
+    "title": "PyCon AU 2025",
+    "text": "PyCon AU is the national conference for developers using the Python Programming Language. Hosted annually since 2010, this event brings the national and international Python community together.",
+    "href": "https://2025.pycon.org.au/",
     "button": "Explore event",
-    "logo": "/assets/images/logos/67c4e80db279c10646838a08_sxsw-black.png"
+    "banner": "/assets/images/banners/pyconau2025.png"
   },
   {
     "cardType": "engage",
