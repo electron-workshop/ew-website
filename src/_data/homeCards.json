@@ -5,7 +5,8 @@
     "text": "Australia's Python flagship conference in Melbourne | 12-16 September 2025 (hybrid)",
     "href": "https://2025.pycon.org.au/",
     "button": "Explore event",
-    "banner": "/assets/images/banners/pyconau2025.png"
+    "banner": "/assets/images/banners/pyconau2025.png",
+    "tags": ["tech", "open-source"]
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -14,7 +15,8 @@
     "href": "https://digitalfreedoms.org/en/sfd",
     "button": "Get involved",
     "logo": "/assets/images/logos/sfdlogo.png",
-    "banner": "/assets/images/banners/sfd-2025.png"
+    "banner": "/assets/images/banners/sfd-2025.png",
+    "tags": ["open-source", "governance"]
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -22,6 +24,16 @@
     "text": "Australia's Internet Governance Forum in Adelaide | 23–24 Sept 2025 (hybrid).",
     "href": "https://auigf.au/",
     "button": "Learn more",
-    "banner": "/assets/images/banners/auigf-2025.jpeg"
+    "banner": "/assets/images/banners/auigf-2025.jpeg",
+    "tags": ["tech", "governance"]
+  },
+  {
+    "cardType": "whatsOnEcosystem",
+    "title": "SXSW Sydney 2025",
+    "text": "Creative industries festival | 13–19 Oct 2025 in Sydney.",
+    "href": "https://www.sxswsydney.com/",
+    "button": "Explore event",
+    "logo": "/assets/images/logos/67c4e80db279c10646838a08_sxsw-black.png",
+    "tags": ["tech", "social-enterprise"]
   }
 ]
