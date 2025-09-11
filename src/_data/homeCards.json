@@ -1,11 +1,11 @@
 [
   {
     "cardType": "whatsOnEcosystem",
-    "title": "auIGF 2025",
-    "text": "Australia's Internet Governance Forum in Adelaide | 23–24 Sept 2025 (hybrid).",
-    "href": "https://auigf.au/",
-    "button": "Learn more",
-    "banner": "/assets/images/banners/auigf-2025.jpeg"
+    "title": "PyCon AU 2025",
+    "text": "A vibrant gathering of Python enthusiasts, celebrating open source, nurturing talent, and connecting Australia’s community with the global movement.",
+    "href": "https://2025.pycon.org.au/",
+    "button": "Explore event",
+    "banner": "/assets/images/banners/pyconau2025.png"
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -18,11 +18,11 @@
   },
   {
     "cardType": "whatsOnEcosystem",
-    "title": "PyCon AU 2025",
-    "text": "A vibrant gathering of Python enthusiasts, celebrating open source, nurturing talent, and connecting Australia’s community with the global movement.",
-    "href": "https://2025.pycon.org.au/",
-    "button": "Explore event",
-    "banner": "/assets/images/banners/pyconau2025.png"
+    "title": "auIGF 2025",
+    "text": "Australia's Internet Governance Forum in Adelaide | 23–24 Sept 2025 (hybrid).",
+    "href": "https://auigf.au/",
+    "button": "Learn more",
+    "banner": "/assets/images/banners/auigf-2025.jpeg"
   },
   {
     "cardType": "engage",
