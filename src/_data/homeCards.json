@@ -1,21 +1,5 @@
 [
   {
-    "cardType": "top",
-    "title": "Shared infrastructure for community groups",
-    "text": "Stop re‑inventing the wheel. Join Electron Workshop's network and use our maintained stack for newsletters, documents, and analytics.",
-    "href": "",
-    "button": "",
-    "icon": ""
-  },
-  {
-    "cardType": "top",
-    "title": "Shared infrastructure for community groups",
-    "text": "Stop re‑inventing the wheel. Join Electron Workshop's network and use our maintained stack for newsletters, documents, and analytics.",
-    "href": "",
-    "button": "",
-    "icon": ""
-  },
-  {
     "cardType": "whatsOnEcosystem",
     "title": "auIGF 2025",
     "text": "Australia's Internet Governance Forum in Adelaide | 23–24 Sept 2025 (hybrid).",
@@ -35,7 +19,7 @@
   {
     "cardType": "whatsOnEcosystem",
     "title": "PyCon AU 2025",
-    "text": "PyCon AU is the national conference for developers using the Python Programming Language. Hosted annually since 2010, this event brings the national and international Python community together.",
+    "text": "A vibrant gathering of Python enthusiasts, celebrating open source, nurturing talent, and connecting Australia’s community with the global movement.",
     "href": "https://2025.pycon.org.au/",
     "button": "Explore event",
     "banner": "/assets/images/banners/pyconau2025.png"
