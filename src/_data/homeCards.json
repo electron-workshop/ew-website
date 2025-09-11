@@ -21,15 +21,16 @@
     "text": "Australia's Internet Governance Forum in Adelaide | 23–24 Sept 2025 (hybrid).",
     "href": "https://auigf.au/",
     "button": "Learn more",
-    "icon": "bi-globe"
+    "banner": "/assets/images/banners/auigf-2025.jpeg"
   },
   {
     "cardType": "whatsOnEcosystem",
     "title": "Software Freedom Day",
-    "text": "Celebrate open-source and digital freedom | Saturday 20th Sept 2025.",
+    "text": "Celebrate open-source and digital freedom | Saturday, 20th Sept 2025.",
     "href": "https://digitalfreedoms.org/en/sfd",
     "button": "Get involved",
-    "icon": "bi-code-slash"
+    "logo": "/assets/images/logos/sfdlogo.png",
+    "banner": "/assets/images/banners/sfd-2025.png"
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -37,7 +38,7 @@
     "text": "Creative industries festival | 13–19 Oct 2025 in Sydney.",
     "href": "https://www.sxswsydney.com/",
     "button": "Explore event",
-    "icon": "bi-arrow-down-left-square"
+    "logo": "/assets/images/logos/67c4e80db279c10646838a08_sxsw-black.png"
   },
   {
     "cardType": "engage",
