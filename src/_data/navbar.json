@@ -9,14 +9,17 @@
   },
   {
     "title": "Engage",
-    "href": "/engage/"
+    "href": "/engage/",
+    "footer": true
   },
   {
     "title": "Contact",
-    "href": "/contact/"
+    "href": "/contact/",
+    "footer": true
   },
   {
     "title": "Calendar",
-    "href": "https://electronworkshop.com.au/goto/calendar/?r=ew"
+    "href": "https://electronworkshop.com.au/goto/calendar/?r=ew",
+    "footer": true
   }
 ]
