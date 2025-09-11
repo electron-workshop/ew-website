@@ -79,42 +79,50 @@ permalink: "/"
 
 
 </div> {# Close the container from base.njk #}
+{# Detect if there are any engage cards #}
+{% set hasEngage = false %}
+{% for card in homeCards %}
+  {% if card.cardType == "engage" %}
+    {% set hasEngage = true %}
+  {% endif %}
+{% endfor %}
 
-<!-- Gear Divider -->
-<div class="gear-transition"></div>
+{% if hasEngage %}
+  <!-- Gear Divider -->
+  <div class="gear-transition" aria-hidden="true"></div>
 
+  {# Engage cards with orange background - full width #}
+  <section class="py-5" style="background-color: #d9532b;">
+    <div class="container mt-5">
+      <h2 class="fs-3 fw-normal mb-4 border-bottom border-2 border-white d-inline-block text-white">Engage with Us</h2>
 
-{# Engage cards with orange background - full width #}
-<section class="py-5" style="background-color: #d9532b;">
-  
-  <div class="container mt-5">
-    <h2 class="fs-3 fw-normal mb-4 border-bottom border-2 border-white d-inline-block text-white">Engage with Us</h2>
-
-    <div class="row g-4">
-      {% for card in homeCards %}
-        {% if card.cardType == "engage" %}
-          <div class="col-12 col-md-6">
-            <div class="card h-100 bg-white border-0 shadow-sm">
-              <div class="card-body text-primary text-center">
-                <div class="mb-2 d-flex align-items-center {% if card.icon %}justify-content-between{% else %}justify-content-center{% endif %}">
-                  <p class="h4 mb-0 {% if card.icon %}text-start me-3 flex-grow-1{% else %}text-center{% endif %}">
-                    {{ card.title }}
-                  </p>
-                  {% if card.icon %}
-                    <i class="bi {{ card.icon }} fs-3"></i>
+      <div class="row g-4">
+        {% for card in homeCards %}
+          {% if card.cardType == "engage" %}
+            <div class="col-12 col-md-6">
+              <div class="card h-100 bg-white border-0 shadow-sm">
+                <div class="card-body text-primary text-center">
+                  <div class="mb-2 d-flex align-items-center {% if card.icon %}justify-content-between{% else %}justify-content-center{% endif %}">
+                    <p class="h4 mb-0 {% if card.icon %}text-start me-3 flex-grow-1{% else %}text-center{% endif %}">
+                      {{ card.title }}
+                    </p>
+                    {% if card.icon %}
+                      <i class="bi {{ card.icon }} fs-3"></i>
+                    {% endif %}
+                  </div>
+                  <p class="mb-4 fs-5 text-preline">{{ card.text }}</p>
+                  {% if card.href and card.button %}
+                    <a href="{{ card.href }}" class="btn btn-outline-primary stretched-link">{{ card.button }}</a>
                   {% endif %}
                 </div>
-                <p class="mb-4 fs-5 text-preline">{{ card.text }}</p>
-                {% if card.href and card.button %}
-                  <a href="{{ card.href }}" class="btn btn-outline-primary stretched-link">{{ card.button }}</a>
-                {% endif %}
               </div>
             </div>
-          </div>
-        {% endif %}
-      {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+{% endif %}
+
 
 <div class="container"> {# Reopen the container for any content that follows #}
