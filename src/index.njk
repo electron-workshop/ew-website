@@ -30,7 +30,7 @@ permalink: "/"
   <div class="row g-4">
     {% for card in homeCards %}
       {% if card.cardType == "whatsOnEcosystem" %}
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="col-12 col-md-6 col-xl-3">
           <div class="card border-primary border-opacity-25 shadow-sm border-primary-hover">
 
             {# Banner (full width, cropped 3:1) #}
@@ -53,11 +53,20 @@ permalink: "/"
                   {# Logo (square/wide, max-height controlled) #}
                   {% if card.logo %}
                     <img src="{{ card.logo }}" alt="{{ card.title }} logo"
-                         class="img-fluid"
-                         style="max-height: 40px; width: auto; object-fit: contain;">
+                        class="img-fluid"
+                        style="max-height: 40px; width: auto; object-fit: contain;">
                   {% endif %}
                 </div>
               </div>
+
+              {# Tags #}
+              {% if card.tags %}
+                <div class="mb-3">
+                  {% for tag in card.tags %}
+                    <span class="badge bg-primary bg-opacity-25 text-primary me-1 mb-1">#{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
 
               <p class="mb-4">{{ card.text }}</p>
               {% if card.href and card.button %}
