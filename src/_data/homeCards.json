@@ -2,7 +2,7 @@
   {
     "cardType": "whatsOnEcosystem",
     "title": "PyCon AU 2025",
-    "text": "A vibrant gathering of Python enthusiasts, celebrating open source, nurturing talent, and connecting Australia’s community with the global movement.",
+    "text": "Australia's Python flagship conference in Melbourne | 12-16 September 2025 (hybrid)",
     "href": "https://2025.pycon.org.au/",
     "button": "Explore event",
     "banner": "/assets/images/banners/pyconau2025.png"
@@ -23,13 +23,5 @@
     "href": "https://auigf.au/",
     "button": "Learn more",
     "banner": "/assets/images/banners/auigf-2025.jpeg"
-  },
-  {
-    "cardType": "engage",
-    "title": "",
-    "text": "Electron Workshop is a team effort, we actively look for new ideas, ways to connect to other organisations and help in running current activities. \n\nStay tuned and reach out if we could help or if you have an offer for the group.",
-    "href": "/engage/",
-    "button": "Engage or Volunteer",
-    "icon": ""
   }
 ]
