@@ -6,17 +6,17 @@
     "href": "https://2025.pycon.org.au/",
     "button": "Explore event",
     "banner": "/assets/images/banners/pyconau2025.png",
-    "tags": ["tech", "open-source"]
+    "tags": ["tech", "open-source", "hybrid", "paid"]
   },
   {
     "cardType": "whatsOnEcosystem",
     "title": "Software Freedom Day",
-    "text": "Celebrate open-source and digital freedom | Saturday, 20th Sept 2025.",
+    "text": "Celebrate open-source and digital freedom at Melbourne PC | Saturday, 20th Sept 2025.",
     "href": "https://sfd.org.au",
-    "button": "Get involved",
+    "button": "Attend in-person or online",
     "logo": "/assets/images/logos/sfdlogo.png",
     "banner": "/assets/images/banners/sfd-2025.png",
-    "tags": ["open-source", "governance"]
+    "tags": ["open-source", "governance", "hybrid", "free"]
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -25,7 +25,7 @@
     "href": "https://auigf.au/",
     "button": "Learn more",
     "banner": "/assets/images/banners/auigf-2025.jpeg",
-    "tags": ["tech", "governance"]
+    "tags": ["tech", "governance", "free"]
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -34,6 +34,6 @@
     "href": "https://www.sxswsydney.com/",
     "button": "Explore event",
     "logo": "/assets/images/logos/67c4e80db279c10646838a08_sxsw-black.png",
-    "tags": ["tech", "social-enterprise"]
+    "tags": ["tech", "social-enterprise", "paid"]
   }
 ]
