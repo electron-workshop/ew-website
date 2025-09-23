@@ -1,0 +1,17 @@
+[
+  {
+    "title": "The Beginning",
+    "icon": "bi-rocket-takeoff",
+    "text": "In 2011, the Bulla Truck Workshop from the 1920s was turned into a modern workspace, by Marty and Nick, the original founders of Electron Workshop. \n\n Over the next 10 years, Electron Workshop have hosted many amazing entrepreneurs, events, meetups, movie screenings, and so many great memories."
+  },
+  {
+    "title": "The Pandemic",
+    "icon": "bi-virus2",
+    "text": "Like the rest of the world, Electron Workshop was hit by the pandemic and had to decide on the way forward. \n In April 2021, after 10 years in the North Melbourne warehourse, Electron Workshop decided to leave its body and continue its life in the digital world."
+  },
+  {
+    "title": "The Future",
+    "icon": "bi-stars",
+    "text": "We are now in the process of morphing into our new shape so that we can continue serving our community members and supporting partner organisations in empowering the open source tech industry and innovation commons."
+  }
+]

@@ -1,0 +1,25 @@
+---
+title: "Contact"
+description: "Ways you can contact Electron Workshop"
+layout: base.njk
+permalink: "/about/"
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-8 offset-md-2">
+      <div class="main-timeline">
+        {% for card in timeline %}
+        <a href="#" class="timeline">
+          <div class="timeline-icon"><i class="bi {{ card.icon }}"></i></div>
+          <div class="timeline-content">
+            <h3 class="title">{{ card.title }}</h3>
+            <p class="description text-preline">{{ card.text }}</p>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
