@@ -90,15 +90,23 @@ permalink: "/"
 <section class="mt-5 mb-4">
   
   <div class="row g-3 align-items-center justify-content-center">
-    {% for logo in homeLogos %}
-      <div class="col-12 col-sm-4">
-        <div class="d-flex align-items-center justify-content-center p-3" style="min-height: 80px;">
-          <img src="{{ logo.src }}" 
-               alt="{{ logo.alt }}" 
-               class="img-fluid opacity-75 hover-opacity-100 transition-opacity"
-               style="max-height: 60px; max-width: 100%; object-fit: contain;">
+    {% for groupName, logos in homeLogos %}
+      
+    <div class="mt-5 text-center">
+      <h4 class="border-bottom border-2 border-primary d-inline-block">{{ groupName }}</h4>
+    </div>
+    
+      {% for logo in logos %}
+        <div class="col-12 col-sm-4">
+          <div class="d-flex align-items-center justify-content-center p-3" style="min-height: 80px;">
+            <img src="{{ logo.src }}" 
+                alt="{{ logo.alt }}" 
+                class="img-fluid opacity-75 hover-opacity-100 transition-opacity"
+                style="max-height: 60px; max-width: 100%; object-fit: contain;">
+          </div>
         </div>
-      </div>
+      {% endfor %}
+
     {% endfor %}
   </div>
 </section>
