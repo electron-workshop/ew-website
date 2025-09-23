@@ -8,7 +8,7 @@ permalink: "/"
 <section class="mb-4">
   <div class="row">
     {% for card in homeCards %}
-      {% if card.cardType == "top" %}
+      {% if card.cardType == "top" and card.display != false %}
         <div class="col-12 col-md-6">
           <p class="fs-5 fw-semibold mb-3">{{ card.title }}</p>
           <p class="lead text-secondary">{{ card.text }}</p>
@@ -29,7 +29,7 @@ permalink: "/"
 
   <div class="row g-4">
     {% for card in homeCards %}
-      {% if card.cardType == "whatsOnEcosystem" %}
+      {% if card.cardType == "whatsOnEcosystem" and card.display != false %}
         <div class="col-12 col-md-6 col-xl-3">
           <div class="card border-primary border-opacity-25 shadow-sm border-primary-hover">
 
@@ -132,7 +132,7 @@ permalink: "/"
 
       <div class="row g-4">
         {% for card in homeCards %}
-          {% if card.cardType == "engage" %}
+          {% if card.cardType == "engage" and card.display != false %}
             <div class="col-12 col-md-6">
               <div class="card h-100 bg-white border-0 shadow-sm">
                 <div class="card-body text-primary text-center">

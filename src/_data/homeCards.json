@@ -6,7 +6,8 @@
     "href": "https://2025.pycon.org.au/",
     "button": "Explore event",
     "banner": "/assets/images/banners/pyconau2025.png",
-    "tags": ["tech", "open-source", "hybrid", "paid"]
+    "tags": ["tech", "open-source", "hybrid", "paid"],
+    "display": false
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -16,7 +17,8 @@
     "button": "Attend in-person or online",
     "logo": "/assets/images/logos/sfdlogo.png",
     "banner": "/assets/images/banners/sfd-2025.png",
-    "tags": ["open-source", "governance", "hybrid", "free"]
+    "tags": ["open-source", "governance", "hybrid", "free"],
+    "display": false
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -24,7 +26,7 @@
     "text": "Australia's Internet Governance Forum in Adelaide | 23–24 Sept 2025 (hybrid).",
     "href": "https://auigf.au/",
     "button": "Learn more",
-    "banner": "/assets/images/banners/auigf-2025.jpeg",
+    "logo": "https://img1.wsimg.com/isteam/ip/8ea16ea9-1304-46f7-b88f-500c5463db60/blob-c7b1ea3.png",
     "tags": ["tech", "governance", "free"]
   },
   {
