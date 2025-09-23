@@ -21,5 +21,10 @@
     "title": "Calendar",
     "href": "https://electronworkshop.com.au/goto/calendar/?r=ew",
     "footer": true
+  },
+  {
+    "title": "Timeline",
+    "href": "/about/",
+    "footer": true
   }
 ]
