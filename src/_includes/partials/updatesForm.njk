@@ -1,0 +1,52 @@
+<section class="bg-body mt-5">
+  <div class="text-center bg-body-tertiary px-5 py-4 rounded-3 shadow-sm border border-primary border-opacity-25 shadow-sm mb-4">
+    <h2 class="mb-3 text-primary">{{ form.heading }}</h2>
+    <p class="text-secondary small mb-3">{{ form.description }}</p>
+    <form class="needs-validation col-md-6 offset-md-3"
+          name="{{ form.formName }}"
+          id="{{ form.formId }}"
+          method="post"
+          netlify
+          novalidate>
+      <div class="mb-3">
+        <label for="{{ form.emailId }}" class="form-label">Email Address</label>
+        <input type="email" name="email" class="form-control" id="{{ form.emailId }}" required>
+        <div class="invalid-feedback">Please enter a valid email.</div>
+      </div>
+      <button type="submit" class="btn btn-outline-primary">{{ form.buttonText }}</button>
+    </form>
+  </div>
+</section>
+
+<!-- Bootstrap validation -->
+<script>
+(() => {
+  'use strict';
+  const forms = document.querySelectorAll('.needs-validation');
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
+</script>
+
+<!-- Prefill from URL params -->
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const setFieldFromParams = (selector, keys) => {
+    const el = document.querySelector(selector);
+    if (!el) return;
+    for (const k of keys) {
+      const v = params.get(k);
+      if (v !== null && v !== undefined && v !== "") { el.value = v; return; }
+    }
+  };
+  setFieldFromParams('#{{ form.emailId }}', ['email','e']);
+})();
+</script>
