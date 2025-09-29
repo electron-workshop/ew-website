@@ -27,7 +27,26 @@
     "href": "/posts/igf",
     "button": "Learn more",
     "logo": "https://img1.wsimg.com/isteam/ip/8ea16ea9-1304-46f7-b88f-500c5463db60/blob-c7b1ea3.png",
-    "tags": ["tech", "governance", "free"]
+    "tags": ["tech", "governance", "free"],
+    "display": false
+  },
+  {
+    "cardType": "whatsOnEcosystem",
+    "title": "Everything Open 2026",
+    "text": "University of Canberra, Canberra, Australia | 21-23 January 2026",
+    "href": "https://2026.everythingopen.au/",
+    "button": "Learn more",
+    "logo": "https://2026.everythingopen.au/media/img/card/eo2026-badge.06cfdbb4.png",
+    "tags": ["tech", "open-source", "paid"]
+  },
+  {
+    "cardType": "whatsOnEcosystem",
+    "title": "DrupalSouth Community Day 2025",
+    "text": "Open-source tech conference | 6 Nov 2025 in Canberra.",
+    "href": "https://drupalsouth.org/events/drupalsouth-community-day-2025",
+    "button": "Explore event",
+    "logo": "https://drupalsouth.org/sites/default/files/logo_0.png",
+    "tags": ["tech", "open-source", "paid"]
   },
   {
     "cardType": "whatsOnEcosystem",

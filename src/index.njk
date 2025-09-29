@@ -30,8 +30,8 @@ permalink: "/"
   <div class="row g-4">
     {% for card in homeCards %}
       {% if card.cardType == "whatsOnEcosystem" and card.display != false %}
-        <div class="col-12 col-md-6 col-xl-3">
-          <div class="card border-primary border-opacity-25 shadow-sm border-primary-hover">
+        <div class="col-12 col-md-4">
+          <div class="card border-primary border-opacity-25 shadow-sm border-primary-hover h-100">
 
             {# Banner (full width, cropped 3:1) #}
             {% if card.banner %}
@@ -79,11 +79,11 @@ permalink: "/"
     {% endfor %}
   </div>
 
-  <div class="text-center mt-4">
+  {# <div class="text-center mt-4">
       <a href="https://electronworkshop.com.au/goto/calendar/?r=ew" class="btn btn-outline-primary">
           Checkout our calendar to see all ecosystem events <i class="bi bi-arrow-right me-2"></i>
       </a>
-  </div>
+  </div> #}
 </section>
 
 {# Partners/Logos section #}
@@ -97,12 +97,12 @@ permalink: "/"
     </div>
     
       {% for logo in logos %}
-        <div class="col-12 col-sm-4">
+        <div class="col-12 col-sm-auto">
           <div class="d-flex align-items-center justify-content-center p-3" style="min-height: 80px;">
             <img src="{{ logo.src }}" 
                 alt="{{ logo.alt }}" 
                 class="img-fluid opacity-75 hover-opacity-100 transition-opacity"
-                style="max-height: 60px; max-width: 100%; object-fit: contain;">
+                style="max-height: 60px; max-width: 100%; object-fit: contain; width:100%">
           </div>
         </div>
       {% endfor %}

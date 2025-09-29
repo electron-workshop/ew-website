@@ -3,13 +3,13 @@
     {
       "src": "/assets/images/logos/serversaurus_logo.png",
       "alt": "Serversaurus"
-    },
-    {
-      "src": "/assets/images/logos/gt-logo-wide-bold.png",
-      "alt": "Goodness Triangle"
     }
   ],
   "Service Sponsors": [
+    {
+      "src": "/assets/images/logos/gt-logo-wide-bold.png",
+      "alt": "Goodness Triangle"
+    },
     {
       "src": "/assets/images/logos/TalkingSites_Logo_Horizontal_Rounded.png",
       "alt": "TalkingSites"
@@ -19,10 +19,6 @@
     {
       "src": "https://static.wikia.nocookie.net/logopedia/images/9/9b/Com-secondary-a-solid.png",
       "alt": "City of Melbourne"
-    },
-    {
-      "src": "https://iba.gov.au/wp-content/uploads/2023/06/Export-Finance-Australia-Logo-Colour-300x169.jpg",
-      "alt": "EFA"
     },
     {
       "src": "https://www.thoughtworks.com/etc.clientlibs/thoughtworks/clientlibs/clientlib-site/resources/images/thoughtworks-logo.svg",
