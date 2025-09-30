@@ -3,54 +3,20 @@ title: "Engage with Electron Workshop"
 description: "Stay tuned with selected topics or express your interest in volunteering or advising us along the way"
 layout: base.njk
 permalink: "/engage/"
-
-# All content data in front matter
-hero:
-  heading: "Engage with Electron Workshop"
-  subtext: "Stay tuned with selected topics or express your interest in receiving support or provide capacity or advise."
-
-form:
-  action: "/.netlify/functions/createJiraIssue"
-  fields:
-    name:
-      label: "Full Name"
-      type: "text"
-      required: true
-      error: "Please enter your name."
-    email:
-      label: "Email Address"
-      type: "email"
-      required: true
-      error: "Please enter a valid email."
-    skills:
-      label: "Interests & Skills"
-      type: "textarea"
-      required: true
-      error: "Please add a few words about your interests."
-
-  supportAreas:
-    "sa-lived-experience": "Provide lived experience insight"
-    "sa-organisation": "Provide capacity as an organisation"
-    "sa-individual": "Provide capacity as an individual"
-    "sa-needs": "Receive support for a community group or non for profit"
-
-  submitButton:
-    text: "Submit"
-    class: "btn btn-outline-primary"
 ---
 
 <section class="bg-body mt-5">
   <div class="container">
-    <div class="text-center text-md-start bg-body-tertiary px-5 py-4 rounded-3 shadow-sm border border-primary border-opacity-25 shadow-sm">
-      <h2 class="mb-3 text-primary">{{ hero.heading }}</h2>
-      <p class="text-secondary small mb-2">{{ hero.subtext }}</p>
+    <div class="text-center text-md-start bg-body-tertiary px-5 py-4 rounded-3 shadow-sm border border-primary border-opacity-25 shadow-sm ">
+      <h2 class="mb-3 text-primary">Engage with Linux Victoria</h2>
+      <p class="text-secondary small mb-2">Stay tuned with selected topics or express your interest in volunteering or advising us along the way</p>
 
       <form
         class="needs-validation col-md-6"
         id="VolunteerForm"
         name="VolunteerForm"
         method="POST"
-        action="{{ form.action }}"
+        action="/.netlify/functions/createJiraIssue"
         novalidate
         autocomplete="off"
       >
@@ -62,63 +28,45 @@ form:
         <!-- TIME TRAP (set on load; reject ultra-fast submits server-side) -->
         <input type="hidden" id="form_ts" name="form_ts" value="">
 
-        <!-- Name Field -->
         <div class="mb-3">
-          <label for="name" class="form-label">{{ form.fields.name.label }}</label>
-          <input
-            type="{{ form.fields.name.type }}"
-            class="form-control"
-            id="name"
-            name="name"
-            {% if form.fields.name.required %}required{% endif %}
-          >
-          <div class="invalid-feedback">{{ form.fields.name.error }}</div>
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+          <div class="invalid-feedback">Please enter your name.</div>
         </div>
 
-        <!-- Email Field -->
         <div class="mb-3">
-          <label for="email" class="form-label">{{ form.fields.email.label }}</label>
-          <input
-            type="{{ form.fields.email.type }}"
-            class="form-control"
-            id="email"
-            name="email"
-            {% if form.fields.email.required %}required{% endif %}
-          >
-          <div class="invalid-feedback">{{ form.fields.email.error }}</div>
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+          <div class="invalid-feedback">Please enter a valid email.</div>
         </div>
 
-        <!-- Skills Field -->
         <div class="mb-3">
-          <label for="skills" class="form-label">{{ form.fields.skills.label }}</label>
-          <textarea
-            class="form-control"
-            id="skills"
-            name="skills"
-            {% if form.fields.skills.required %}required{% endif %}
-          ></textarea>
-          <div class="invalid-feedback">{{ form.fields.skills.error }}</div>
+          <label for="skills" class="form-label">Interests &amp; Skills</label>
+          <textarea class="form-control" id="skills" name="skills" required></textarea>
+          <div class="invalid-feedback">Please add a few words about your interests.</div>
         </div>
 
         <!-- Support Areas -->
         <fieldset class="mb-3">
-          {% for id, label in form.supportAreas %}
           <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="{{ id }}"
-              name="supportAreas"
-              value="{{ label }}"
-            >
-            <label class="form-check-label" for="{{ id }}">{{ label }}</label>
+            <input class="form-check-input" type="checkbox" id="sa-insight" name="supportAreas" value="insight">
+            <label class="form-check-label" for="sa-insight">Provide lived experience insight</label>
           </div>
-          {% endfor %}
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="sa-organisation" name="supportAreas" value="organisation">
+            <label class="form-check-label" for="sa-organisation">Provide capacity as an organisation</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="sa-individual" name="supportAreas" value="individual">
+            <label class="form-check-label" for="sa-individual">Provide capacity as an individual</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="sa-receive" name="supportAreas" value="receive">
+            <label class="form-check-label" for="sa-receive">Receive support for a community group or non for profit</label>
+          </div>
         </fieldset>
 
-        <button type="submit" class="{{ form.submitButton.class }}">
-          {{ form.submitButton.text }}
-        </button>
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
       </form>
     </div>
   </div>
@@ -180,16 +128,12 @@ form:
                         .filter(Boolean);
 
   if (wanted.length) {
-    // Build alias mapping from support area aliases
-    const aliasToId = {{ form.supportAreaAliases | dump | safe }};
-    const idToValue = {{ form.supportAreas | dump | safe }};
-
-    // Convert aliases to actual values for matching
-    const alias = {};
-    Object.entries(aliasToId).forEach(([aliasKey, id]) => {
-      alias[aliasKey] = idToValue[id];
-    });
-
+    const alias = {
+      'online':'Online event support',
+      'online-event':'Online event support',
+      'admin':'Admin support',
+      'tech':'Linux & technical support',
+    };
     const targets = new Set(wanted.map(w => (alias[w] || w).toLowerCase()));
     document.querySelectorAll('input[name="supportAreas"][type="checkbox"]').forEach(cb => {
       const val = (cb.value || '').trim().toLowerCase();
