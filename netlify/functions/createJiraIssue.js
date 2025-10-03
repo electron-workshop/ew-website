@@ -53,9 +53,10 @@ exports.handler = async (event) => {
     }
 
     // ---- Pull common fields ----
-    const name   = (formData.name || "New Volunteer").toString();
-    const email  = (formData.email || "").toString();
+    const name = (formData.name || "New Volunteer").toString();
+    const email = (formData.email || "").toString();
     const skills = (formData.skills || "").toString();
+    const referral = (formData.referral || "").toString();
 
     const supportAreas = Array.isArray(formData.supportAreas) ? formData.supportAreas : [];
     const groupsFromForm = Array.isArray(formData.group)
@@ -64,26 +65,27 @@ exports.handler = async (event) => {
     if (Array.isArray(formData.groups)) groupsFromForm.push(...formData.groups);
 
     // ---- Env vars ----
-    const jiraUrl               = process.env.JIRA_URL;
-    const jiraAuth              = process.env.JIRA_AUTH;
-    const projectKey            = process.env.JIRA_PROJECT_KEY;
-    const issueType             = process.env.JIRA_ISSUE_TYPE;
-    const emailFieldId          = process.env.JIRA_EMAIL_FIELD_ID || "customfield_10053";
-    const supportAreasFieldId   = process.env.JIRA_SUPPORT_AREAS_FIELD_ID;
-    const groupFieldId          = process.env.JIRA_GROUP_FIELD_ID;
-    const groupValuesEnvCsv     = process.env.JIRA_GROUP_VALUES || "";
+    const jiraUrl = process.env.JIRA_URL;
+    const jiraAuth = process.env.JIRA_AUTH;
+    const projectKey = process.env.JIRA_PROJECT_KEY;
+    const issueType = process.env.JIRA_ISSUE_TYPE;
+    const emailFieldId = process.env.JIRA_EMAIL_FIELD_ID || "customfield_10053";
+    const referralFieldId = "customfield_10251";
+    const supportAreasFieldId = process.env.JIRA_SUPPORT_AREAS_FIELD_ID;
+    const groupFieldId = process.env.JIRA_GROUP_FIELD_ID;
+    const groupValuesEnvCsv = process.env.JIRA_GROUP_VALUES || "";
 
     // NEW: Source labels (labels-type) from env (preserve capitalization)
-    const sourceFieldId         = process.env.JIRA_SOURCE_FIELD_ID;        // e.g., "labels" or "customfield_10218"
-    const sourceValueCsv        = process.env.JIRA_SOURCE_VALUE || "";     // e.g., "FormSubmission,ElectronWorkshopWebsite"
+    const sourceFieldId = process.env.JIRA_SOURCE_FIELD_ID;        // e.g., "labels" or "customfield_10218"
+    const sourceValueCsv = process.env.JIRA_SOURCE_VALUE || "";     // e.g., "FormSubmission,ElectronWorkshopWebsite"
 
     // ---- Resolve groups (env + form) ----
     const groupsFromEnv = groupValuesEnvCsv.split(",").map(s => s.trim()).filter(Boolean);
     const groupValues = Array.from(new Set([...groupsFromEnv, ...groupsFromForm])).filter(Boolean);
 
     // ---- Human-readable description (Atlassian document format) ----
-    const areasText  = supportAreas.length ? supportAreas.join(", ") : "—";
-    const groupsText = groupValues.length  ? groupValues.join(", ")  : "—";
+    const areasText = supportAreas.length ? supportAreas.join(", ") : "—";
+    const groupsText = groupValues.length ? groupValues.join(", ") : "—";
 
     const description = {
       type: "doc",
@@ -97,19 +99,25 @@ exports.handler = async (event) => {
         { type: "paragraph", content: [{ type: "text", text: groupsText }] },
         { type: "heading", attrs: { level: 2 }, content: [{ type: "text", text: "Contact Email" }] },
         { type: "paragraph", content: [{ type: "text", text: `${email}` }] },
+        { type: "heading", attrs: { level: 2 }, content: [{ type: "text", text: "Referral" }] },
+        { type: "paragraph", content: [{ type: "text", text: `${referral}` }] },
       ],
     };
 
     // ---- Build Jira fields payload ----
     const fields = {
-      project:   { key: projectKey },
+      project: { key: projectKey },
       issuetype: { name: issueType },
-      summary:   name,
+      summary: name,
       description,
     };
 
     // Email -> custom field
     if (emailFieldId) fields[emailFieldId] = email;
+
+    if (referralFieldId && referral) {
+      fields[referralFieldId] = referral;
+    }
 
     // Support Areas -> multi-select (array of { value })
     if (supportAreasFieldId && supportAreas.length) {
@@ -162,8 +170,8 @@ exports.handler = async (event) => {
 
     if (!response.ok) {
       const msg = data?.errorMessages?.join(", ") ||
-                  (data?.errors && JSON.stringify(data.errors)) ||
-                  "Jira issue creation failed";
+        (data?.errors && JSON.stringify(data.errors)) ||
+        "Jira issue creation failed";
       throw new Error(msg);
     }
 

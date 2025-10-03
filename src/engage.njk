@@ -7,10 +7,11 @@ permalink: "/engage/"
 
 <section class="bg-body mt-5">
   <div class="container">
-    <div class="text-center text-md-start bg-body-tertiary px-5 py-4 rounded-3 shadow-sm border border-primary border-opacity-25 shadow-sm ">
+    <div class="text-center text-md-start bg-body-tertiary px-5 py-4 rounded-3 shadow-sm border border-primary border-opacity-25
+        shadow-sm ">
       <h2 class="mb-3 text-primary">Engage with Linux Victoria</h2>
-      <p class="text-secondary small mb-2">Stay tuned with selected topics or express your interest in volunteering or advising us along the way</p>
-
+      <p class="text-secondary small mb-2">Stay tuned with selected topics or express your interest in volunteering or
+        advising us along the way</p>
       <form
         class="needs-validation col-md-6"
         id="VolunteerForm"
@@ -18,8 +19,7 @@ permalink: "/engage/"
         method="POST"
         action="/.netlify/functions/createJiraIssue"
         novalidate
-        autocomplete="off"
-      >
+        autocomplete="off">
         <!-- HONEYPOT (bots fill this; humans don't see it) -->
         <div class="visually-hidden" aria-hidden="true">
           <label for="company">Company</label>
@@ -27,118 +27,143 @@ permalink: "/engage/"
         </div>
         <!-- TIME TRAP (set on load; reject ultra-fast submits server-side) -->
         <input type="hidden" id="form_ts" name="form_ts" value="">
-
         <div class="mb-3">
           <label for="name" class="form-label">Full Name</label>
-          <input type="text" class="form-control" id="name" name="name" required>
+          <input type="text" class="form-control" id="name" name="name">
           <div class="invalid-feedback">Please enter your name.</div>
         </div>
-
         <div class="mb-3">
-          <label for="email" class="form-label">Email Address</label>
+          <label for="email" class="form-label">Email Address *</label>
           <input type="email" class="form-control" id="email" name="email" required>
           <div class="invalid-feedback">Please enter a valid email.</div>
         </div>
-
         <div class="mb-3">
           <label for="skills" class="form-label">Interests &amp; Skills</label>
-          <textarea class="form-control" id="skills" name="skills" required></textarea>
+          <textarea class="form-control" id="skills" name="skills"></textarea>
           <div class="invalid-feedback">Please add a few words about your interests.</div>
         </div>
-
+        <div class="mb-3">
+          <label for="referral" class="form-label">How did you hear about us?</label>
+          <input class="form-control" id="referral" name="referral"></input>
+          <div class="invalid-feedback"></div>
+        </div>
         <!-- Support Areas -->
         <fieldset class="mb-3">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="sa-insight" name="supportAreas" value="insight">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="sa-insight"
+              name="supportAreas"
+              value="Provide lived experience insight">
             <label class="form-check-label" for="sa-insight">Provide lived experience insight</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="sa-organisation" name="supportAreas" value="organisation">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="sa-organisation"
+              name="supportAreas"
+              value="Provide capacity as an organisation">
             <label class="form-check-label" for="sa-organisation">Provide capacity as an organisation</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="sa-individual" name="supportAreas" value="individual">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="sa-individual"
+              name="supportAreas"
+              value="Provide capacity as an individual">
             <label class="form-check-label" for="sa-individual">Provide capacity as an individual</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="sa-receive" name="supportAreas" value="receive">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="sa-receive"
+              name="supportAreas"
+              value="Receive support for a community group or non for profit">
             <label class="form-check-label" for="sa-receive">Receive support for a community group or non for profit</label>
           </div>
         </fieldset>
-
         <button type="submit" class="btn btn-outline-primary">Submit</button>
       </form>
     </div>
   </div>
 </section>
-
 <!-- Bootstrap validation -->
 <script>
-(() => {
-  'use strict';
-  // set time trap on load
-  document.addEventListener('DOMContentLoaded', () => {
-    const ts = document.getElementById('form_ts');
-    if (ts) ts.value = Date.now().toString();
-  });
-
-  const forms = document.querySelectorAll('.needs-validation');
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', (event) => {
-      // client-side honeypot check (bots may bypass this; server still validates)
-      const company = form.querySelector('#company');
-      if (company && company.value.trim() !== '') {
-        event.preventDefault();
-        event.stopPropagation();
-        return;
-      }
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add('was-validated');
-    }, false);
-  });
-})();
+  (() => {
+    'use strict';
+    // set time trap on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const ts = document.getElementById('form_ts');
+      if (ts) 
+        ts.value = Date.now().toString();
+      
+    });
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', (event) => {
+        // client-side honeypot check (bots may bypass this; server still validates)
+        const company = form.querySelector('#company');
+        if (company && company.value.trim() !== '') {
+          event.preventDefault();
+          event.stopPropagation();
+          return;
+        }
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
 </script>
-
 <!-- Prefill from URL params -->
 <script>
-(function () {
-  const params = new URLSearchParams(window.location.search);
-  const setFieldFromParams = (selector, keys) => {
-    const el = document.querySelector(selector);
-    if (!el) return;
-    for (const k of keys) {
-      const v = params.get(k);
-      if (v !== null && v !== undefined && v !== "") { el.value = v; return; }
-    }
-  };
-
-  setFieldFromParams('#name',   ['name','fullName']);
-  setFieldFromParams('#email',  ['email','e']);
-  setFieldFromParams('#skills', ['skills','interests','interest','notes']);
-
-  const rawVals = [];
-  const pull = (key) => params.getAll(key).forEach(v => rawVals.push(v));
-  pull('supportAreas'); pull('supportAreas[]');
-
-  const wanted = rawVals.flatMap(v => String(v).split(','))
-                        .map(v => v.trim().toLowerCase())
-                        .filter(Boolean);
-
-  if (wanted.length) {
-    const alias = {
-      'online':'Online event support',
-      'online-event':'Online event support',
-      'admin':'Admin support',
-      'tech':'Linux & technical support',
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const setFieldFromParams = (selector, keys) => {
+      const el = document.querySelector(selector);
+      if (! el) 
+        return;
+      
+      for (const k of keys) {
+        const v = params.get(k);
+        if (v !== null && v !== undefined && v !== "") {
+          el.value = v;
+          return;
+        }
+      }
     };
-    const targets = new Set(wanted.map(w => (alias[w] || w).toLowerCase()));
-    document.querySelectorAll('input[name="supportAreas"][type="checkbox"]').forEach(cb => {
-      const val = (cb.value || '').trim().toLowerCase();
-      if (targets.has(val)) cb.checked = true;
-    });
-  }
-})();
+    setFieldFromParams('#name', ['name', 'fullName']);
+    setFieldFromParams('#email', ['email', 'e']);
+    setFieldFromParams('#skills', ['skills', 'interests', 'interest', 'notes']);
+    setFieldFromParams('#referral', ['referral', 'source']);
+    const rawVals = [];
+    const pull = (key) => params.getAll(key).forEach(v => rawVals.push(v));
+    pull('supportAreas');
+    pull('supportAreas[]');
+    const wanted = rawVals
+      .flatMap(v => String(v).split(','))
+      .map(v => v.trim().toLowerCase())
+      .filter(Boolean);
+    if (wanted.length) {
+      const alias = {
+        'insight': 'Provide lived experience insight',
+        'organisation': 'Provide capacity as an organisation',
+        'individual': 'Provide capacity as an individual',
+        'receive': 'Receive support for a community group or non for profit'
+      };
+      const targets = new Set(wanted.map(w => (alias[w] || w).toLowerCase()));
+      document.querySelectorAll('input[name="supportAreas"][type="checkbox"]').forEach(cb => {
+        const val = (cb.value || '').trim().toLowerCase();
+        if (targets.has(val)) 
+          cb.checked = true;
+        
+      });
+    }
+  })();
 </script>
