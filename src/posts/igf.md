@@ -15,8 +15,11 @@ form:
 
 ## Upcoming events:
 
-auIGF Debrief - Online
-Details coming soon
+Debriefing session No. 1    
+November 2025
+
+Details TBC    
+Please subscribe to this page so that you'll get notified when there's update. Thanks
 
 <br>
 
