@@ -15,6 +15,13 @@ form:
 
 ## Upcoming events:
 
+auIGF Debrief - Online
+Details coming soon
+
+<br>
+
+## Past events:
+
 auIGF, Adelaide Convention Centre
 
 <https://auigf.au>
@@ -22,8 +29,6 @@ auIGF, Adelaide Convention Centre
 23 - 24 September, 2025
 
 <br>
-
-## Past events:
 
 preIGF - Online
 
