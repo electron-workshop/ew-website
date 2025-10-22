@@ -15,7 +15,7 @@ form:
 
 ## Upcoming events:
 
-Debriefing session No. 1    
+**Debriefing session No. 1**    
 November 2025
 
 Details TBC    
@@ -25,19 +25,15 @@ Please subscribe to this page so that you'll get notified when there's update. T
 
 ## Past events:
 
-auIGF, Adelaide Convention Centre
-
-<https://auigf.au>
-
+**auIGF, Adelaide Convention Centre**   
+<https://auigf.au>   
 23 - 24 September, 2025
 
 <br>
 
-preIGF - Online
-
-17th September, 2025
-
-facilitated by Kiki Fong
+**preIGF - Online**   
+17th September, 2025   
+facilitated by Kiki Fong   
 
 
 {% include "partials/updatesForm.njk" %}

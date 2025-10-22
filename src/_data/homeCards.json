@@ -7,7 +7,8 @@
     "button": "Explore event",
     "banner": "/assets/images/banners/pyconau2025.png",
     "tags": ["tech", "open-source", "hybrid", "paid"],
-    "display": false
+    "display": true,
+    "past": true
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -18,17 +19,18 @@
     "logo": "/assets/images/logos/sfdlogo.png",
     "banner": "/assets/images/banners/sfd-2025.png",
     "tags": ["open-source", "governance", "hybrid", "free"],
-    "display": false
+    "display": true,
+    "past": true
   },
   {
     "cardType": "whatsOnEcosystem",
     "title": "auIGF 2025",
-    "text": "Australia's Internet Governance Forum in Adelaide | 23–24 Sept 2025 (hybrid).",
+    "text": "Next: Debriefing session. Dates TBC",
     "href": "/posts/igf",
     "button": "Learn more",
     "logo": "https://img1.wsimg.com/isteam/ip/8ea16ea9-1304-46f7-b88f-500c5463db60/blob-c7b1ea3.png",
     "tags": ["tech", "governance", "free"],
-    "display": false
+    "display": true
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -55,6 +57,8 @@
     "href": "https://www.sxswsydney.com/",
     "button": "Explore event",
     "logo": "/assets/images/logos/67c4e80db279c10646838a08_sxsw-black.png",
-    "tags": ["tech", "social-enterprise", "paid"]
+    "tags": ["tech", "social-enterprise", "paid"],
+    "display": true,
+    "past": true
   }
 ]
