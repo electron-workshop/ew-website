@@ -1,0 +1,40 @@
+---
+layout: base.njk
+title: Initiatives under Eletron Workshop
+description: View what initiatives are being worked on as part of Electron Workshop.
+permalink: "/initiatives/"
+---
+<h1 class="mb-4">Initiatives</h1>
+<p class="text-secondary mb-4">If you are a small community group or a non-for-profit organisation with limited resources, reach out to us to benefit from our self-hosted services on a pro-bono basis or at a minimal cost.
+We leverage open-source technologies and the dedication of our volunteers, powered by the generosity of our infrastructure partners, to make this possible.
+</p>
+
+<style>
+  .offering-logo{ max-height: 36px; width: auto; }
+</style>
+
+<div class="row g-4">
+  {% for item in initiatives %}
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card h-100 border-primary border-opacity-25 shadow-sm border-primary-hover">
+        <div class="card-body d-flex flex-column">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            {% if item.logo %}
+              <img src="{{ item.logo }}" alt="{{ item.title }} logo" class="offering-logo">
+            {% endif %}
+            <h2 class="h5 mb-0">{{ item.title }}</h2>
+          </div>
+          <p class="flex-grow-1">{{ item.text }}</p>
+          <div>
+          <a href="/offering/{{ item.slug }}/" class="stretched-link btn btn-primary" aria-label="{{ item.title }}">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="text-center mt-5">
+  <p class="lead mb-2">Interested in joining?</p>
+  <p class="mb-0">Email <strong>network[at]electronworkshop.com.au</strong> and we’ll help you get started.</p>
+</div>
