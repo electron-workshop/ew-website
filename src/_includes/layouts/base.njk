@@ -6,12 +6,7 @@
     <title data-pagefind-meta="title[content]" data-pagefind-index="true">
       {{ title | default(site.title) }}
     </title>
-    <meta
-      name="title"
-      content="{{ title | default(site.title) }}"
-      data-pagefind-meta="title[content]"
-      data-pagefind-index="true"
-    />
+    <meta name="title" content="{{ title | default(site.title) }}" data-pagefind-meta="title[content]" data-pagefind-index="true" />
     <meta
       name="description"
       content="{{ description | default(site.description) }}"
@@ -73,45 +68,48 @@
   <!-- End Matomo Code -->
 
   <body class="bg-body">
-    {% include "partials/navbar.njk" %}
+    <div>
+      {% include "partials/navbar.njk" %}
 
-    <div data-pagefind-body>
-      <span class="visually-hidden">
-        {{ title | default(site.title) }} {{ description |
-        default(site.description) }} {% if not description %} — {{ content |
-        striptags | replace("\n", " ") | truncate(240, true, "") }} {% endif %}
-      </span>
+      <div data-pagefind-body>
+        <span class="visually-hidden">
+          {{ title | default(site.title) }} {{ description |
+          default(site.description) }} {% if not description %} — {{ content |
+          striptags | replace("\n", " ") | truncate(240, true, "") }} {% endif %}
+        </span>
+      </div>
+
+      <main class="pt-3 pt-md-5">
+        <div class="container">{{ content | safe }}
+
+        </div>
+      </main>
     </div>
 
-    <main class="pt-3 pt-md-5 h-100">
-      <div class="container">{{ content | safe }}
-
-      </div>
-    </main>
-
-
-  <div class="gear-transition" aria-hidden="true"></div>
-    <footer class="border-top py-4 mt-auto bg-primary pt-5" style="background: var(--surface)">
-      <div
-        class="container d-flex flex-wrap justify-content-between align-items-center gap-3 text-light pt-5"
-      >
-        <div class="small">
-          © {{ global.currentYear }}
-          <a href="/" class="text-decoration-none text-light"
-            >{{ site.title }}</a>
+    <div>
+      <div class="gear-transition" aria-hidden="true"></div>
+      <footer class="border-top py-4 mt-auto bg-primary pt-5" style="background: var(--surface)">
+        <div
+          class="container d-flex flex-wrap justify-content-between align-items-center gap-3 text-light pt-5"
+        >
+          <div class="small">
+            © {{ global.currentYear }}
+            <a href="/" class="text-decoration-none text-light"
+              >{{ site.title }}</a>
+          </div>
+          <div class="d-flex gap-3">
+            {% for item in navbar %} {% if item.footer %}
+            <a
+              href="{{ item.href }}"
+              class="text-decoration-none small text-light"
+            >
+              {{ item.title }}
+            </a>
+            {% endif %} {% endfor %}
+          </div>
         </div>
-        <div class="d-flex gap-3">
-          {% for item in navbar %} {% if item.footer %}
-          <a
-            href="{{ item.href }}"
-            class="text-decoration-none small text-light"
-          >
-            {{ item.title }}
-          </a>
-          {% endif %} {% endfor %}
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/search.js" defer></script>
