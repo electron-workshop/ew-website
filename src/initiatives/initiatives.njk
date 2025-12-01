@@ -5,8 +5,7 @@ description: View what initiatives are being worked on as part of Electron Works
 permalink: "/initiatives/"
 ---
 <h1 class="mb-4">Initiatives</h1>
-<p class="text-secondary mb-4">If you are a small community group or a non-for-profit organisation with limited resources, reach out to us to benefit from our self-hosted services on a pro-bono basis or at a minimal cost.
-We leverage open-source technologies and the dedication of our volunteers, powered by the generosity of our infrastructure partners, to make this possible.
+<p class="text-secondary mb-4">
 </p>
 
 <style>
@@ -20,13 +19,13 @@ We leverage open-source technologies and the dedication of our volunteers, power
         <div class="card-body d-flex flex-column">
           <div class="d-flex align-items-center gap-2 mb-2">
             {% if item.logo %}
-              <img src="{{ item.logo }}" alt="{{ item.title }} logo" class="offering-logo">
+              <img src="{{ item.logo }}" alt="{{ item.title }} logo" class="">
             {% endif %}
             <h2 class="h5 mb-0">{{ item.title }}</h2>
           </div>
           <p class="flex-grow-1">{{ item.text }}</p>
           <div>
-          <a href="/offering/{{ item.slug }}/" class="stretched-link btn btn-primary" aria-label="{{ item.title }}">Read more</a>
+          <a href="/initiatives/{{ item.slug }}/" class="stretched-link btn btn-primary" aria-label="{{ item.title }}">Read more</a>
           </div>
         </div>
       </div>

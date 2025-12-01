@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Sprint 1",
+    "start": "Nov 27",
+    "end": "Dec 9",
+    "year": "2024",
+    "description": "First sprint period"
+  },
+  {
+    "title": "Sprint 2",
+    "start": "Dec 11",
+    "end": "Dec 23",
+    "year": "2024",
+    "description": "Second sprint period"
+  }
+]

@@ -1,6 +1,10 @@
-node_modules/
 _site/
-.env
-
-# Local Netlify folder
 .netlify
+.netlify/*
+node_modules/
+package-lock.json
+posts/.obsidian/app.json
+posts/.obsidian/appearance.json
+posts/.obsidian/core-plugins.json
+posts/.obsidian/workspace.json
+.env
