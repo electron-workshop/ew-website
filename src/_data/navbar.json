@@ -26,5 +26,10 @@
     "title": "Timeline",
     "href": "/about/",
     "footer": true
+  },
+  {
+    "title": "Initiatives",
+    "href": "/initiatives/",
+    "footer": true
   }
 ]
