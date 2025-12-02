@@ -38,7 +38,7 @@ permalink: "/initiatives/sprints/"
         <div id="participant-count" class="small text-muted">Loading...</div>
       </div>
       <a 
-        href="YOUR_BBB_JOIN_URL" 
+        href="https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join" 
         id="join-coworking"
         class="btn btn-primary"
         target="_blank"

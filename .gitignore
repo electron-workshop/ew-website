@@ -8,3 +8,4 @@ posts/.obsidian/appearance.json
 posts/.obsidian/core-plugins.json
 posts/.obsidian/workspace.json
 .env
+.netlify/
