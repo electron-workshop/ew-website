@@ -1,16 +1,37 @@
 [
   {
+    "title": "Sprint 0",
+    "start": "Dec 11",
+    "end": "Dec 23",
+    "year": "2025",
+    "description": "Planning for the year, mapping grants, conferences and which sprints they fall under."
+  },
+  {
     "title": "Sprint 1",
-    "start": "Nov 27",
-    "end": "Dec 9",
-    "year": "2024",
-    "description": "First sprint period"
+    "start": "Jan 1",
+    "end": "Jan 13",
+    "year": "2026",
+    "description": "Jan 1 ~ Get Done"
   },
   {
     "title": "Sprint 2",
-    "start": "Dec 11",
-    "end": "Dec 23",
-    "year": "2024",
-    "description": "Second sprint period"
+    "start": "Jan 15",
+    "end": "Jan 27",
+    "year": "2026",
+    "description": ""
+  },
+  {
+    "title": "Sprint 3",
+    "start": "Jan 29",
+    "end": "Feb 10",
+    "year": "2026",
+    "description": ""
+  },
+  {
+    "title": "Sprint 4",
+    "start": "Feb 12",
+    "end": "Feb 24",
+    "year": "2026",
+    "description": ""
   }
 ]

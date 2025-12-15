@@ -1,6 +1,15 @@
 [
   {
     "cardType": "whatsOnEcosystem",
+    "title": "Canberra Un-forum",
+    "text": "Discussions and hands-on workshops on AI and open technology for the everyday people | Canberra Tech Hub, Civic Center | 20th to 22nd December 2025",
+    "href": "/posts/canberra-unforum",
+    "banner": "/assets/images/banners/Canberra_Un-forum_2025_Banner_V100.svg",
+    "button": "Learn more",
+    "tags": ["tech", "open-source", "free"]
+  },
+  {
+    "cardType": "whatsOnEcosystem",
     "title": "PyCon AU 2025",
     "text": "Australia's Python flagship conference in Melbourne | 12-16 September 2025 (hybrid)",
     "href": "https://2025.pycon.org.au/",
@@ -48,7 +57,9 @@
     "href": "https://drupalsouth.org/events/drupalsouth-community-day-2025",
     "button": "Explore event",
     "logo": "https://drupalsouth.org/sites/default/files/logo_0.png",
-    "tags": ["tech", "open-source", "paid"]
+    "tags": ["tech", "open-source", "paid"],
+    "display": true,
+    "past": true
   },
   {
     "cardType": "whatsOnEcosystem",
