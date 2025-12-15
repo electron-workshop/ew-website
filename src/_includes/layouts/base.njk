@@ -22,30 +22,42 @@
     />
     <link href="/assets/css/styles.css" rel="stylesheet" />
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-    <meta property="og:title" content="Electron Workshop — Our Offerings" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{ title | default(site.title) }}" />
     <meta
       property="og:description"
-      content="Join our network and use Mautic, Nextcloud, and Matomo with your own logins — all hosted and maintained for you."
+      content="{{ description | default(site.description) }}"
     />
+    {% if preview_image %}
+    <meta property="og:image" content="{{ preview_image }}" />
+    {% else %}
     <meta
       property="og:image"
-      content="https://electron-workshop-offerings-website.onrender.com/assets/images/offerings-preview.png"
+      content="https://electronworkshop.org/assets/images/eworkshop-website-preview.webp"
     />
+    {% endif %}
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content="https://electron-workshop-offerings-website.onrender.com"
+      content="https://electronworkshop.org/"
     />
+    
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Electron Workshop — Our Offerings" />
+    <meta name="twitter:title" content="{{ title | default(site.title) }}" />
     <meta
       name="twitter:description"
-      content="Join our network and use Mautic, Nextcloud, and Matomo with your own logins — all hosted and maintained for you."
+      content="{{ description | default(site.description) }}"
     />
+    {% if preview_image %}
+    <meta name="twitter:image" content="{{ preview_image }}" />
+    {% else %}
     <meta
       name="twitter:image"
-      content="https://electron-workshop-offerings-website.onrender.com/assets/images/offerings-preview.png"
+      content="https://electronworkshop.org/assets/images/eworkshop-website-preview.webp"
     />
+    {% endif %}
   </head>
   <!-- Matomo -->
   <script>

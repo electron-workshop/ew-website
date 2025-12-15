@@ -3,6 +3,8 @@ layout: base.njk
 title: Canberra Un-forum
 description: Discussions and hands-on workshops on AI and open technology for the everyday people
 permalink: "/posts/canberra-unforum/"
+preview_image: "https://electronworkshop.org/assets/images/banners/Canberra_Un-forum_2025_Banner_V100.webp"
+
 form:
   heading: "Subscribe to Canberra Un-forum Updates"
   description: "Want to follow along and get updates about the Canberra Un-forum? Enter your email below, and you will be notified of developments"
@@ -44,39 +46,11 @@ form:
 
 
 <div class="row g-4 my-4">
-  <div class="col-12 col-lg-4">
-    <div class="card h-100 bg-light overflow-hidden">
-      <div class="card-header bg-primary text-white">
-        <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Saturday 20th Dec 2025</h5>
-      </div>
-      <div class="card-body p-0 bg-light">
-        <div class="p-3 border-bottom dashed-border bg-light">
-          <div class="fw-bold text-primary mb-2">
-            <i class="bi bi-clock" aria-hidden="true"></i> 2pm to 4pm
-          </div>
-          <p class="mb-2"><strong>Workshop: Create a Website You Fully Own</strong></p>
-          <a href="https://skillstudio.com.au/events/2025/12/create-your-website/" target="_blank" class="btn btn-sm btn-primary">
-            <i class="bi bi-info-circle" aria-hidden="true"></i> View Details
-          </a>
-        </div>
-        <div class="p-3 bg-light">
-          <div class="fw-bold text-primary mb-2">
-            <i class="bi bi-clock" aria-hidden="true"></i> 6pm to 8pm
-          </div>
-          <p class="mb-0">
-          <h6 class="fw-bold">
-            <i class="bi bi-gear-wide-connected" aria-hidden="true"></i> Digital Freedoms and Technology Commons
-          </h6>
-          Let's talk about how we can use consumer-grade hardware and open source technologies and protocols to provide the tech needs for ourselves and our families, and have control over our data and privacy. Let's make technology work for us, not the other way around.</p>
-        </div>
-      </div>
-    </div>
-  </div>
   
   <div class="col-12 col-lg-4">
     <div class="card h-100 bg-light overflow-hidden">
       <div class="card-header bg-primary text-white">
-        <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Sunday 21st Dec 2025</h5>
+        <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Saturday 20th Dec 2025</h5>
       </div>
       <div class="card-body p-0">
         <div class="p-3 border-bottom dashed-border bg-light">
@@ -97,6 +71,34 @@ form:
             <i class="bi bi-cpu" aria-hidden="true"></i> AI: Good, Bad & Ugly
           </h6>
           Structured conversations exploring AI ethics, privacy, digital sovereignty, and the future of open technology. Moderated dialogue with opportunities for all voices to be heard.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="card h-100 bg-light overflow-hidden">
+      <div class="card-header bg-primary text-white">
+        <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Sunday 21st Dec 2025</h5>
+      </div>
+      <div class="card-body p-0 bg-light">
+        <div class="p-3 border-bottom dashed-border bg-light">
+          <div class="fw-bold text-primary mb-2">
+            <i class="bi bi-clock" aria-hidden="true"></i> 2pm to 4pm
+          </div>
+          <p class="mb-2"><strong>Workshop: Create a Website You Fully Own</strong></p>
+          <a href="https://skillstudio.com.au/events/2025/12/create-your-website/" target="_blank" class="btn btn-sm btn-primary">
+            <i class="bi bi-info-circle" aria-hidden="true"></i> View Details
+          </a>
+        </div>
+        <div class="p-3 bg-light">
+          <div class="fw-bold text-primary mb-2">
+            <i class="bi bi-clock" aria-hidden="true"></i> 6pm to 8pm
+          </div>
+          <p class="mb-0">
+          <h6 class="fw-bold">
+            <i class="bi bi-gear-wide-connected" aria-hidden="true"></i> Digital Freedoms and Technology Commons
+          </h6>
+          Let's talk about how we can use consumer-grade hardware and open source technologies and protocols to provide the tech needs for ourselves and our families, and have control over our data and privacy. Let's make technology work for us, not the other way around.</p>
         </div>
       </div>
     </div>
