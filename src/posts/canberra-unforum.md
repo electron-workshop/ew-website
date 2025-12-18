@@ -37,7 +37,7 @@ form:
 <h1 class="text-primary">{{title}}</h1>
 
 <p class="mb-1">
-  <a href="https://maps.app.goo.gl/9dYW3Baa28Q1ZnFP8" target="_blank">
+  <a href="https://maps.app.goo.gl/9dYW3Baa28Q1ZnFP8" class="text-primary" target="_blank">
   <i class="bi bi-geo-alt" aria-hidden="true"></i> 
   Skill Studio, Civic Center, Canberra
   </a>
@@ -71,16 +71,27 @@ form:
     <div class="card h-100 bg-light overflow-hidden">
       <div class="card-header bg-primary text-white">
         <h5 class="card-title mb-1">Day 1: AI</h5>
-        <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Saturday 20th Dec 2025</h5>
       </div>
       <div class="card-body p-0">
+        <div class="p-3 border-bottom dashed-border bg-light">
+          <div class="fw-bold text-primary mb-0">
+            <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Saturday 20th Dec 2025</h5>
+          </div>
+        </div>
         <div class="p-3 border-bottom dashed-border bg-light">
           <div class="fw-bold text-primary mb-2">
             <i class="bi bi-clock" aria-hidden="true"></i> 2pm to 4pm
           </div>
-          <p class="mb-2"><strong>
-          <span class="badge text-bg-secondary">Paid</span>
-          Workshop: Running Agentic AI Offline on your Linux Machine</strong></p>
+          <div class="fw-bold text-primary mb-2">
+            <span class="badge text-bg-primary">Workshop</span>
+            <span class="badge text-bg-secondary">Paid</span>
+            <span class="badge text-bg-secondary">Hybrid<i class="bi bi-broadcast-pin ms-1"></i></span>  
+          </div>
+          <p class="mb-2">
+            <strong>
+              Workshop: Running Agentic AI Offline on your Linux Machine
+            </strong>
+          </p>
           <a href="https://luma.com/9ducj3ua" target="_blank" class="btn btn-sm btn-primary">
             <i class="bi bi-ticket-perforated" aria-hidden="true"></i> Get Ticket
           </a>
@@ -89,9 +100,12 @@ form:
           <div class="fw-bold text-primary mb-2">
             <i class="bi bi-clock" aria-hidden="true"></i> 6pm to 8pm
           </div>
+          <div class="fw-bold text-primary mb-2">
+            <span class="badge text-bg-primary">Discussion</span>
+            <span class="badge text-bg-secondary">Free</span>
+          </div>
           <p class="mb-0">
-            <h6 class="fw-bold d-flex align-items-end">
-              <span class="badge text-bg-secondary">Free</span>
+            <h6 class="fw-bold">
                 <i class="bi bi-cpu mx-1" aria-hidden="true"></i> 
                 AI: Good, Bad & Ugly
             </h6>
@@ -108,17 +122,27 @@ form:
     <div class="card h-100 bg-light overflow-hidden">
       <div class="card-header bg-primary text-white">
         <h5 class="card-title mb-1">Day 2: Linux Day</h5>
-        <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Sunday 21st Dec 2025</h5>
       </div>
+        <div class="p-3 border-bottom dashed-border bg-light">
+          <div class="fw-bold text-primary mb-0">
+            <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Sunday 21st Dec 2025</h5>
+          </div>
+        </div>
       <div class="card-body p-0 bg-light">
         <div class="p-3 border-bottom dashed-border bg-light">
           <div class="fw-bold text-primary mb-2">
             <i class="bi bi-clock" aria-hidden="true"></i> 2pm to 4pm
           </div>
-          <p class="mb-2"><strong>
-          <span class="badge text-bg-secondary">Free</span>
-          Workshop: Create a Website You Fully Own
-          </strong></p>
+          <div class="fw-bold text-primary mb-2">
+            <span class="badge text-bg-primary">Workshop</span>
+            <span class="badge text-bg-secondary">Free</span>
+            <span class="badge text-bg-secondary">Hybrid<i class="bi bi-broadcast-pin ms-1"></i></span>  
+          </div>
+          <p class="mb-2">
+            <strong>
+              Workshop: Create a Website You Fully Own
+            </strong>
+          </p>
           <a href="https://luma.com/aqac75re" target="_blank" class="btn btn-sm btn-primary">
             <i class="bi bi-ticket-perforated" aria-hidden="true"></i> RSVP 
           </a>
@@ -127,13 +151,17 @@ form:
           <div class="fw-bold text-primary mb-2">
             <i class="bi bi-clock" aria-hidden="true"></i> 6pm to 8pm
           </div>
+          <div class="fw-bold text-primary mb-2">
+            <span class="badge text-bg-primary">Discussion</span>
+            <span class="badge text-bg-secondary">Free</span>
+          </div>
           <p class="mb-0">
-          <h6 class="fw-bold ">
-          <span class="badge text-bg-secondary">Free</span>
-            <i class="bi bi-gear-wide-connected" aria-hidden="true"></i> 
-            Digital Freedoms and Technology Commons
-          </h6>
-          Let's talk about how we can use consumer-grade hardware and open source technologies and protocols to provide the tech needs for ourselves and our families, and have control over our data and privacy. Let's make technology work for us, not the other way around.</p>
+            <h6 class="fw-bold ">
+              <i class="bi bi-gear-wide-connected" aria-hidden="true"></i> 
+              Digital Freedoms and Technology Commons
+            </h6>
+            Let's talk about how we can use consumer-grade hardware and open source technologies and protocols to provide the tech needs for ourselves and our families, and have control over our data and privacy. Let's make technology work for us, not the other way around.
+          </p>
           <a href="https://luma.com/bd03korb" target="_blank" class="btn btn-sm btn-primary">
             <i class="bi bi-ticket-perforated" aria-hidden="true"></i> RSVP 
           </a>
@@ -146,25 +174,33 @@ form:
     <div class="card h-100 bg-light overflow-hidden">
       <div class="card-header bg-primary text-white">
         <h5 class="card-title mb-1">Day 3: Open Day</h5>
-        <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Monday 22nd Dec 2025</h5>
+      </div>
+      <div class="p-3 border-bottom dashed-border bg-light">
+        <div class="fw-bold text-primary mb-0">
+          <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Monday 22nd Dec 2025</h5>
+        </div>
       </div>
       <div class="card-body p-0">
         <div class="p-3 border-bottom dashed-border bg-light">
           <div class="fw-bold text-primary mb-2">
             <i class="bi bi-clock" aria-hidden="true"></i> 11am to 5pm
           </div>
-          <p class="mb-0">
+          <div class="fw-bold text-primary mb-2">
+            <span class="badge text-bg-secondary">Free</span> 
+          </div>
           <h6 class="fw-bold">
-          <span class="badge text-bg-secondary">Free</span>
             <i class="bi bi-people" aria-hidden="true"></i> 
             Unconference
           </h6>
           <p class="mb-0">
-          Participant-driven day featuring impromptu talks, breakout discussions, and collaborative sessions based on themes that emerged over the weekend. Propose a topic, lead a panel, or simply join conversations that interest you.</p>
+            Participant-driven day featuring impromptu talks, breakout discussions, and collaborative sessions based on themes that emerged over the weekend. Propose a topic, lead a panel, or simply join conversations that interest you.
+          </p>
           <br>
-          <p class="mb-0"><strong>
-          <span class="badge text-bg-secondary me-2">Free</span>Linux Install Fest</strong><br>
-          Breathe new life into older hardware or experiment with different distributions. Bring your laptop and get hands-on help installing Linux—perfect prep for Sunday's AI workshop.</p>
+          <p class="mb-0">
+            <strong>Linux Install Fest</strong>
+            <br>
+            Breathe new life into older hardware or experiment with different distributions. Bring your laptop and get hands-on help installing Linux—perfect prep for Sunday's AI workshop.
+          </p>
         </div>
       </div>
     </div>
