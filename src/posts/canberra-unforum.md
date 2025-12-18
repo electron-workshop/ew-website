@@ -59,17 +59,18 @@ form:
 </div>
 
 
-<div class="banner-container my-4 rounded">
+<div class="banner-container my-2 rounded">
     <img src="/assets/images/banners/Canberra-Unforum-2025-Banner-Page-V102.svg" 
          alt="Canberra Un-forum 2025 Banner" 
          class="img-fluid">
 </div>
 
-<div class="row g-4 my-4">
+<div class="row g-4 mb-4 mt-1">
   
   <div class="col-12 col-lg-4">
     <div class="card h-100 bg-light overflow-hidden">
       <div class="card-header bg-primary text-white">
+        <h5 class="card-title mb-1">Day 1: AI</h5>
         <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Saturday 20th Dec 2025</h5>
       </div>
       <div class="card-body p-0">
@@ -89,11 +90,16 @@ form:
             <i class="bi bi-clock" aria-hidden="true"></i> 6pm to 8pm
           </div>
           <p class="mb-0">
-          <h6 class="fw-bold">
-            <i class="bi bi-cpu" aria-hidden="true"></i> 
-            AI: Good, Bad & Ugly
-          </h6>
-          Structured conversations exploring AI ethics, privacy, digital sovereignty, and the future of open technology. Moderated dialogue with opportunities for all voices to be heard.</p>
+            <h6 class="fw-bold d-flex align-items-end">
+              <span class="badge text-bg-secondary">Free</span>
+                <i class="bi bi-cpu mx-1" aria-hidden="true"></i> 
+                AI: Good, Bad & Ugly
+            </h6>
+            Structured conversations exploring AI ethics, privacy, digital sovereignty, and the future of open technology. Moderated dialogue with opportunities for all voices to be heard.
+          </p>
+          <a href="https://luma.com/3tb5hr3u" target="_blank" class="btn btn-sm btn-primary">
+            <i class="bi bi-ticket-perforated" aria-hidden="true"></i> RSVP 
+          </a>
         </div>
       </div>
     </div>
@@ -101,6 +107,7 @@ form:
   <div class="col-12 col-lg-4">
     <div class="card h-100 bg-light overflow-hidden">
       <div class="card-header bg-primary text-white">
+        <h5 class="card-title mb-1">Day 2: Linux Day</h5>
         <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Sunday 21st Dec 2025</h5>
       </div>
       <div class="card-body p-0 bg-light">
@@ -121,10 +128,15 @@ form:
             <i class="bi bi-clock" aria-hidden="true"></i> 6pm to 8pm
           </div>
           <p class="mb-0">
-          <h6 class="fw-bold">
-            <i class="bi bi-gear-wide-connected" aria-hidden="true"></i> Digital Freedoms and Technology Commons
+          <h6 class="fw-bold ">
+          <span class="badge text-bg-secondary">Free</span>
+            <i class="bi bi-gear-wide-connected" aria-hidden="true"></i> 
+            Digital Freedoms and Technology Commons
           </h6>
           Let's talk about how we can use consumer-grade hardware and open source technologies and protocols to provide the tech needs for ourselves and our families, and have control over our data and privacy. Let's make technology work for us, not the other way around.</p>
+          <a href="https://luma.com/bd03korb" target="_blank" class="btn btn-sm btn-primary">
+            <i class="bi bi-ticket-perforated" aria-hidden="true"></i> RSVP 
+          </a>
         </div>
       </div>
     </div>
@@ -133,6 +145,7 @@ form:
   <div class="col-12 col-lg-4">
     <div class="card h-100 bg-light overflow-hidden">
       <div class="card-header bg-primary text-white">
+        <h5 class="card-title mb-1">Day 3: Open Day</h5>
         <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Monday 22nd Dec 2025</h5>
       </div>
       <div class="card-body p-0">
@@ -142,12 +155,15 @@ form:
           </div>
           <p class="mb-0">
           <h6 class="fw-bold">
-            <i class="bi bi-people" aria-hidden="true"></i> Open Day, Unconference
+          <span class="badge text-bg-secondary">Free</span>
+            <i class="bi bi-people" aria-hidden="true"></i> 
+            Unconference
           </h6>
           <p class="mb-0">
           Participant-driven day featuring impromptu talks, breakout discussions, and collaborative sessions based on themes that emerged over the weekend. Propose a topic, lead a panel, or simply join conversations that interest you.</p>
           <br>
-          <p class="mb-0"><strong>Linux Install Fest</strong><br>
+          <p class="mb-0"><strong>
+          <span class="badge text-bg-secondary me-2">Free</span>Linux Install Fest</strong><br>
           Breathe new life into older hardware or experiment with different distributions. Bring your laptop and get hands-on help installing Linux—perfect prep for Sunday's AI workshop.</p>
         </div>
       </div>
