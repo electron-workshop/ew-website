@@ -59,11 +59,11 @@ form:
 </div>
 
 
-<!-- <div class="banner-container my-4">
-    <img src="/assets/images/banners/Canberra-Unforum-2025-Banner-Page-Wide-V100.svg" 
+<div class="banner-container my-4 rounded">
+    <img src="/assets/images/banners/Canberra-Unforum-2025-Banner-Page-V102.svg" 
          alt="Canberra Un-forum 2025 Banner" 
          class="img-fluid">
-</div> -->
+</div>
 
 <div class="row g-4 my-4">
   
