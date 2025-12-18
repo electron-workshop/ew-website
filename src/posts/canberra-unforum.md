@@ -38,8 +38,8 @@ form:
 
 <p class="mb-1">
   <a href="https://maps.app.goo.gl/9dYW3Baa28Q1ZnFP8" class="text-primary" target="_blank">
-  <i class="bi bi-geo-alt" aria-hidden="true"></i> 
-  Skill Studio, Civic Center, Canberra
+    <i class="bi bi-geo-alt" aria-hidden="true"></i> 
+    Skill Studio, Civic Center, Canberra
   </a>
 </p>
 <p class="mb-1">
@@ -121,7 +121,7 @@ form:
   <div class="col-12 col-lg-4">
     <div class="card h-100 bg-light overflow-hidden">
       <div class="card-header bg-primary text-white">
-        <h5 class="card-title mb-1">Day 2: Linux Day</h5>
+        <h5 class="card-title mb-1">Day 2: Linux</h5>
       </div>
         <div class="p-3 border-bottom dashed-border bg-light">
           <div class="fw-bold text-primary mb-0">
@@ -199,7 +199,7 @@ form:
           <p class="mb-0">
             <strong>Linux Install Fest</strong>
             <br>
-            Breathe new life into older hardware or experiment with different distributions. Bring your laptop and get hands-on help installing Linux—perfect prep for Sunday's AI workshop.
+            Breathe new life into older hardware or experiment with different distributions. Bring your laptop and get hands-on help installing Linux.
           </p>
         </div>
       </div>
