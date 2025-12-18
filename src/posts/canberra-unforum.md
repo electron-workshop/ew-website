@@ -3,7 +3,7 @@ layout: base.njk
 title: Canberra Un-forum
 description: Discussions and hands-on workshops on AI and open technology for the everyday people
 permalink: "/posts/canberra-unforum/"
-preview_image: "https://electronworkshop.org/assets/images/banners/Canberra_Un-forum_2025_Banner_V100.webp"
+preview_image: "https://electronworkshop.org/assets/images/banners/Canberra_Un-forum_2025_Banner_V101.webp"
 
 form:
   heading: "Subscribe to Canberra Un-forum Updates"
@@ -25,7 +25,7 @@ form:
 <p class="mb-1">
   <a href="https://maps.app.goo.gl/9dYW3Baa28Q1ZnFP8" target="_blank">
   <i class="bi bi-geo-alt" aria-hidden="true"></i> 
-  Canberra Tech Hub, Civic Center, Canberra
+  Skill Studio, Civic Center, Canberra
   </a>
 </p>
 <p class="mb-1">
