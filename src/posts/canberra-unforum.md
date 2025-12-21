@@ -111,7 +111,7 @@ form:
             </h6>
             Structured conversations exploring AI ethics, privacy, digital sovereignty, and the future of open technology. Moderated dialogue with opportunities for all voices to be heard.
           </p>
-          <a href="https://luma.com/3tb5hr3u" target="_blank" class="btn btn-sm btn-primary">
+          <a href="https://luma.com/3tb5hr3u" target="_blank" class="btn btn-sm btn-secondary">
             <i class="bi bi-ticket-perforated" aria-hidden="true"></i> RSVP 
           </a>
         </div>
@@ -162,7 +162,7 @@ form:
             </h6>
             Let's talk about how we can use consumer-grade hardware and open source technologies and protocols to provide the tech needs for ourselves and our families, and have control over our data and privacy. Let's make technology work for us, not the other way around.
           </p>
-          <a href="https://luma.com/bd03korb" target="_blank" class="btn btn-sm btn-primary">
+          <a href="https://luma.com/bd03korb" target="_blank" class="btn btn-sm btn-secondary">
             <i class="bi bi-ticket-perforated" aria-hidden="true"></i> RSVP 
           </a>
         </div>
@@ -181,7 +181,7 @@ form:
         </div>
       </div>
       <div class="card-body p-0">
-        <div class="p-3 border-bottom dashed-border bg-light">
+        <div class="p-3 bg-light">
           <div class="fw-bold text-primary mb-2">
             <i class="bi bi-clock" aria-hidden="true"></i> 11am to 5pm
           </div>
@@ -201,6 +201,11 @@ form:
             <br>
             Breathe new life into older hardware or experiment with different distributions. Bring your laptop and get hands-on help installing Linux.
           </p>
+        </div>
+        <div class="px-3 py-1 bg-light">
+          <a href="/unconference-countdown" target="_blank" class="btn btn-sm btn-outline-primary">
+            <i class="bi bi-clock" aria-hidden="true"></i> View Countdown!
+          </a>
         </div>
       </div>
     </div>
