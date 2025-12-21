@@ -92,10 +92,7 @@ form:
               Workshop: Running Agentic AI Offline on your Linux Machine
             </strong>
           </p>
-          <a href="http://electronworkshop.com.au/goto/coworking" target="_blank" class="btn btn-sm btn-primary mb-2">
-            <i class="bi bi-globe" aria-hidden="true"></i> Join the room
-          </a><br>
-          <a href="https://luma.com/9ducj3ua" target="_blank" class="btn btn-sm btn-outline-primary">
+          <a href="https://luma.com/9ducj3ua" target="_blank" class="btn btn-sm btn-outline-secondary">
             <i class="bi bi-ticket-perforated" aria-hidden="true"></i> Get Ticket
           </a> 
         </div>
@@ -146,7 +143,7 @@ form:
               Workshop: Create a Website You Fully Own
             </strong>
           </p>
-          <a href="https://luma.com/aqac75re" target="_blank" class="btn btn-sm btn-primary">
+          <a href="https://luma.com/aqac75re" target="_blank" class="btn btn-sm btn-outline-secondary">
             <i class="bi bi-ticket-perforated" aria-hidden="true"></i> RSVP 
           </a>
         </div>
