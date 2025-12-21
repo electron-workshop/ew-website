@@ -190,6 +190,15 @@ form:
           </div>
           <h6 class="fw-bold">
             <i class="bi bi-people" aria-hidden="true"></i> 
+            Agenda
+          </h6>
+          <p class="mb-0">
+            - 11am - 12:30pm Unconference planning <br>
+            - (lunch break at Dosa Hut) <br>
+            - 2pm - 5pm Unconference & Installfest <br>
+          </p>
+          <h6 class="fw-bold">
+            <i class="bi bi-people" aria-hidden="true"></i> 
             Unconference
           </h6>
           <p class="mb-0">
