@@ -71,5 +71,29 @@
     "tags": ["tech", "social-enterprise", "paid"],
     "display": true,
     "past": true
+  },
+  {
+    "cardType": "quickAccess",
+    "title": "Calendar",
+    "text": "Stay updated with all upcoming events in the Electron Workshop ecosystem. Check our community calendar for workshops, meetups, and conferences.",
+    "href": "/calendar/",
+    "button": "View Calendar",
+    "icon": "bi-calendar-event"
+  },
+  {
+    "cardType": "quickAccess",
+    "title": "Sprints",
+    "text": "Join our coding sprints to contribute to open-source projects. Collaborate with developers and learn new skills in a supportive environment.",
+    "href": "/initiatives/sprints/",
+    "button": "Join Sprints",
+    "icon": "bi-code-slash"
+  },
+  {
+    "cardType": "quickAccess",
+    "title": "Chainference",
+    "text": "Explore blockchain and decentralized technologies at our annual Chainference. Discover innovations and connect with experts in the field.",
+    "href": "/chainference/",
+    "button": "Learn More",
+    "icon": "bi-link-45deg"
   }
 ]
