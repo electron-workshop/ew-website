@@ -9,15 +9,14 @@
     "tags": ["tech", "open-source", "free"]
   },
   {
-    "cardType": "whatsOnEcosystem",
-    "title": "PyCon AU 2025",
-    "text": "Australia's Python flagship conference in Melbourne | 12-16 September 2025 (hybrid)",
-    "href": "https://2025.pycon.org.au/",
-    "button": "Explore event",
-    "banner": "/assets/images/banners/pyconau2025.png",
-    "tags": ["tech", "open-source", "hybrid", "paid"],
-    "display": true,
-    "past": true
+    "cardType": "chainference",
+    "title": "PyCon AU Chainference",
+    "text": "We were an official sponsor. Join our watch parties for publicly available videos to continue the learning and community engagement.",
+    "href": "/chainferences/pycon/",
+    "button": "Learn more",
+    "logo": "/assets/images/logos/pycon-logo.svg",
+    "tags": ["tech", "open-source", "chainference"],
+    "display": true
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -32,23 +31,23 @@
     "past": true
   },
   {
-    "cardType": "whatsOnEcosystem",
-    "title": "auIGF 2025",
-    "text": "Next: Debriefing session. Dates TBC",
+    "cardType": "chainference",
+    "title": "auIGF Chainference",
+    "text": "Debriefing sessions and continued engagement around internet governance topics. Dates TBC.",
     "href": "/posts/igf",
     "button": "Learn more",
     "logo": "https://img1.wsimg.com/isteam/ip/8ea16ea9-1304-46f7-b88f-500c5463db60/blob-c7b1ea3.png",
-    "tags": ["tech", "governance", "free"],
+    "tags": ["tech", "governance", "chainference"],
     "display": true
   },
   {
-    "cardType": "whatsOnEcosystem",
-    "title": "Everything Open 2026",
-    "text": "University of Canberra, Canberra, Australia | 21-23 January 2026",
-    "href": "https://2026.everythingopen.au/",
+    "cardType": "chainference",
+    "title": "Everything Open Chainference",
+    "text": "Fringe event Saturday after, Linux Victoria breakfast on 2nd morning, helped with CfS for 2023 & 2025.",
+    "href": "/chainferences/everything-open/",
     "button": "Learn more",
     "logo": "https://2026.everythingopen.au/media/img/card/eo2026-badge.06cfdbb4.png",
-    "tags": ["tech", "open-source", "paid"]
+    "tags": ["tech", "open-source", "chainference"]
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -62,13 +61,13 @@
     "past": true
   },
   {
-    "cardType": "whatsOnEcosystem",
-    "title": "SXSW Sydney 2025",
-    "text": "Creative industries festival | 13–19 Oct 2025 in Sydney.",
-    "href": "https://www.sxswsydney.com/",
-    "button": "Explore event",
+    "cardType": "chainference",
+    "title": "SXSW Sydney Chainference",
+    "text": "Organizing local meetups for attendees to connect and follow up in their cities.",
+    "href": "/chainferences/sxsw/",
+    "button": "Learn more",
     "logo": "/assets/images/logos/67c4e80db279c10646838a08_sxsw-black.png",
-    "tags": ["tech", "social-enterprise", "paid"],
+    "tags": ["tech", "social-enterprise", "chainference"],
     "display": true,
     "past": true
   },

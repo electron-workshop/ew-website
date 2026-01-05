@@ -52,35 +52,22 @@ permalink: "/"
   </div>
 </section>
 
-{# Regular cards section for whatsOnEcosystem or other types #}
+{# Chainference section #}
 <section class="mt-4 mb-5">
-  
-  <h1 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Featured from the Ecosystem</h1>
+  <h1 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Chainferences</h1>
 
   <div class="row g-4">
     {% for card in homeCards %}
-      {% if card.cardType == "whatsOnEcosystem" and card.past != true and card.display != false %}
-        <div class="col-12 col-md-4">
+      {% if card.cardType == "chainference" and card.display != false %}
+        <div class="col-12 col-md-6">
           <div class="card border-primary border-opacity-25 shadow-sm border-primary-hover">
-
-            {# Banner (full width, cropped 3:1) #}
-            {% if card.banner %}
-              <div class="card-img-top overflow-hidden" style="aspect-ratio: 3/1; object-fit: cover;">
-                <img src="{{ card.banner }}" alt="{{ card.title }}" class="w-100 h-100 object-fit-cover">
-              </div>
-            {% endif %}
-
             <div class="card-body">
               <div class="d-flex align-items-center justify-content-between mb-2">
                 <p class="h4 mb-0">{{ card.title }}</p>
-
                 <div class="d-flex align-items-center gap-2">
-                  {# Icon #}
                   {% if card.icon %}
                     <i class="bi {{ card.icon }} fs-3"></i>
                   {% endif %}
-
-                  {# Logo (square/wide, max-height controlled) #}
                   {% if card.logo %}
                     <img src="{{ card.logo }}" alt="{{ card.title }} logo"
                         class="img-fluid"
@@ -88,16 +75,6 @@ permalink: "/"
                   {% endif %}
                 </div>
               </div>
-
-              {# Tags #}
-              {% if card.tags %}
-                <div class="mb-3">
-                  {% for tag in card.tags %}
-                    <span class="badge bg-primary bg-opacity-25 text-primary me-1 mb-1">#{{ tag }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
-
               <p class="mb-4 text-preline">{{ card.text }}</p>
               {% if card.href and card.button %}
                 <a href="{{ card.href }}" class="btn btn-primary stretched-link">{{ card.button }}</a>
@@ -108,22 +85,16 @@ permalink: "/"
       {% endif %}
     {% endfor %}
   </div>
-
-  {# <div class="text-center mt-4">
-      <a href="https://electronworkshop.com.au/goto/calendar/?r=ew" class="btn btn-outline-primary">
-          Checkout our calendar to see all ecosystem events <i class="bi bi-arrow-right me-2"></i>
-      </a>
-  </div> #}
 </section>
 
 {# Regular cards section for whatsOnEcosystem or other types #}
-<section class="mt-4">
+<section class="mt-4 mb-5">
   
-  <h1 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Past Events in the ecosystem</h1>
+  <h1 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Ecosystem Events</h1>
 
   <div class="row g-4">
     {% for card in homeCards %}
-      {% if card.cardType == "whatsOnEcosystem" and card.past == true and card.display != false %}
+      {% if card.cardType == "whatsOnEcosystem" and card.display != false %}
         <div class="col-12 col-md-4">
           <div class="card border-primary border-opacity-25 shadow-sm border-primary-hover">
 
