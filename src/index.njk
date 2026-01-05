@@ -22,6 +22,36 @@ permalink: "/"
   </div>
 </section>
 
+{# Quick Access section #}
+<section class="mt-4 mb-5">
+  <h1 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Quick Access</h1>
+
+  <div class="row g-4">
+    {% for card in homeCards %}
+      {% if card.cardType == "quickAccess" and card.display != false %}
+        <div class="col-12 col-md-4">
+          <div class="card border-primary border-opacity-25 shadow-sm border-primary-hover">
+            <div class="card-body">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <p class="h4 mb-0">{{ card.title }}</p>
+                <div class="d-flex align-items-center gap-2">
+                  {% if card.icon %}
+                    <i class="bi {{ card.icon }} fs-3"></i>
+                  {% endif %}
+                </div>
+              </div>
+              <p class="mb-4 text-preline">{{ card.text }}</p>
+              {% if card.href and card.button %}
+                <a href="{{ card.href }}" class="btn btn-primary stretched-link">{{ card.button }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
 {# Regular cards section for whatsOnEcosystem or other types #}
 <section class="mt-4 mb-5">
   
