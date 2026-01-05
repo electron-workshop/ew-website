@@ -3,94 +3,118 @@ layout: base.njk
 title: Chainference - Electron Workshop
 permalink: "/chainference/"
 ---
-
 # Chainference
 
-## A simple idea for stronger, more connected conferences
+## A collaborative layer that strengthens conferences
 
-In our ecosystem, conferences often happen in isolation.
+Chainference is a simple idea born from respect for conferences and the people who organise them.
 
-While events may focus on different topics or communities, the people who attend them—speakers, volunteers, organisers, and participants—overlap significantly. Despite this strong correlation, each conference typically runs its **before**, **during**, and **after** phases on its own.
+In our ecosystem, conferences are thoughtfully designed, carefully delivered, and deeply valued. Each event has its own identity, goals, culture, and constraints—and organisers already carry a significant responsibility in bringing them to life.
 
-This creates friction:
-- Calls for papers and ideas start from scratch every time
-- Volunteer discovery is repetitive and time‑consuming
-- Post‑conference follow‑ups are uneven or missing
-- Valuable energy and momentum are lost between events
+At the same time, we observe a shared reality:
+- The people who attend, speak at, volunteer for, and organise conferences overlap significantly
+- Engagement naturally begins *before* a conference and often wants to continue *after* it
+- Some opportunities for connection and value exist beyond the scope of any single event
 
-Some conferences try to address these challenges, but doing so individually is hard, resource‑intensive, and not yet the norm—so it is rarely expected.
+Chainference exists to support this reality—not to critique it.
 
-## The notion of a Chainference
+## What we mean by Chainference
 
-**Chainference** is our name for a collective, ecosystem‑level layer that exists *alongside* conferences.
+**Chainference** is our name for a voluntary, ecosystem‑initiated layer that sits *alongside* conferences.
 
-It is not a replacement for conferences, and it does not interfere with the autonomy or responsibilities of individual organisers.
+It is designed to:
+- **Align with conference organisers**, not direct or override them
+- **Respect full ownership** of conference design, content, delivery, and intellectual property
+- **Reduce effort**, not add complexity
+- **Increase value for audiences**, speakers, and volunteers
 
-Instead, a Chainference:
-- Operates at a **meta level**, across multiple conferences
-- Is initiated and sustained by the **ecosystem**, not a single event
-- Makes conference organisation **lighter and easier**, not heavier
+Chainference does not replace existing processes, brands, or decisions. It complements them.
 
-You can think of it as a shared connective tissue between otherwise separate events.
+## Clear boundaries, by design
 
-## What a Chainference does
+From the outset, Chainference is intentionally scoped to avoid grey areas.
 
-A Chainference focuses on the stages around a conference that benefit most from collective effort:
+We do **not**:
+- Make decisions about conference programs
+- Influence acceptance or rejection of talks
+- Control messaging, branding, or delivery
+- Use or redistribute non‑public materials
+- Claim ownership over ideas, content, or outcomes
+
+Conference organisers retain full control and IP at all times.
+
+Our role is supportive, optional, and transparent.
+
+## Where Chainference helps most
+
+Chainference focuses on areas where collective effort can add value *without interfering* with organiser workflows.
 
 ### Before conferences
-- Supporting **calls for papers** and session ideas
-- Creating shared spaces for **grassroots ideation**
-- Helping speakers shape and refine proposals
+- Facilitating **grassroots ideation spaces** that help potential speakers explore themes and shape ideas
+- Supporting **call‑for‑papers readiness** by lowering barriers to participation
+- Helping organisers reach engaged, prepared contributors
 
 ### Around conferences
-- Encouraging cross‑conference participation and awareness
-- Strengthening relationships between communities
+- Encouraging cross‑community awareness and participation
+- Strengthening relationships between aligned events and audiences
 
 ### After conferences
-- Facilitating **post‑conference engagement**
-- Creating opportunities to reflect, learn, and continue conversations
-- Helping recordings and ideas reach wider audiences
+- Creating opt‑in spaces for **post‑conference reflection and learning**
+- Supporting continued engagement around publicly available content
+- Helping conference impact extend beyond event dates
 
-## Why this must be collective
+All participation is voluntary and aligned with organiser intent.
 
-Some things cannot be done effectively by a single conference—no matter how well‑resourced it is.
+## Why this works best at an ecosystem level
 
-These activities are collective by nature:
-- Sustained community learning
-- Cross‑pollination of ideas between events
-- Long‑term volunteer and speaker discovery
-- Cultural continuity across conferences
+Some forms of value are inherently collective:
+- Long‑term speaker development
+- Volunteer discovery across events
+- Knowledge continuity between conferences
+- Community momentum that spans years, not days
 
-Chainference exists specifically to enable this kind of collective action.
+These are difficult for any single conference to sustain alone—even with strong resources.
+
+Chainference exists to hold this shared layer, so conferences can focus on what they do best.
 
 ## What we have done so far
 
-As part of the Chainference approach, we have already begun with two practical initiatives:
+We are intentionally starting small and responsibly.
 
 ### Grassroots ideation for Calls for Papers
-We facilitate open ideation sessions where community members:
-- Explore themes together
-- Develop session ideas collaboratively
-- Lower the barrier to becoming a speaker
+We facilitate open, community‑driven ideation sessions where participants:
+- Explore conference themes together
+- Develop early‑stage session ideas
+- Gain confidence and clarity before submitting proposals
 
-These sessions help conferences receive stronger, more diverse proposals—without increasing organiser workload.
+This often results in stronger, more thoughtful submissions—without adding work for organisers.
 
 ### Conference watch parties
-We organise watch parties for **publicly available conference recordings** that matter to the collective.
+We organise watch parties around **publicly available conference recordings** that matter to the collective.
 
 These events:
-- Create shared learning moments
-- Re‑activate conference content after the event ends
-- Bring people together who may not have attended the original conference
+- Extend the life of conference content
+- Create shared learning experiences
+- Introduce conferences to new audiences respectfully
 
-## In summary
+We only work with content that organisers have already chosen to make public.
 
-**Chainference** is our term for a shared, ecosystem‑driven layer that connects conferences across time and community.
+## An open invitation
 
-It helps with what happens *before* and *after* conferences, supports organisers rather than burdening them, and enables collective efforts that no single event can achieve alone.
+Chainference is an invitation, not an obligation.
 
-It is not an event.
-It is not a brand.
+If you organise a conference and:
+- Care about your community beyond event dates
+- Want to increase the impact of your call for papers
+- Are curious about collective approaches that respect your autonomy
 
-It is a practice—and a commitment—to building conferences as part of a living, connected ecosystem.
+We would love to explore how Chainference can support *your* goals.
 
+Our intention is simple:
+
+> **Help conferences create more value for their audiences—together—while staying fully in your control.**
+
+Chainference is not an event.
+It is not a brand overlay.
+
+It is a shared practice for a healthier conference ecosystem.
