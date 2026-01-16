@@ -16,7 +16,7 @@ permalink: "/initiatives/sprints/"
     </div>
     <div class="border-start border-primary border-3 ps-3">
       <h3 class="h5">{{ sprint.title }}</h3>
-      <p class="mb-0">{{ sprint.description }}</p>
+      <p class="mb-0">{{ sprint.description | safe }}</p>
     </div>
   </div>
   {% endfor %}
