@@ -10,7 +10,7 @@ permalink: "/initiatives/sprints/sprint-1/"
 ## Key Dates:
 - Sprint opening: Sunday, January 4, 2026
 - Mid-sprint meeting: Sunday, January 11, 2026
-- Sprint Retro: Sunday, January 16, 2026
+- Sprint Retro: Friday, January 16, 2026
 
 ## Sprint Retro
 
