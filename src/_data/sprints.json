@@ -10,48 +10,38 @@
       "startDate": "2025-12-11",
       "endDate": "2025-12-23",
       "description": "Planning for the year, mapping grants, conferences and which sprints they fall under.",
-      "opening": "2025-12-11",
-      "midReview": "2025-12-18",
-      "retro": "2025-12-23"
+      "midReview": "2025-12-18"
     },
     {
       "title": "Sprint 1",
       "startDate": "2026-01-04",
       "endDate": "2026-01-16",
       "description": "Sprint One!",
-      "opening": "2026-01-04",
-      "midReview": "2026-01-11",
-      "retro": "2026-01-16"
+      "midReview": "2026-01-11"
     },
     {
       "title": "Sprint 2",
       "startDate": "2026-01-18",
       "endDate": "2026-01-30",
       "description": "January second sprint",
-      "opening": "2026-01-18",
-      "midReview": "2026-01-25",
-      "retro": "2026-01-30"
+      "midReview": "2026-01-25"
     },
     {
       "title": "Sprint 3",
       "startDate": "2026-02-01",
       "endDate": "2026-02-13",
       "description": "Leading to Love Sprint",
-      "opening": "2026-02-01",
-      "midReview": "2026-02-08",
-      "retro": "2026-02-13"
+      "midReview": "2026-02-08"
     },
     {
       "title": "Sprint 4",
       "startDate": "2026-02-15",
       "endDate": "2026-02-27",
       "description": "New Chapter Sprint",
-      "opening": "2026-02-15",
       "midReview": {
         "date": "2026-02-22",
         "physicalUrl": "https://maps.app.goo.gl/8xYPAuvpN2q1s5xc6"
-      },
-      "retro": "2026-02-28"
+      }
     }
   ]
 }

@@ -95,9 +95,9 @@ permalink: "/initiatives/sprints/"
     <p class="text-muted small mb-3">{{ s.description }}</p>
     {% endif %}
     <div class="row g-3">
-      {{ sessionCard("Sprint Opening",    "bi-play-circle",           "primary", s.opening)   }}
+      {{ sessionCard("Sprint Opening",    "bi-play-circle",           "primary", {date: s.startDate, time: sprintHelpers.defaults.time, online: sprintHelpers.defaults.online, physical: sprintHelpers.defaults.physical}) }}
       {{ sessionCard("Mid-Sprint Review", "bi-chat-dots",             "info",    s.midReview) }}
-      {{ sessionCard("Retro",             "bi-arrow-counterclockwise","warning", s.retro)     }}
+      {{ sessionCard("Retro",             "bi-arrow-counterclockwise","warning", {date: s.endDate, time: sprintHelpers.defaults.time, online: sprintHelpers.defaults.online, physical: sprintHelpers.defaults.physical}) }}
     </div>
   </div>
 </div>

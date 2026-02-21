@@ -24,9 +24,9 @@ module.exports = function () {
     online:    sprint.online    ?? defaults.online,
     physical:  sprint.physical  ?? defaults.physical,
     time:      sprint.time      ?? defaults.time,
-    opening:   normaliseSession(sprint.opening,   sprint),
-    midReview: normaliseSession(sprint.midReview, sprint),
-    retro:     normaliseSession(sprint.retro,     sprint),
+    opening:   normaliseSession(sprint.opening   ?? sprint.startDate, sprint),
+    midReview: normaliseSession(sprint.midReview ?? sprint.startDate, sprint),
+    retro:     normaliseSession(sprint.retro     ?? sprint.endDate,   sprint),
   }));
 
   const current = sprints.find((s) => {
