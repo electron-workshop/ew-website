@@ -2,7 +2,8 @@
   "defaults": {
     "online": "https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join",
     "physical": "Inspire9",
-    "time": "10:00"
+    "time": "10:00",
+    "retroTime": "18:00"
   },
   "items": [
     {
