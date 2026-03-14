@@ -54,5 +54,26 @@
         "physicalUrl": "https://maps.app.goo.gl/8xYPAuvpN2q1s5xc6"
       }
     }
+    ,
+    {
+      "title": "Sprint 6",
+      "startDate": "2026-03-15",
+      "endDate": "2026-03-27",
+      "description": "March Final Sprint",
+      "midReview": {
+        "date": "2026-03-22",
+        "physicalUrl": "https://maps.app.goo.gl/8xYPAuvpN2q1s5xc6"
+      }
+    },
+    {
+      "title": "Sprint 7",
+      "startDate": "2026-03-29",
+      "endDate": "2026-04-10",
+      "description": "April Opening Sprint",
+      "midReview": {
+        "date": "2026-04-05",
+        "physicalUrl": "https://maps.app.goo.gl/8xYPAuvpN2q1s5xc6"
+      }
+    }
   ]
 }
