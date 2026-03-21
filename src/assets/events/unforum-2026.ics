@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Un Forum 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Un Forum 2026
+X-WR-TIMEZONE:Australia/Sydney
+BEGIN:VEVENT
+DTSTART;TZID=Australia/Sydney:20260321T090000
+DTEND;TZID=Australia/Sydney:20260323T200000
+DTSTAMP:20260301T000000Z
+UID:unforum-2026@electronworkshop.org
+SUMMARY:Un Forum 2026
+LOCATION:Online and in person in different locations
+DESCRIPTION:Discussions and hands-on workshops on AI and open technology for the everyday people.\n\nSaturday 21st March to Monday 23rd March 2026\n\nDay 1 (Sat): Catch ups in local areas\nDay 2 (Sun): Workshops — online and in person at Inspire9\nDay 3 (Mon): Unconference\n\nMore info: https://electronworkshop.org/posts/unforum/
+URL:https://electronworkshop.org/posts/unforum/
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Un Forum 2026 starts in 30 minutes
+END:VALARM
+END:VEVENT
+BEGIN:VTIMEZONE
+TZID:Australia/Sydney
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+1000
+TZOFFSETTO:+1100
+TZNAME:AEDT
+DTSTART:19701004T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+1100
+TZOFFSETTO:+1000
+TZNAME:AEST
+DTSTART:19700405T030000
+RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+END:VCALENDAR

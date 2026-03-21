@@ -37,6 +37,13 @@ form:
 <h1 class="text-primary">{{title}}</h1>
 
 <p class="mb-1">
+  <a href="/posts/unforum/" class="text-primary">
+    <i class="bi bi-arrow-right-circle" aria-hidden="true"></i>
+    Next Un-forum: 2026-March
+  </a>
+</p>
+
+<p class="mb-1">
   <a href="https://maps.app.goo.gl/9dYW3Baa28Q1ZnFP8" class="text-primary" target="_blank">
     <i class="bi bi-geo-alt" aria-hidden="true"></i> 
     Skill Studio, Civic Center, Canberra

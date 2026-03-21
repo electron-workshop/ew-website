@@ -28,9 +28,42 @@ permalink: "/"
 
   <div class="row g-4">
     {% for card in homeCards %}
+      {% if card.featured == true and card.display != false %}
+        <div class="col-12 col-md-6">
+          <div class="card h-100 border-primary border-opacity-50 shadow-sm border-primary-hover overflow-hidden">
+            {% if card.banner %}
+              <div class="overflow-hidden" style="max-height: 180px;">
+                <img src="{{ card.banner }}" alt="{{ card.title }}" class="w-100" style="object-fit: cover; width: 100%;">
+              </div>
+            {% endif %}
+            <div class="card-body">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <p class="h4 mb-0">{{ card.title }}</p>
+                <div class="d-flex align-items-center gap-2">
+                  {% if card.icon %}<i class="bi {{ card.icon }} fs-3"></i>{% endif %}
+                  {% if card.logo %}<img src="{{ card.logo }}" alt="{{ card.title }} logo" class="img-fluid" style="max-height: 40px; width: auto; object-fit: contain;">{% endif %}
+                </div>
+              </div>
+              {% if card.tags %}
+                <div class="mb-3">
+                  {% for tag in card.tags %}
+                    <span class="badge bg-primary bg-opacity-25 text-primary me-1 mb-1">#{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <p class="mb-4 text-preline">{{ card.text }}</p>
+              {% if card.href and card.button %}
+                <a href="{{ card.href }}" class="btn btn-primary stretched-link">{{ card.button }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    {% for card in homeCards %}
       {% if card.cardType == "quickAccess" and card.display != false %}
-        <div class="col-12 col-md-4">
-          <div class="card border-primary border-opacity-25 shadow-sm border-primary-hover">
+        <div class="col-12 col-md-6">
+          <div class="card h-100 border-primary border-opacity-25 shadow-sm border-primary-hover">
             <div class="card-body">
               <div class="d-flex align-items-center justify-content-between mb-2">
                 <p class="h4 mb-0">{{ card.title }}</p>
@@ -94,7 +127,7 @@ permalink: "/"
 
   <div class="row g-4">
     {% for card in homeCards %}
-      {% if card.cardType == "whatsOnEcosystem" and card.display != false %}
+      {% if card.cardType == "whatsOnEcosystem" and card.display != false and card.featured != true %}
         <div class="col-12 col-md-4">
           <div class="card border-primary border-opacity-25 shadow-sm border-primary-hover">
 
