@@ -60,7 +60,7 @@ form:
 </div>
 
 <div class="banner-container my-2 rounded">
-    <img src="/assets/images/banners/Unforum-2026-Banner-Page-V100-1.svg" 
+    <img src="/assets/images/banners/Unforum-2026-Banner-Page-V100.svg" 
          alt="Un Forum 2026 Banner" 
          class="img-fluid">
 </div>
