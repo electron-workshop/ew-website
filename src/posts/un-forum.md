@@ -65,8 +65,6 @@ form:
          class="img-fluid">
 </div>
 
-<p class="mb-3">Session titles and descriptions are TBC and will be updated as we go.</p>
-
 <div class="row g-4 mb-4 mt-1">
   
   <div class="col-12 col-lg-4">
@@ -121,23 +119,30 @@ form:
               <tbody>
                 <tr>
                   <td class="fw-bold" style="width: 30%;">7:00am &ndash; 8:30am</td>
-                  <td><span class="badge bg-secondary">Online</span> Kickoff circle - welcoming, intro and community connections</td>
+                  <td><span class="badge bg-secondary">Online</span> Kickoff circle - introduction to Electron Workshop initatives and the Tech Ecology groups and organisations</td>
                 </tr>
                 <tr>
                   <td class="fw-bold">10:00am &ndash; 11:30am</td>
-                  <td><span class="badge bg-info text-dark">Hybrid</span> Inspire9 - Electron Workshop touch point and Mid-sprint Review</td>
+                  <td><span class="badge bg-info text-dark">Hybrid</span> - Electron Workshop touch point and Mid-sprint Review</td>
                 </tr>
                 <tr>
                   <td class="fw-bold">1:00pm &ndash; 2:30pm</td>
-                  <td><span class="badge bg-success">In person</span> Inspire9 - hands-on tech workshops on local AI + security</td>
+                  <td><span class="badge bg-success">In person</span> - hands-on tech workshops on local AI + security</td>
                 </tr>
                 <tr>
                   <td class="fw-bold">6:00pm &ndash; 7:30pm</td>
-                  <td><span class="badge bg-secondary">Online</span> Digital Freedom Days discussion (Document & Hardware Freedom Day)</td>
+                  <td><span class="badge bg-secondary">Online</span> introduction to Digital Freedoms Foundation and planning for the upcoming Document & Hardware Freedom Days</td>
                 </tr>
               </tbody>
             </table>
           </div>
+        </div>
+        <div class="p-3 bg-light">
+          <h6 class="fw-bold mb-2">In-person locations</h6>
+          <p class="fw-semibold mb-1"><i class="bi bi-geo-alt" aria-hidden="true"></i> Melbourne</p>
+          <ul class="mb-0 ps-3">
+            <li><a href="https://maps.app.goo.gl/dadYzXWrrFBAUWvHA" target="_blank" rel="noopener">Inspire9</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -172,7 +177,7 @@ form:
                 </tr>
                 <tr>
                   <td class="fw-bold">All day</td>
-                  <td><span class="badge bg-success">In person</span> Start Space — on-site hub for StartSpace members (limited capacity)</td>
+                  <td><span class="badge bg-success">In person</span> Start Space - on-site hub for StartSpace members (and limited number of guests)</td>
                 </tr>
                 <tr>
                   <td class="fw-bold">6:00pm onwards</td>
@@ -182,11 +187,18 @@ form:
             </table>
           </div>
         </div>
+        <div class="p-3 bg-light">
+          <h6 class="fw-bold mb-2">In-person locations</h6>
+          <p class="fw-semibold mb-1"><i class="bi bi-geo-alt" aria-hidden="true"></i> Melbourne</p>
+          <ul class="mb-0 ps-3">
+            <li><a href="https://maps.app.goo.gl/ZzBUh5LfmLaFwJQf6" target="_blank" rel="noopener">Start Space</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<p class="mb-4">Topics will be curated as we go, keep posted.</p>
+<p class="mb-4">This program evolves, subscribe to receive updates.</p>
 
 {% include "partials/updatesForm.njk" %}
