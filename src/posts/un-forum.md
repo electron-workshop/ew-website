@@ -3,7 +3,7 @@ layout: base.njk
 title: Un-forum
 description: Discussions and hands-on workshops on AI and open technology for the everyday people
 preview_image: "https://electronworkshop.org/assets/images/banners/Unforum-2026-Banner-Preview-V100.webp"
-
+permalink: "/un-forum/"
 form:
   heading: "Subscribe to Un-forum Updates"
   description: "Want to follow along and get updates about the Un-forum? Enter your email below, and you will be notified of developments"
@@ -112,19 +112,32 @@ form:
       </div>
       <div class="card-body p-0 bg-light">
         <div class="p-3 border-bottom dashed-border bg-light">
-          <p class="mb-0">Workshops and activities with the purpose of learning together or creating together. In person and online.</p>
+          <p class="mb-0">A full program of workshops and community learning, designed for both online and in-person participants.</p>
         </div>
         <div class="p-3 border-bottom dashed-border bg-light">
-          <h6 class="fw-bold mb-2">Sessions</h6>
-          <ul class="mb-0 ps-3">
-            <li class="mb-1">7:00am &ndash; 8:30am <span class="badge bg-secondary">Online</span></li>
-            <li class="mb-1">10:00am &ndash; 11:30am <span class="badge bg-info text-dark">Hybrid</span> Inspire9</li>
-            <li class="mb-1">1:00pm &ndash; 2:30pm <span class="badge bg-success">In person</span> Inspire9</li>
-            <li class="mb-1">6:00pm &ndash; 7:30pm <span class="badge bg-info text-dark">Hybrid</span> Inspire9</li>
-          </ul>
-        </div>
-        <div class="p-3 bg-light">
-          <p class="mb-0 text-muted fst-italic">Details to come.</p>
+          <h6 class="fw-bold mb-2">Program Schedule</h6>
+          <div class="table-responsive">
+            <table class="table table-borderless mb-0">
+              <tbody>
+                <tr>
+                  <td class="fw-bold" style="width: 30%;">7:00am &ndash; 8:30am</td>
+                  <td><span class="badge bg-secondary">Online</span> Kickoff circle - welcoming, intro and community connections</td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">10:00am &ndash; 11:30am</td>
+                  <td><span class="badge bg-info text-dark">Hybrid</span> Inspire9 - Electron Workshop touch point and Mid-sprint Review</td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">1:00pm &ndash; 2:30pm</td>
+                  <td><span class="badge bg-success">In person</span> Inspire9 - hands-on tech workshops on local AI + security</td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">6:00pm &ndash; 7:30pm</td>
+                  <td><span class="badge bg-secondary">Online</span> Digital Freedom Days discussion (Document & Hardware Freedom Day)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -145,15 +158,29 @@ form:
           <p class="mb-0">An Unconference around the following themes and their intersection.</p>
         </div>
         <div class="p-3 border-bottom dashed-border bg-light">
-          <h6 class="fw-bold mb-2">Themes</h6>
-          <ul class="mb-0 ps-3">
-            <li class="mb-1">Digital Freedoms and Technology Commons</li>
-            <li class="mb-1">Social Enterprise and Mutual Aid</li>
-            <li class="mb-1">Collective Well-being</li>
-          </ul>
-        </div>
-        <div class="p-3 bg-light">
-          <p class="mb-0 text-muted fst-italic">Details soon.</p>
+          <h6 class="fw-bold mb-2">Program Schedule</h6>
+          <div class="table-responsive">
+            <table class="table table-borderless mb-0">
+              <tbody>
+                <tr>
+                  <td class="fw-bold" style="width: 30%;">11:00am &ndash; 4:00pm</td>
+                  <td><strong>Unconference sessions</strong> - interactive topics, breakout discussions, theme clinics</td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">All day</td>
+                  <td><span class="badge bg-secondary">Online</span> remote stream and participation channel</td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">All day</td>
+                  <td><span class="badge bg-success">In person</span> Start Space — on-site hub for StartSpace members (limited capacity)</td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">6:00pm onwards</td>
+                  <td><span class="badge bg-primary">In person</span> Melbourne CBD celebration meetup</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
