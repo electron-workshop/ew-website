@@ -1,11 +1,12 @@
 [
   {
     "cardType": "whatsOnEcosystem",
-    "title": "Un-forum",
-    "text": "Discussions and hands-on workshops on AI and open technology for the everyday people | Skill Studio, Civic Center | 20th to 22nd December 2025",
+    "featured": true,
+    "title": "Un-forum 2026",
+    "text": "Discussions and hands-on workshops on AI and open technology for the everyday people | Online and in person | 21st to 23rd March 2026",
     "href": "/posts/unforum",
-    "banner": "/assets/images/banners/Canberra_Un-forum_2025_Banner_V101.svg",
-    "button": "Learn more",
+    "banner": "/assets/images/banners/Unforum-2026-Banner-V100.svg",
+    "button": "Attend",
     "tags": ["tech", "open-source", "free"]
   },
   {
