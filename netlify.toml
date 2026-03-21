@@ -13,3 +13,8 @@
   command = "npx @11ty/eleventy --serve"
   targetPort = 8080
   port = 8888
+
+[[redirects]]
+  from = "/posts/unforum/"
+  to = "/un-forum/"
+  status = 301
