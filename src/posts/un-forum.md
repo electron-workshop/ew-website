@@ -48,18 +48,55 @@ form:
   <i class="bi bi-broadcast-pin" aria-hidden="true"></i> Online and in person in different locations
 </p>
 
-<div class="mt-3 mb-3">
-    <a class="btn btn-outline-primary me-2 mb-3 mb-sm-0" href="/assets/events/unforum-2026.ics"
+<div class="row g-3 mb-4">
+  <div class="col-12 col-md-6">
+    <div class="card h-100 border-primary bg-light">
+      <div class="card-header bg-primary text-white">
+        <h5 class="card-title mb-0"><i class="bi bi-camera-video"></i> Online Session</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text small mb-3">
+          Join the online room to participate, share notes, and collaborate with everyone—whether you're attending in person or remotely.
+        </p>
+        <a href="https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join" 
+           class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-arrow-up-right"></i> Join Online Room
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6">
+    <div class="card h-100 border-success bg-light">
+      <div class="card-header bg-success text-white">
+        <h5 class="card-title mb-0"><i class="bi bi-geo-alt"></i> In-Person Locations</h5>
+      </div>
+      <div class="card-body">
+        <p class="fw-semibold mb-2">Melbourne</p>
+        <ul class="small list-unstyled ps-3 mb-2">
+          <li><strong>Day 2 (Sun):</strong> <a href="https://maps.app.goo.gl/dadYzXWrrFBAUWvHA" target="_blank" rel="noopener">Inspire9</a></li>
+          <li><strong>Day 3 (Mon):</strong> <a href="https://maps.app.goo.gl/ZzBUh5LfmLaFwJQf6" target="_blank" rel="noopener">Start Space</a></li>
+        </ul>
+        <p class="fw-semibold mb-2">Canberra</p>
+        <ul class="small list-unstyled ps-3">
+          <li><strong>Day 1 (Sat):</strong> <a href="https://maps.app.goo.gl/YLBSBpQinZS3vLnf7" target="_blank" rel="noopener">Dissent</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-3 mb-4">
+    <a class="btn btn-outline-primary me-2 mb-2 mb-sm-0" href="/assets/events/unforum-2026.ics"
         download>
-        Add to Calendar (download .ics)
+        <i class="bi bi-download"></i> Add to Calendar (download .ics)
     </a>
-    <a class="btn btn-outline-primary mb-3 mb-sm-0"
+    <a class="btn btn-outline-primary mb-2 mb-sm-0"
          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un+Forum+2026&dates=20260320T220000Z/20260323T090000Z&details=Discussions+and+hands-on+workshops+on+AI+and+open+technology+for+the+everyday+people.%0A%0ASaturday+21st+March+to+Monday+23rd+March+2026%0A%0ADay+1+(Sat)%3A+Catch+ups+in+local+areas%0ADay+2+(Sun)%3A+Workshops+%E2%80%94+online+and+in+person+at+Inspire9%0ADay+3+(Mon)%3A+Unconference%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Fposts%2Funforum%2F&location=Online+and+in+person+in+different+locations&ctz=Australia/Sydney" target="_blank" rel="noopener">
-        Add to Google Calendar
+        <i class="bi bi-calendar2"></i> Add to Google Calendar
     </a>
 </div>
 
-<div class="banner-container my-2 rounded">
+<div class="banner-container my-4 rounded">
     <img src="/assets/images/banners/Unforum-2026-Banner-Page-V101.svg" 
          alt="Un Forum 2026 Banner" 
          class="img-fluid">
