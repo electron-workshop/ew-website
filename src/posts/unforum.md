@@ -1,0 +1,165 @@
+---
+layout: base.njk
+title: Un-forum
+description: Discussions and hands-on workshops on AI and open technology for the everyday people
+preview_image: "https://electronworkshop.org/assets/images/banners/Unforum-2026-Banner-Preview-V100.webp"
+
+form:
+  heading: "Subscribe to Un-forum Updates"
+  description: "Want to follow along and get updates about the Un-forum? Enter your email below, and you will be notified of developments"
+  formName: "canberraUnforumForm"
+  formId: "canberraUnforumForm"
+  emailId: "canberraUnforumEmail"
+  buttonText: "Subscribe"
+---
+
+<style>
+.dashed-border {
+  border-bottom-style: dashed !important;
+  
+}
+.banner-container {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-container img {
+    height: 200px;
+    width: auto;
+    max-width: none;
+}
+</style>
+
+<h1 class="text-primary">{{title}}</h1>
+
+<p class="mb-1">
+  <a href="/posts/canberra-unforum/" class="text-primary">
+    <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
+    Previous Un-forum: 2025-December
+  </a>
+</p>
+<p class="mb-1">
+  <i class="bi bi-calendar3" aria-hidden="true"></i> Saturday to Monday, 21st March to 23rd March 2026
+</p>
+<p class="mb-3">
+  <i class="bi bi-broadcast-pin" aria-hidden="true"></i> Online and in person in different locations
+</p>
+
+<div class="mt-3 mb-3">
+    <a class="btn btn-outline-primary me-2 mb-3 mb-sm-0" href="/assets/events/unforum-2026.ics"
+        download>
+        Add to Calendar (download .ics)
+    </a>
+    <a class="btn btn-outline-primary mb-3 mb-sm-0"
+         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un+Forum+2026&dates=20260320T220000Z/20260323T090000Z&details=Discussions+and+hands-on+workshops+on+AI+and+open+technology+for+the+everyday+people.%0A%0ASaturday+21st+March+to+Monday+23rd+March+2026%0A%0ADay+1+(Sat)%3A+Catch+ups+in+local+areas%0ADay+2+(Sun)%3A+Workshops+%E2%80%94+online+and+in+person+at+Inspire9%0ADay+3+(Mon)%3A+Unconference%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Fposts%2Funforum%2F&location=Online+and+in+person+in+different+locations&ctz=Australia/Sydney" target="_blank" rel="noopener">
+        Add to Google Calendar
+    </a>
+</div>
+
+<div class="banner-container my-2 rounded">
+    <img src="/assets/images/banners/Unforum-2026-Banner-Page-V101.svg" 
+         alt="Un Forum 2026 Banner" 
+         class="img-fluid">
+</div>
+
+<p class="mb-3">Session titles and descriptions are TBC and will be updated as we go.</p>
+
+<div class="row g-4 mb-4 mt-1">
+  
+  <div class="col-12 col-lg-4">
+    <div class="card h-100 bg-light overflow-hidden">
+      <div class="card-header bg-primary text-white">
+        <h5 class="card-title mb-1">Day 1 &mdash; Catch ups</h5>
+      </div>
+      <div class="card-body p-0">
+        <div class="p-3 border-bottom dashed-border bg-light">
+          <div class="fw-bold text-primary mb-0">
+            <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Saturday 21st March 2026</h5>
+          </div>
+        </div>
+        <div class="p-3 border-bottom dashed-border bg-light">
+          <p class="mb-0">Schedule catch ups in your local areas with friends or community. Discuss the themes of the Un Forum and plan attending an in person or online workshop or meeting together.</p>
+        </div>
+        <div class="p-3 bg-light">
+          <h6 class="fw-bold mb-2">Suggested venues</h6>
+          <p class="fw-semibold mb-1"><i class="bi bi-geo-alt" aria-hidden="true"></i> Canberra</p>
+          <ul class="mb-3 ps-3">
+            <li><a href="https://maps.app.goo.gl/YLBSBpQinZS3vLnf7" target="_blank" rel="noopener">Dissent</a></li>
+          </ul>
+          <p class="fw-semibold mb-1"><i class="bi bi-geo-alt" aria-hidden="true"></i> Melbourne</p>
+          <ul class="mb-0 ps-3">
+            <li><a href="https://maps.app.goo.gl/Lcqwi45b693LQxtG9" target="_blank" rel="noopener">Vinnys</a></li>
+            <li><a href="https://maps.app.goo.gl/mP9mTJk5ZnTHs3d59" target="_blank" rel="noopener">Ample</a></li>
+            <li><a href="https://maps.app.goo.gl/ojHMgjsSswHxf5mZ8" target="_blank" rel="noopener">Levanter</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-4">
+    <div class="card h-100 bg-light overflow-hidden">
+      <div class="card-header bg-primary text-white">
+        <h5 class="card-title mb-1">Day 2 &mdash; Workshops</h5>
+      </div>
+      <div class="p-3 border-bottom dashed-border bg-light">
+        <div class="fw-bold text-primary mb-0">
+          <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Sunday 22nd March 2026</h5>
+        </div>
+      </div>
+      <div class="card-body p-0 bg-light">
+        <div class="p-3 border-bottom dashed-border bg-light">
+          <p class="mb-0">Workshops and activities with the purpose of learning together or creating together. In person and online.</p>
+        </div>
+        <div class="p-3 border-bottom dashed-border bg-light">
+          <h6 class="fw-bold mb-2">Sessions</h6>
+          <ul class="mb-0 ps-3">
+            <li class="mb-1">7:00am &ndash; 8:30am <span class="badge bg-secondary">Online</span></li>
+            <li class="mb-1">10:00am &ndash; 11:30am <span class="badge bg-info text-dark">Hybrid</span> Inspire9</li>
+            <li class="mb-1">1:00pm &ndash; 2:30pm <span class="badge bg-success">In person</span> Inspire9</li>
+            <li class="mb-1">6:00pm &ndash; 7:30pm <span class="badge bg-info text-dark">Hybrid</span> Inspire9</li>
+          </ul>
+        </div>
+        <div class="p-3 bg-light">
+          <p class="mb-0 text-muted fst-italic">Details to come.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-12 col-lg-4">
+    <div class="card h-100 bg-light overflow-hidden">
+      <div class="card-header bg-primary text-white">
+        <h5 class="card-title mb-1">Day 3 &mdash; Unconference</h5>
+      </div>
+      <div class="p-3 border-bottom dashed-border bg-light">
+        <div class="fw-bold text-primary mb-0">
+          <h5 class="card-title mb-0"><i class="bi bi-calendar3" aria-hidden="true"></i> Monday 23rd March 2026</h5>
+        </div>
+      </div>
+      <div class="card-body p-0">
+        <div class="p-3 border-bottom dashed-border bg-light">
+          <p class="mb-0">An Unconference around the following themes and their intersection.</p>
+        </div>
+        <div class="p-3 border-bottom dashed-border bg-light">
+          <h6 class="fw-bold mb-2">Themes</h6>
+          <ul class="mb-0 ps-3">
+            <li class="mb-1">Digital Freedoms and Technology Commons</li>
+            <li class="mb-1">Social Enterprise and Mutual Aid</li>
+            <li class="mb-1">Collective Well-being</li>
+          </ul>
+        </div>
+        <div class="p-3 bg-light">
+          <p class="mb-0 text-muted fst-italic">Details soon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="mb-4">Topics will be curated as we go, keep posted.</p>
+
+{% include "partials/updatesForm.njk" %}
