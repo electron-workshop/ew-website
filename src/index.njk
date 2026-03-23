@@ -4,76 +4,104 @@ title: Welcome to Electron Workshop - Home
 permalink: "/"
 ---
 
-{# Top section cards with cardType: "top" #}
-<section class="mb-4">
-  <div class="row">
-    {% for card in homeCards %}
-      {% if card.cardType == "top" and card.display != false %}
-        <div class="col-12 col-md-6">
-          <p class="fs-5 fw-semibold mb-3">{{ card.title }}</p>
-          <p class="lead text-secondary">{{ card.text }}</p>
+{# ── HERO ─────────────────────────────────────────────────────────────────── #}
+<section class="py-4 pb-5 mb-5 border-bottom border-2">
+  <div class="row align-items-center g-4">
+    <div class="col-12 col-md-7 col-lg-8">
+      <p class="text-primary fw-bold text-uppercase mb-2" style="letter-spacing:.08em; font-size:.8rem;">Electron Workshop</p>
+      <h1 class="display-6 fw-bold mb-3 lh-sm">{{ site.description }}</h1>
+      <p class="lead text-secondary mb-4">Open-source tools — email campaigns, file collaboration, analytics, and hosting — for community groups that deserve privacy and independence.</p>
+      <div class="d-flex gap-3 flex-wrap">
+        <a href="/offering/" class="btn btn-primary btn-lg">Explore Offerings</a>
+        <a href="/engage/" class="btn btn-outline-primary btn-lg">Get Involved</a>
+      </div>
+    </div>
+    <div class="col-12 col-md-5 col-lg-4 d-flex justify-content-center">
+      <img src="/assets/images/logo.jpg" alt="Electron Workshop" class="img-fluid rounded" style="max-height: 150px; object-fit: contain;">
+    </div>
+  </div>
+</section>
 
+{# ── FEATURED EVENT ───────────────────────────────────────────────────────── #}
+{% set hasFeatured = false %}
+{% for card in homeCards %}
+  {% if card.featured == true and card.display != false %}{% set hasFeatured = true %}{% endif %}
+{% endfor %}
+
+{% if hasFeatured %}
+<section class="mb-5">
+  <p class="text-primary fw-bold text-uppercase mb-3" style="letter-spacing:.08em; font-size:.8rem;"><i class="bi bi-star-fill me-1"></i>Featured Event</p>
+  {% for card in homeCards %}
+    {% if card.featured == true and card.display != false %}
+      <div class="card border-primary border-2 shadow overflow-hidden">
+        {% if card.banner %}
+          <div class="overflow-hidden" style="max-height: 260px;">
+            <img src="{{ card.banner }}" alt="{{ card.title }}" class="w-100" style="object-fit: cover; width: 100%;">
+          </div>
+        {% endif %}
+        <div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-3 p-4">
+          <div>
+            <h2 class="h3 fw-bold mb-1">{{ card.title }}</h2>
+            <p class="text-secondary mb-2 text-preline">{{ card.text }}</p>
+            {% if card.tags %}
+              <div>
+                {% for tag in card.tags %}
+                  <span class="badge bg-primary bg-opacity-25 text-primary me-1">#{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
           {% if card.href and card.button %}
-            <a href="{{ card.href }}" class="btn btn-primary">{{ card.button }}</a>
+            <a href="{{ card.href }}" class="btn btn-primary btn-lg flex-shrink-0">{{ card.button }}</a>
           {% endif %}
         </div>
-      {% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</section>
+{% endif %}
+
+{# ── OFFERINGS STRIP ──────────────────────────────────────────────────────── #}
+<section class="mb-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="fs-3 fw-semibold mb-0 border-bottom border-2 border-primary d-inline-block">What We Offer</h2>
+    <a href="/offering/" class="btn btn-sm btn-outline-primary">View all <i class="bi bi-arrow-right"></i></a>
+  </div>
+  <div class="row g-3">
+    {% for item in offerings %}
+      <div class="col-6 col-md-4">
+        <a href="/offering/{{ item.slug }}/" class="text-decoration-none">
+          <div class="d-flex align-items-center gap-3 p-3 rounded border border-primary border-opacity-25 h-100 border-primary-hover bg-white">
+            {% if item.logo %}
+              <img src="{{ item.logo }}" alt="{{ item.title }} logo" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+            {% else %}
+              <i class="bi bi-tools fs-4 text-primary flex-shrink-0"></i>
+            {% endif %}
+            <p class="fw-semibold text-dark mb-0 small lh-sm">{{ item.title }}</p>
+          </div>
+        </a>
+      </div>
     {% endfor %}
   </div>
 </section>
 
-{# Quick Access section #}
+{# ── QUICK ACCESS ─────────────────────────────────────────────────────────── #}
 <section class="mt-4 mb-5">
-  <h1 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Quick Access</h1>
+  <h2 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Quick Access</h2>
 
   <div class="row g-4">
     {% for card in homeCards %}
-      {% if card.featured == true and card.display != false %}
-        <div class="col-12 col-md-6">
-          <div class="card h-100 border-primary border-opacity-50 shadow-sm border-primary-hover overflow-hidden">
-            {% if card.banner %}
-              <div class="overflow-hidden" style="max-height: 180px;">
-                <img src="{{ card.banner }}" alt="{{ card.title }}" class="w-100" style="object-fit: cover; width: 100%;">
-              </div>
-            {% endif %}
-            <div class="card-body">
-              <div class="d-flex align-items-center justify-content-between mb-2">
-                <p class="h4 mb-0">{{ card.title }}</p>
-                <div class="d-flex align-items-center gap-2">
-                  {% if card.icon %}<i class="bi {{ card.icon }} fs-3"></i>{% endif %}
-                  {% if card.logo %}<img src="{{ card.logo }}" alt="{{ card.title }} logo" class="img-fluid" style="max-height: 40px; width: auto; object-fit: contain;">{% endif %}
-                </div>
-              </div>
-              {% if card.tags %}
-                <div class="mb-3">
-                  {% for tag in card.tags %}
-                    <span class="badge bg-primary bg-opacity-25 text-primary me-1 mb-1">#{{ tag }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
-              <p class="mb-4 text-preline">{{ card.text }}</p>
-              {% if card.href and card.button %}
-                <a href="{{ card.href }}" class="btn btn-primary stretched-link">{{ card.button }}</a>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-      {% endif %}
-    {% endfor %}
-    {% for card in homeCards %}
       {% if card.cardType == "quickAccess" and card.display != false %}
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-4">
           <div class="card h-100 border-primary border-opacity-25 shadow-sm border-primary-hover">
             <div class="card-body">
-              <div class="d-flex align-items-center justify-content-between mb-2">
-                <p class="h4 mb-0">{{ card.title }}</p>
-                <div class="d-flex align-items-center gap-2">
-                  {% if card.icon %}
-                    <i class="bi {{ card.icon }} fs-3"></i>
-                  {% endif %}
-                </div>
+              <div class="d-flex align-items-center gap-3 mb-2">
+                {% if card.icon %}
+                  <i class="bi {{ card.icon }} fs-2 text-primary flex-shrink-0"></i>
+                {% endif %}
+                <p class="h5 mb-0">{{ card.title }}</p>
               </div>
-              <p class="mb-4 text-preline">{{ card.text }}</p>
+              <p class="mb-4 text-preline text-secondary">{{ card.text }}</p>
               {% if card.href and card.button %}
                 <a href="{{ card.href }}" class="btn btn-primary stretched-link">{{ card.button }}</a>
               {% endif %}
@@ -85,9 +113,9 @@ permalink: "/"
   </div>
 </section>
 
-{# Chainference section #}
+{# ── CHAINFERENCES ────────────────────────────────────────────────────────── #}
 <section class="mt-4 mb-5">
-  <h1 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Chainferences</h1>
+  <h2 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Chainferences</h2>
 
   <div class="row g-4">
     {% for card in homeCards %}
@@ -120,10 +148,9 @@ permalink: "/"
   </div>
 </section>
 
-{# Regular cards section for whatsOnEcosystem or other types #}
+{# ── ECOSYSTEM EVENTS ─────────────────────────────────────────────────────── #}
 <section class="mt-4 mb-5">
-  
-  <h1 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Ecosystem Events</h1>
+  <h2 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Ecosystem Events</h2>
 
   <div class="row g-4">
     {% for card in homeCards %}
@@ -143,12 +170,9 @@ permalink: "/"
                 <p class="h4 mb-0">{{ card.title }}</p>
 
                 <div class="d-flex align-items-center gap-2">
-                  {# Icon #}
                   {% if card.icon %}
                     <i class="bi {{ card.icon }} fs-3"></i>
                   {% endif %}
-
-                  {# Logo (square/wide, max-height controlled) #}
                   {% if card.logo %}
                     <img src="{{ card.logo }}" alt="{{ card.title }} logo"
                         class="img-fluid"
@@ -157,7 +181,6 @@ permalink: "/"
                 </div>
               </div>
 
-              {# Tags #}
               {% if card.tags %}
                 <div class="mb-3">
                   {% for tag in card.tags %}
@@ -176,29 +199,22 @@ permalink: "/"
       {% endif %}
     {% endfor %}
   </div>
-
-  {# <div class="text-center mt-4">
-      <a href="https://electronworkshop.com.au/goto/calendar/?r=ew" class="btn btn-outline-primary">
-          Checkout our calendar to see all ecosystem events <i class="bi bi-arrow-right me-2"></i>
-      </a>
-  </div> #}
 </section>
 
-{# Partners/Logos section #}
+{# ── PARTNERS / LOGOS ─────────────────────────────────────────────────────── #}
 <section class="mt-5 mb-4">
-  
   <div class="row g-3 align-items-center justify-content-center">
     {% for groupName, logos in homeLogos %}
-      
+
     <div class="mt-5 text-center">
       <h4 class="border-bottom border-2 border-primary d-inline-block">{{ groupName }}</h4>
     </div>
-    
+
       {% for logo in logos %}
         <div class="col-12 col-sm-auto">
           <div class="d-flex align-items-center justify-content-center p-3" style="min-height: 80px;">
-            <img src="{{ logo.src }}" 
-                alt="{{ logo.alt }}" 
+            <img src="{{ logo.src }}"
+                alt="{{ logo.alt }}"
                 class="img-fluid opacity-75 hover-opacity-100 transition-opacity"
                 style="max-height: 60px; max-width: 100%; object-fit: contain; width:100%">
           </div>
