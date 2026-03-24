@@ -109,20 +109,61 @@ permalink: "/"
   </div>
 </section>
 
-{# ── AWARENESS CALENDAR ────────────────────────────────────────────────────── #}
+{# ── AWARENESS FESTIVALS ───────────────────────────────────────────────────── #}
 {% if awarenessdays.length %}
-<section class="mb-5 mt-4">
-  <p class="text-primary fw-bold text-uppercase mb-2" style="letter-spacing:.08em; font-size:.8rem;"><i class="bi bi-globe me-1"></i>Global Awareness Festivals</p>
-  <p class="text-secondary small mb-3">These festivals set our themes and focus across the year — days the open tech movement celebrates worldwide.</p>
-  <div class="d-flex flex-wrap gap-2">
+<section class="mb-5 mt-2">
+  <div class="d-flex justify-content-between align-items-center mb-1">
+    <h2 class="fs-3 fw-semibold mb-0 border-bottom border-2 border-primary d-inline-block">Global Awareness Festivals</h2>
+  </div>
+  <p class="text-secondary mb-4">These festivals set the themes and focus for our year — days the open tech and commons movements celebrate worldwide.</p>
+  <div class="row g-4">
     {% for day in awarenessdays %}
-      <a href="{{ day.href }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-        <div class="d-flex align-items-center gap-2 px-3 py-2 rounded border border-primary border-opacity-25 bg-body-tertiary">
-          <span class="badge bg-primary bg-opacity-25 text-primary" style="font-size:.7rem;">{{ day.month }}</span>
-          <i class="bi {{ day.icon }} text-primary small"></i>
-          <span class="small fw-semibold text-dark">{{ day.title }}</span>
+      <div class="col-12 col-md-4">
+        <div class="card h-100 border-primary border-opacity-25 shadow-sm overflow-hidden">
+
+          {# Banner or fallback #}
+          {% if day.banner %}
+            <div style="height: 120px; overflow: hidden;">
+              <img src="{{ day.banner }}" alt="{{ day.title }}"
+                   class="w-100 h-100 object-fit-cover">
+            </div>
+          {% else %}
+            <div class="d-flex align-items-center justify-content-center bg-primary bg-opacity-10"
+                 style="height: 120px;">
+              <i class="bi {{ day.icon }} text-primary" style="font-size: 3.5rem; opacity: 0.3;"></i>
+            </div>
+          {% endif %}
+
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge bg-primary bg-opacity-25 text-primary small">{{ day.month }}</span>
+              {% if day.dateRule | awarenessIsUpcoming(60) %}
+                <span class="badge bg-primary small">Coming soon</span>
+              {% endif %}
+            </div>
+            <h3 class="h6 fw-bold mb-2">{{ day.title }}</h3>
+            <p class="text-secondary small flex-grow-1 mb-2">{{ day.description | truncate(120) }}</p>
+            {% if day.dateRule %}
+              <p class="small mb-3">
+                <i class="bi bi-calendar3 me-1 text-primary"></i>
+                <span class="fw-semibold">{{ day.dateRule | awarenessDate }}</span>
+              </p>
+            {% else %}
+              <p class="text-secondary small mb-3">{{ day.dateRuleText }}</p>
+            {% endif %}
+            <div class="d-flex gap-2 flex-wrap mt-auto">
+              <a href="/awareness/{{ day.slug }}/" class="btn btn-primary btn-sm">Events &amp; Info</a>
+              {% if day.externalHref %}
+                <a href="{{ day.externalHref }}" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+
         </div>
-      </a>
+      </div>
     {% endfor %}
   </div>
 </section>
