@@ -9,11 +9,11 @@ permalink: "/"
   <div class="row align-items-center g-4">
     <div class="col-12 col-md-7 col-lg-8">
       <p class="text-primary fw-bold text-uppercase mb-2" style="letter-spacing:.08em; font-size:.8rem;">Electron Workshop</p>
-      <h1 class="display-6 fw-bold mb-3 lh-sm">{{ site.description }}</h1>
-      <p class="lead text-secondary mb-4">Open-source tools — email campaigns, file collaboration, analytics, and hosting — for community groups that deserve privacy and independence.</p>
+      <h1 class="display-6 fw-bold mb-3 lh-sm">Building the open tech commons, together</h1>
+      <p class="lead text-secondary mb-4">A meeting ground for community organisers, ecosystem thinkers, and open innovators. Through global awareness festivals, community gatherings, open sprints, and network collaboration — we help each other thrive.</p>
       <div class="d-flex gap-3 flex-wrap">
-        <a href="/offering/" class="btn btn-primary btn-lg">Explore Offerings</a>
-        <a href="/engage/" class="btn btn-outline-primary btn-lg">Get Involved</a>
+        <a href="/calendar/" class="btn btn-primary btn-lg">See What's On</a>
+        <a href="/connect/" class="btn btn-outline-primary btn-lg">Get Involved</a>
       </div>
     </div>
     <div class="col-12 col-md-5 col-lg-4 d-flex justify-content-center">
@@ -30,7 +30,7 @@ permalink: "/"
 
 {% if hasFeatured %}
 <section class="mb-5">
-  <p class="text-primary fw-bold text-uppercase mb-3" style="letter-spacing:.08em; font-size:.8rem;"><i class="bi bi-star-fill me-1"></i>Featured Event</p>
+  <p class="text-primary fw-bold text-uppercase mb-3" style="letter-spacing:.08em; font-size:.8rem;"><i class="bi bi-star-fill me-1"></i>Featured</p>
   {% for card in homeCards %}
     {% if card.featured == true and card.display != false %}
       <div class="card border-primary border-2 shadow overflow-hidden">
@@ -61,6 +61,136 @@ permalink: "/"
 </section>
 {% endif %}
 
+{# ── HOW WE WORK (The Fabric) ──────────────────────────────────────────────── #}
+<section class="mb-4">
+  <h2 class="fs-3 fw-semibold mb-1 border-bottom border-2 border-primary d-inline-block">How We Work</h2>
+  <p class="text-secondary mb-4">Three interlocking threads that together form a fabric for the open tech commons.</p>
+  <div class="row g-4">
+
+    <div class="col-12 col-md-4">
+      <div class="card h-100 border-primary border-opacity-25 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <i class="bi bi-calendar-event fs-2 text-primary flex-shrink-0"></i>
+            <h3 class="h5 mb-0">Festivals &amp; Gatherings</h3>
+          </div>
+          <p class="text-secondary flex-grow-1">Global awareness festivals — Software Freedom Day, Hardware Freedom Day, Document Freedom Day, Linux Birthday — set the themes and focus for the year. Around them, and around major local conferences, we run <strong>chainferences</strong> and our flagship <strong>Un-forum</strong>: a home for conversations that don't have one elsewhere.</p>
+          <a href="/calendar/" class="btn btn-outline-primary btn-sm mt-2 align-self-start">View Calendar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <div class="card h-100 border-primary border-opacity-25 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <i class="bi bi-lightning-charge fs-2 text-primary flex-shrink-0"></i>
+            <h3 class="h5 mb-0">Electron Sprints</h3>
+          </div>
+          <p class="text-secondary flex-grow-1">Fortnightly open work sessions using self-hosted tools. Community and open projects make real progress while people learn skills, make friends, and contribute to a cause. Work and community woven together — no burnout, just doing.</p>
+          <a href="/initiatives/sprints/" class="btn btn-outline-primary btn-sm mt-2 align-self-start">Join a Sprint</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <div class="card h-100 border-primary border-opacity-25 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <i class="bi bi-diagram-3 fs-2 text-primary flex-shrink-0"></i>
+            <h3 class="h5 mb-0">Electron Network</h3>
+          </div>
+          <p class="text-secondary flex-grow-1">Community groups joining forces. Shared capacity, collective intelligence, and coordinated action — activating audiences for causes in the open innovation commons. Stronger together than apart.</p>
+          <a href="/about/" class="btn btn-outline-primary btn-sm mt-2 align-self-start">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{# ── AWARENESS CALENDAR ────────────────────────────────────────────────────── #}
+{% if awarenessdays.length %}
+<section class="mb-5 mt-4">
+  <p class="text-primary fw-bold text-uppercase mb-2" style="letter-spacing:.08em; font-size:.8rem;"><i class="bi bi-globe me-1"></i>Global Awareness Festivals</p>
+  <p class="text-secondary small mb-3">These festivals set our themes and focus across the year — days the open tech movement celebrates worldwide.</p>
+  <div class="d-flex flex-wrap gap-2">
+    {% for day in awarenessdays %}
+      <a href="{{ day.href }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+        <div class="d-flex align-items-center gap-2 px-3 py-2 rounded border border-primary border-opacity-25 bg-body-tertiary">
+          <span class="badge bg-primary bg-opacity-25 text-primary" style="font-size:.7rem;">{{ day.month }}</span>
+          <i class="bi {{ day.icon }} text-primary small"></i>
+          <span class="small fw-semibold text-dark">{{ day.title }}</span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{# ── WHAT'S ON ─────────────────────────────────────────────────────────────── #}
+{% set hasEvents = false %}
+{% for card in homeCards %}
+  {% if (card.cardType == "chainference" or card.cardType == "whatsOnEcosystem") and card.display != false and card.featured != true %}
+    {% set hasEvents = true %}
+  {% endif %}
+{% endfor %}
+
+{% if hasEvents %}
+<section class="mt-4 mb-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="fs-3 fw-semibold mb-0 border-bottom border-2 border-primary d-inline-block">What's On</h2>
+    <a href="/calendar/" class="btn btn-sm btn-outline-primary">Full calendar <i class="bi bi-arrow-right"></i></a>
+  </div>
+  <div class="row g-4">
+    {% for card in homeCards %}
+      {% if (card.cardType == "chainference" or card.cardType == "whatsOnEcosystem") and card.display != false and card.featured != true %}
+        <div class="col-12 col-md-4">
+          <div class="card h-100 border-primary border-opacity-25 shadow-sm border-primary-hover">
+
+            {% if card.banner %}
+              <div class="card-img-top overflow-hidden" style="aspect-ratio: 3/1;">
+                <img src="{{ card.banner }}" alt="{{ card.title }}" class="w-100 h-100 object-fit-cover">
+              </div>
+            {% endif %}
+
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between gap-2 mb-2">
+                <div class="flex-grow-1">
+                  {% if card.cardType == "chainference" %}
+                    <span class="badge bg-primary bg-opacity-25 text-primary mb-1">Chainference</span>
+                  {% endif %}
+                  <p class="h5 mb-0">{{ card.title }}</p>
+                </div>
+                {% if card.logo %}
+                  <img src="{{ card.logo }}" alt="{{ card.title }} logo"
+                      class="img-fluid flex-shrink-0"
+                      style="max-height: 36px; width: auto; object-fit: contain;">
+                {% endif %}
+              </div>
+
+              {% if card.tags %}
+                <div class="mb-2">
+                  {% for tag in card.tags %}
+                    <span class="badge bg-primary bg-opacity-10 text-primary me-1 mb-1">#{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              <p class="text-secondary text-preline flex-grow-1">{{ card.text }}</p>
+
+              {% if card.href and card.button %}
+                <a href="{{ card.href }}" class="btn btn-primary stretched-link mt-auto align-self-start">{{ card.button }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
 {# ── OFFERINGS STRIP ──────────────────────────────────────────────────────── #}
 <section class="mb-5">
   <div class="d-flex justify-content-between align-items-center mb-3">
@@ -81,122 +211,6 @@ permalink: "/"
           </div>
         </a>
       </div>
-    {% endfor %}
-  </div>
-</section>
-
-{# ── QUICK ACCESS ─────────────────────────────────────────────────────────── #}
-<section class="mt-4 mb-5">
-  <h2 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Quick Access</h2>
-
-  <div class="row g-4">
-    {% for card in homeCards %}
-      {% if card.cardType == "quickAccess" and card.display != false %}
-        <div class="col-12 col-md-4">
-          <div class="card h-100 border-primary border-opacity-25 shadow-sm border-primary-hover">
-            <div class="card-body">
-              <div class="d-flex align-items-center gap-3 mb-2">
-                {% if card.icon %}
-                  <i class="bi {{ card.icon }} fs-2 text-primary flex-shrink-0"></i>
-                {% endif %}
-                <p class="h5 mb-0">{{ card.title }}</p>
-              </div>
-              <p class="mb-4 text-preline text-secondary">{{ card.text }}</p>
-              {% if card.href and card.button %}
-                <a href="{{ card.href }}" class="btn btn-primary stretched-link">{{ card.button }}</a>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-</section>
-
-{# ── CHAINFERENCES ────────────────────────────────────────────────────────── #}
-<section class="mt-4 mb-5">
-  <h2 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Chainferences</h2>
-
-  <div class="row g-4">
-    {% for card in homeCards %}
-      {% if card.cardType == "chainference" and card.display != false %}
-        <div class="col-12 col-md-6">
-          <div class="card border-primary border-opacity-25 shadow-sm border-primary-hover">
-            <div class="card-body">
-              <div class="d-flex align-items-center justify-content-between mb-2">
-                <p class="h4 mb-0">{{ card.title }}</p>
-                <div class="d-flex align-items-center gap-2">
-                  {% if card.icon %}
-                    <i class="bi {{ card.icon }} fs-3"></i>
-                  {% endif %}
-                  {% if card.logo %}
-                    <img src="{{ card.logo }}" alt="{{ card.title }} logo"
-                        class="img-fluid"
-                        style="max-height: 40px; width: auto; object-fit: contain;">
-                  {% endif %}
-                </div>
-              </div>
-              <p class="mb-4 text-preline">{{ card.text }}</p>
-              {% if card.href and card.button %}
-                <a href="{{ card.href }}" class="btn btn-primary stretched-link">{{ card.button }}</a>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-</section>
-
-{# ── ECOSYSTEM EVENTS ─────────────────────────────────────────────────────── #}
-<section class="mt-4 mb-5">
-  <h2 class="fs-3 fw-semibold mb-3 border-bottom border-2 border-primary d-inline-block">Ecosystem Events</h2>
-
-  <div class="row g-4">
-    {% for card in homeCards %}
-      {% if card.cardType == "whatsOnEcosystem" and card.display != false and card.featured != true %}
-        <div class="col-12 col-md-4">
-          <div class="card border-primary border-opacity-25 shadow-sm border-primary-hover">
-
-            {# Banner (full width, cropped 3:1) #}
-            {% if card.banner %}
-              <div class="card-img-top overflow-hidden" style="aspect-ratio: 3/1; object-fit: cover;">
-                <img src="{{ card.banner }}" alt="{{ card.title }}" class="w-100 h-100 object-fit-cover">
-              </div>
-            {% endif %}
-
-            <div class="card-body">
-              <div class="d-flex align-items-center justify-content-between mb-2">
-                <p class="h4 mb-0">{{ card.title }}</p>
-
-                <div class="d-flex align-items-center gap-2">
-                  {% if card.icon %}
-                    <i class="bi {{ card.icon }} fs-3"></i>
-                  {% endif %}
-                  {% if card.logo %}
-                    <img src="{{ card.logo }}" alt="{{ card.title }} logo"
-                        class="img-fluid"
-                        style="max-height: 40px; width: auto; object-fit: contain;">
-                  {% endif %}
-                </div>
-              </div>
-
-              {% if card.tags %}
-                <div class="mb-3">
-                  {% for tag in card.tags %}
-                    <span class="badge bg-primary bg-opacity-25 text-primary me-1 mb-1">#{{ tag }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
-
-              <p class="mb-4 text-preline">{{ card.text }}</p>
-              {% if card.href and card.button %}
-                <a href="{{ card.href }}" class="btn btn-primary stretched-link">{{ card.button }}</a>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-      {% endif %}
     {% endfor %}
   </div>
 </section>
@@ -227,38 +241,33 @@ permalink: "/"
 
 
 </div> {# Close the container from base.njk #}
-{# Detect if there are any engage cards #}
+
+{# ── GET INVOLVED ──────────────────────────────────────────────────────────── #}
 {% set hasEngage = false %}
 {% for card in homeCards %}
-  {% if card.cardType == "engage" %}
-    {% set hasEngage = true %}
-  {% endif %}
+  {% if card.cardType == "engage" %}{% set hasEngage = true %}{% endif %}
 {% endfor %}
 
 {% if hasEngage %}
-  <!-- Gear Divider -->
   <div class="gear-transition" aria-hidden="true"></div>
 
-  {# Engage cards with orange background - full width #}
-  <section class="py-5 bg-primary" >
+  <section class="py-5 bg-primary">
     <div class="container mt-5">
-      <h2 class="fs-3 fw-normal mb-4 border-bottom border-2 border-white d-inline-block text-white">Engage with Us</h2>
-
+      <h2 class="fs-3 fw-normal mb-1 border-bottom border-2 border-white d-inline-block text-white">Get Involved</h2>
+      <p class="text-white opacity-75 mb-4">There are different ways to participate — pick the one that fits you.</p>
       <div class="row g-4">
         {% for card in homeCards %}
           {% if card.cardType == "engage" and card.display != false %}
             <div class="col-12 col-md-6">
               <div class="card h-100 bg-white border-0 shadow-sm">
-                <div class="card-body text-primary text-center">
-                  <div class="mb-2 d-flex align-items-center {% if card.icon %}justify-content-between{% else %}justify-content-center{% endif %}">
-                    <p class="h4 mb-0 {% if card.icon %}text-start me-3 flex-grow-1{% else %}text-center{% endif %}">
-                      {{ card.title }}
-                    </p>
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-3 mb-2">
                     {% if card.icon %}
-                      <i class="bi {{ card.icon }} fs-3"></i>
+                      <i class="bi {{ card.icon }} fs-3 text-primary flex-shrink-0"></i>
                     {% endif %}
+                    <p class="h5 mb-0 text-primary">{{ card.title }}</p>
                   </div>
-                  <p class="mb-4 fs-5 text-preline">{{ card.text }}</p>
+                  <p class="mb-4 text-secondary text-preline">{{ card.text }}</p>
                   {% if card.href and card.button %}
                     <a href="{{ card.href }}" class="btn btn-outline-primary stretched-link">{{ card.button }}</a>
                   {% endif %}
@@ -271,6 +280,5 @@ permalink: "/"
     </div>
   </section>
 {% endif %}
-
 
 <div class="container"> {# Reopen the container for any content that follows #}

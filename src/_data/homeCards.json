@@ -82,6 +82,38 @@
     "past": true
   },
   {
+    "cardType": "engage",
+    "title": "Attend a Gathering",
+    "text": "Join an Un-forum session, a chainference alongside a major conference, or celebrate a global awareness day with the community. All skill levels, all backgrounds welcome.",
+    "href": "/calendar/",
+    "button": "View Calendar",
+    "icon": "bi-calendar-event"
+  },
+  {
+    "cardType": "engage",
+    "title": "Join a Sprint",
+    "text": "Contribute to open community projects in a fortnightly sprint — using self-hosted, open tools. Bring your skills or come to learn. No burnout — just doing, together.",
+    "href": "/initiatives/sprints/",
+    "button": "Join Sprints",
+    "icon": "bi-lightning-charge"
+  },
+  {
+    "cardType": "engage",
+    "title": "Connect Your Organisation",
+    "text": "Bring your community group into the Electron Network. Join forces with like-minded orgs, share capacity, and amplify the causes you're already working on.",
+    "href": "/connect/",
+    "button": "Get in Touch",
+    "icon": "bi-diagram-3"
+  },
+  {
+    "cardType": "engage",
+    "title": "Support as an Enabler",
+    "text": "As a policy maker, sponsor, or ecosystem partner — your support helps the open tech commons grow. Reach out to explore how we can work together.",
+    "href": "/connect/",
+    "button": "Reach Out",
+    "icon": "bi-stars"
+  },
+  {
     "cardType": "quickAccess",
     "title": "Calendar",
     "text": "Stay updated with all upcoming events in the Electron Workshop ecosystem. Check our community calendar for workshops, meetups, and conferences.",
@@ -92,7 +124,7 @@
   {
     "cardType": "quickAccess",
     "title": "Sprints",
-    "text": "Join our coding sprints to contribute to open-source projects. Collaborate with developers and learn new skills in a supportive environment.",
+    "text": "Fortnightly open work sessions for community and open projects. Learn skills, make friends, and contribute to something meaningful — together.",
     "href": "/initiatives/sprints/",
     "button": "Join Sprints",
     "icon": "bi-code-slash"
@@ -100,7 +132,7 @@
   {
     "cardType": "quickAccess",
     "title": "Chainference",
-    "text": "Explore blockchain and decentralized technologies at our annual Chainference. Discover innovations and connect with experts in the field.",
+    "text": "Local follow-on events and watch parties chained around major conferences. Keep the learning and community engagement going after the main event.",
     "href": "/chainference/",
     "button": "Learn More",
     "icon": "bi-link-45deg"

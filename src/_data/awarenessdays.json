@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Document Freedom Day",
+    "month": "March",
+    "icon": "bi-file-text",
+    "href": "https://documentfreedom.org"
+  },
+  {
+    "title": "Hardware Freedom Day",
+    "month": "April",
+    "icon": "bi-cpu",
+    "href": "https://www.hardwarefreedomday.org"
+  },
+  {
+    "title": "International Timebanking Day",
+    "month": "May",
+    "icon": "bi-clock-history",
+    "href": "https://timebanks.org"
+  },
+  {
+    "title": "Linux Birthday",
+    "month": "August",
+    "icon": "bi-terminal",
+    "href": "https://en.wikipedia.org/wiki/History_of_Linux"
+  },
+  {
+    "title": "Software Freedom Day",
+    "month": "September",
+    "icon": "bi-code-square",
+    "href": "https://www.softwarefreedomday.org"
+  }
+]
