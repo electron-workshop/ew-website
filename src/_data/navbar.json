@@ -8,16 +8,6 @@
     "href": "/offering/"
   },
   {
-    "title": "Engage",
-    "href": "/engage/",
-    "footer": true
-  },
-  {
-    "title": "Contact",
-    "href": "/contact/",
-    "footer": true
-  },
-  {
     "title": "Calendar",
     "href": "/calendar/",
     "footer": true
@@ -28,8 +18,8 @@
     "footer": true
   },
   {
-    "title": "Initiatives",
-    "href": "/initiatives/",
+    "title": "Connect",
+    "href": "/connect/",
     "footer": true
   }
 ]

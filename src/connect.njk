@@ -1,0 +1,172 @@
+---
+title: "Connect"
+description: "Get in touch or get involved with Electron Workshop"
+layout: base.njk
+permalink: "/connect/"
+---
+
+<section class="bg-body mt-5">
+  <div class="container">
+
+    <!-- Contact -->
+    <div class="text-center text-md-start bg-body-tertiary px-5 py-4 rounded-3 shadow-sm border border-primary border-opacity-25 mb-4">
+      <h2 class="mb-3 text-primary">Contact Us</h2>
+      <p class="text-secondary small mb-3">Send us a message or inquiry</p>
+
+      <form class="needs-validation col-md-6" name="ContactForm" id="ContactForm" method="post" netlify novalidate>
+        <div class="mb-3">
+          <label for="contactName" class="form-label">Name</label>
+          <input type="text" name="Name" class="form-control" id="contactName" required>
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="contactEmail" class="form-label">Email Address</label>
+          <input type="email" name="email" class="form-control" id="contactEmail" required>
+          <div class="invalid-feedback">Please enter a valid email.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="contactMessage" class="form-label">Message or Comment</label>
+          <textarea class="form-control" id="contactMessage" name="message" rows="4" required></textarea>
+          <div class="invalid-feedback">Please enter your message.</div>
+        </div>
+
+        <button type="submit" class="btn btn-outline-primary">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Get Involved -->
+    <div class="text-center text-md-start bg-body-tertiary px-5 py-4 rounded-3 shadow-sm border border-primary border-opacity-25">
+      <h2 class="mb-3 text-primary">Get Involved</h2>
+      <p class="text-secondary small mb-2">Stay tuned with selected topics or express your interest in volunteering or advising us along the way</p>
+
+      <form
+        class="needs-validation col-md-6"
+        id="VolunteerForm"
+        name="VolunteerForm"
+        method="POST"
+        action="/.netlify/functions/createJiraIssue"
+        novalidate
+        autocomplete="off">
+        <!-- HONEYPOT (bots fill this; humans don't see it) -->
+        <div class="visually-hidden" aria-hidden="true">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+        </div>
+        <!-- TIME TRAP (set on load; reject ultra-fast submits server-side) -->
+        <input type="hidden" id="form_ts" name="form_ts" value="">
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" name="name">
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address *</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+          <div class="invalid-feedback">Please enter a valid email.</div>
+        </div>
+        <div class="mb-3">
+          <label for="skills" class="form-label">Interests &amp; Skills</label>
+          <textarea class="form-control" id="skills" name="skills"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="referral" class="form-label">How did you hear about us?</label>
+          <input class="form-control" id="referral" name="referral">
+        </div>
+        <fieldset class="mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="sa-insight" name="supportAreas" value="Provide lived experience insight">
+            <label class="form-check-label" for="sa-insight">Provide lived experience insight</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="sa-organisation" name="supportAreas" value="Provide capacity as an organisation">
+            <label class="form-check-label" for="sa-organisation">Provide capacity as an organisation</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="sa-individual" name="supportAreas" value="Provide capacity as an individual">
+            <label class="form-check-label" for="sa-individual">Provide capacity as an individual</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="sa-receive" name="supportAreas" value="Receive support for a community group or non for profit">
+            <label class="form-check-label" for="sa-receive">Receive support for a community group or non for profit</label>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- Bootstrap validation -->
+<script>
+(() => {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const ts = document.getElementById('form_ts');
+    if (ts) ts.value = Date.now().toString();
+  });
+
+  const forms = document.querySelectorAll('.needs-validation');
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', (event) => {
+      if (form.id === 'VolunteerForm') {
+        const company = form.querySelector('#company');
+        if (company && company.value.trim() !== '') {
+          event.preventDefault();
+          event.stopPropagation();
+          return;
+        }
+      }
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
+</script>
+
+<!-- Prefill from URL params -->
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const setField = (selector, keys) => {
+    const el = document.querySelector(selector);
+    if (!el) return;
+    for (const k of keys) {
+      const v = params.get(k);
+      if (v !== null && v !== undefined && v !== '') { el.value = v; return; }
+    }
+  };
+
+  setField('#contactName',    ['name', 'fullName', 'n', 'Name']);
+  setField('#contactEmail',   ['email', 'e']);
+  setField('#contactMessage', ['message', 'msg', 'comment', 'notes']);
+
+  setField('#name',     ['name', 'fullName']);
+  setField('#email',    ['email', 'e']);
+  setField('#skills',   ['skills', 'interests', 'interest']);
+  setField('#referral', ['referral', 'source']);
+
+  const rawVals = [];
+  params.getAll('supportAreas').forEach(v => rawVals.push(v));
+  params.getAll('supportAreas[]').forEach(v => rawVals.push(v));
+  const wanted = rawVals.flatMap(v => String(v).split(',')).map(v => v.trim().toLowerCase()).filter(Boolean);
+  if (wanted.length) {
+    const alias = {
+      'insight': 'Provide lived experience insight',
+      'organisation': 'Provide capacity as an organisation',
+      'individual': 'Provide capacity as an individual',
+      'receive': 'Receive support for a community group or non for profit'
+    };
+    const targets = new Set(wanted.map(w => (alias[w] || w).toLowerCase()));
+    document.querySelectorAll('input[name="supportAreas"][type="checkbox"]').forEach(cb => {
+      if (targets.has((cb.value || '').trim().toLowerCase())) cb.checked = true;
+    });
+  }
+})();
+</script>
