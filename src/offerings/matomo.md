@@ -9,4 +9,4 @@ permalink: "/offering/matomo/"
 
 Track visits, conversions and referrers without third‑party data sharing. Consent‑aware analytics for your site.
 
-<p class="mt-4"><a href="/offering/">← Back to all offerings</a></p>
+<p class="mt-4"><a href="/network/" class="text-decoration-none"><i class="bi bi-arrow-left me-1"></i>Back to Network</a></p>
