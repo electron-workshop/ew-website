@@ -1,0 +1,16 @@
+[
+  {
+    "month": "October",
+    "theme": "Robotics",
+    "icon": "bi-robot",
+    "color": "warning",
+    "description": "Throughout October the community focuses on robotics — open hardware, firmware, community-built robots, and the intersection of open source with physical computing."
+  },
+  {
+    "month": "December",
+    "theme": "DAOs",
+    "icon": "bi-diagram-2",
+    "color": "info",
+    "description": "December is for Decentralised Autonomous Organisations — governance models, tooling, and experiments in collective decision-making for the commons."
+  }
+]

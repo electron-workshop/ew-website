@@ -83,32 +83,40 @@
   },
   {
     "cardType": "engage",
-    "title": "Attend a Gathering",
-    "text": "Join an Un-forum session, a chainference alongside a major conference, or celebrate a global awareness day with the community. All skill levels, all backgrounds welcome.",
-    "href": "/calendar/",
-    "button": "View Calendar",
+    "title": "Shape a Gathering",
+    "text": "Have an idea for a chainference around an upcoming conference? Want to host or co-host an Un-forum session? Or simply volunteer to help an existing gathering happen? Reach out — gatherings are shaped by those who show up to make them.",
+    "href": "/connect/",
+    "button": "Propose or Volunteer",
     "icon": "bi-calendar-event"
   },
   {
     "cardType": "engage",
-    "title": "Join a Sprint",
-    "text": "Contribute to open community projects in a fortnightly sprint — using self-hosted, open tools. Bring your skills or come to learn. No burnout — just doing, together.",
+    "title": "Bring Your Project to a Sprint",
+    "text": "Have an open project — from a hackathon, a community group, or a hobby — that you're ready to work on in the open? Bring it to a sprint, make progress together, and mentor those who join. You don't need a finished idea, just an open one.",
     "href": "/initiatives/sprints/",
-    "button": "Join Sprints",
+    "button": "Bring a Project",
+    "icon": "bi-folder2-open"
+  },
+  {
+    "cardType": "engage",
+    "title": "Contribute Skills to Sprints",
+    "text": "Bring your time and skills to open community projects in a fortnightly sprint. Work alongside project owners, learn from real use cases, contribute meaningfully — no long-term commitment required beyond a session.",
+    "href": "/initiatives/sprints/",
+    "button": "Join a Sprint",
     "icon": "bi-lightning-charge"
   },
   {
     "cardType": "engage",
     "title": "Connect Your Organisation",
-    "text": "Bring your community group into the Electron Network. Join forces with like-minded orgs, share capacity, and amplify the causes you're already working on.",
+    "text": "Bring your community group into the Electron Network. Join forces with like-minded organisations, share capacity, co-activate your audiences, and pick up causes you couldn't carry alone.",
     "href": "/connect/",
     "button": "Get in Touch",
     "icon": "bi-diagram-3"
   },
   {
     "cardType": "engage",
-    "title": "Support as an Enabler",
-    "text": "As a policy maker, sponsor, or ecosystem partner — your support helps the open tech commons grow. Reach out to explore how we can work together.",
+    "title": "Enable the Commons",
+    "text": "As a policy maker, funder, or ecosystem partner — your support helps the open tech commons grow. We work with enablers who want to amplify what communities are already building, not replace it.",
     "href": "/connect/",
     "button": "Reach Out",
     "icon": "bi-stars"

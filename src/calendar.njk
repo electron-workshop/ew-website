@@ -1,0 +1,173 @@
+---
+title: "Calendar — Electron Workshop"
+description: "The open tech commons calendar — awareness festivals, themed months, gatherings, and sprints across the year."
+layout: base.njk
+permalink: "/calendar/"
+---
+
+{# ── INTRO ────────────────────────────────────────────────────────────────── #}
+<div class="mb-5">
+  <p class="text-primary fw-bold text-uppercase mb-2" style="letter-spacing:.08em; font-size:.8rem;">Community Calendar</p>
+  <h1 class="display-6 fw-bold mb-3">The Open Tech Year</h1>
+  <p class="lead text-secondary">Global awareness festivals set our themes. Themed months focus the community's energy. Gatherings, chainferences, Un-forum sessions, and fortnightly sprints fill the calendar. Here's the shape of the year.</p>
+</div>
+
+{# ── SHAPE OF THE YEAR ────────────────────────────────────────────────────── #}
+<section class="mb-5">
+  <h2 class="fs-4 fw-semibold mb-1 border-bottom border-2 border-primary d-inline-block">Shape of the Year</h2>
+  <p class="text-secondary mb-4 mt-2">Each month carries awareness festivals and themed focus areas that guide our gatherings, sprints, and network conversations.</p>
+
+  {% set months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %}
+  {% set monthShort = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] %}
+
+  <div class="row g-3">
+    {% for month in months %}
+      {% set mFestivals = awarenessdays | filterByProp("month", month) %}
+      {% set mThemes = thememonths | filterByProp("month", month) %}
+      {% set hasHighlight = mFestivals.length or mThemes.length %}
+
+      <div class="col-6 col-md-3 col-lg-2">
+        <div class="card h-100 {% if hasHighlight %}border-primary border-opacity-50{% else %}border-0 bg-body-tertiary{% endif %}">
+          <div class="card-body p-3">
+            <p class="fw-bold mb-2 {% if not hasHighlight %}text-secondary{% endif %} small">{{ month }}</p>
+
+            {% for theme in mThemes %}
+              <div class="mb-2">
+                <span class="badge bg-{{ theme.color }} bg-opacity-25 text-{{ theme.color }}-emphasis d-block text-start fw-bold small">
+                  <i class="bi {{ theme.icon }} me-1"></i>{{ theme.theme | upper }}
+                </span>
+              </div>
+            {% endfor %}
+
+            {% for festival in mFestivals %}
+              <a href="/awareness/{{ festival.slug }}/" class="text-decoration-none">
+                <span class="badge bg-primary bg-opacity-15 text-primary d-block text-start mb-1 fw-normal" style="font-size:.65rem; white-space:normal;">
+                  <i class="bi {{ festival.icon }} me-1"></i>{{ festival.title }}
+                </span>
+              </a>
+            {% endfor %}
+
+            {% if not hasHighlight %}
+              <span class="text-secondary" style="font-size:.7rem;">—</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  {# Legend #}
+  <div class="d-flex flex-wrap gap-3 mt-3">
+    <span class="d-flex align-items-center gap-2 small text-secondary">
+      <span class="badge bg-primary bg-opacity-15 text-primary">Awareness Festival</span>
+      Global open tech awareness days
+    </span>
+    <span class="d-flex align-items-center gap-2 small text-secondary">
+      <span class="badge bg-warning bg-opacity-25 text-warning-emphasis">Theme</span>
+      Community focus month
+    </span>
+  </div>
+</section>
+
+{# ── AWARENESS FESTIVALS ───────────────────────────────────────────────────── #}
+<section class="mb-5">
+  <h2 class="fs-4 fw-semibold mb-1 border-bottom border-2 border-primary d-inline-block">Awareness Festivals</h2>
+  <p class="text-secondary mb-4 mt-2">These global days set our themes and focus. Each has its own page listing community events and a way to submit your own.</p>
+  <div class="row g-3">
+    {% for day in awarenessdays %}
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="/awareness/{{ day.slug }}/" class="text-decoration-none">
+          <div class="card h-100 border-primary border-opacity-25 shadow-sm border-primary-hover">
+            <div class="card-body d-flex align-items-start gap-3">
+              <i class="bi {{ day.icon }} fs-3 text-primary flex-shrink-0 mt-1"></i>
+              <div>
+                <p class="fw-semibold mb-1 text-dark">{{ day.title }}</p>
+                <p class="text-secondary small mb-1">
+                  {% if day.dateRule %}
+                    <i class="bi bi-calendar3 me-1"></i>{{ day.dateRule | awarenessDate }}
+                  {% else %}
+                    {{ day.dateRuleText }}
+                  {% endif %}
+                </p>
+                <p class="text-secondary small mb-0" style="font-size:.75rem;">{{ day.dateRuleText }}</p>
+              </div>
+              {% if day.dateRule | awarenessIsUpcoming(60) %}
+                <span class="badge bg-primary ms-auto flex-shrink-0">Soon</span>
+              {% endif %}
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{# ── THEMED MONTHS ─────────────────────────────────────────────────────────── #}
+{% if thememonths.length %}
+<section class="mb-5">
+  <h2 class="fs-4 fw-semibold mb-1 border-bottom border-2 border-primary d-inline-block">Themed Months</h2>
+  <p class="text-secondary mb-4 mt-2">Each themed month focuses the community's energy — sprints, gatherings, and network conversations take their cue from the theme.</p>
+  <div class="row g-4">
+    {% for theme in thememonths %}
+      <div class="col-12 col-md-6">
+        <div class="card h-100 border-{{ theme.color }} border-opacity-50 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <i class="bi {{ theme.icon }} fs-2 text-{{ theme.color }} flex-shrink-0"></i>
+              <div>
+                <p class="text-secondary small mb-0 text-uppercase fw-bold" style="letter-spacing:.06em; font-size:.7rem;">{{ theme.month }}</p>
+                <p class="h5 fw-bold mb-0">{{ theme.month | upper }}'S {{ theme.theme | upper }}</p>
+              </div>
+            </div>
+            <p class="text-secondary mb-0">{{ theme.description }}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{# ── THE CALENDAR ─────────────────────────────────────────────────────────── #}
+<section class="mb-5">
+  <h2 class="fs-4 fw-semibold mb-1 border-bottom border-2 border-primary d-inline-block">Upcoming Events</h2>
+  <p class="text-secondary mb-4 mt-2">Gatherings, chainferences, Un-forum sessions, sprints, and awareness day events — all in one place.</p>
+
+  <div class="border border-primary border-opacity-25 rounded overflow-hidden shadow-sm mb-3">
+    <div class="ratio" style="--bs-aspect-ratio: 75%;">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=9kqed7qc2s5kb19ekiptl8vn08%40group.calendar.google.com&ctz=Australia%2FSydney&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&mode=MONTH"
+        style="border: 0;"
+        frameborder="0"
+        scrolling="no"
+        title="Electron Workshop Community Calendar"
+      ></iframe>
+    </div>
+  </div>
+
+  <div class="d-flex flex-wrap gap-3">
+    <a href="https://calendar.google.com/calendar/u/0?cid=9kqed7qc2s5kb19ekiptl8vn08%40group.calendar.google.com"
+       target="_blank" rel="noopener noreferrer"
+       class="btn btn-outline-primary btn-sm">
+      <i class="bi bi-google me-1"></i>Open in Google Calendar
+    </a>
+    <a href="https://calendar.google.com/calendar/ical/9kqed7qc2s5kb19ekiptl8vn08%40group.calendar.google.com/public/basic.ics"
+       class="btn btn-outline-secondary btn-sm">
+      <i class="bi bi-download me-1"></i>Subscribe (.ics)
+    </a>
+  </div>
+</section>
+
+{# ── ADD AN EVENT ─────────────────────────────────────────────────────────── #}
+<section class="bg-body-tertiary border border-primary border-opacity-25 rounded p-4 mb-4">
+  <div class="d-flex align-items-start gap-3">
+    <i class="bi bi-calendar-plus fs-3 text-primary flex-shrink-0 mt-1"></i>
+    <div>
+      <h2 class="fs-5 fw-semibold mb-1">Add Your Event</h2>
+      <p class="text-secondary small mb-2">Organising a gathering, chainference, or awareness day event? Get it on the calendar and in front of the community.</p>
+      <a href="mailto:team@electronworkshop.com.au?subject=Calendar event submission" class="btn btn-primary btn-sm">
+        Contact us to add an event
+      </a>
+    </div>
+  </div>
+</section>

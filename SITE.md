@@ -15,6 +15,34 @@ Electron Workshop is a Melbourne-based open tech community organisation. The web
 | **Electron Sprints** | Fortnightly open work sessions using self-hosted tools, helping community and open projects get done while people learn skills and build connections. |
 | **Electron Network** | Community groups joining forces — shared capacity, collective intelligence, coordinated action for causes in the open innovation commons. |
 
+### Core Philosophy
+
+**EW is an intermediary and collective enabler — not a direct service provider.**
+
+EW does not aim to directly serve ordinary attendees or end users of services. That happens through proper service providers and community organisers. EW's role is to facilitate organisations, initiatives, active people, and thinkers to join forces and pick up heavier weights together.
+
+This should be reflected in all copy: the audience is community organisers, ecosystem thinkers, ecosystem enablers (policy makers, funders, sponsors), and open innovators. All participation pathways are framed for people who want to *make things happen*, not consume them.
+
+### The Shape of the Year
+
+The calendar is structured around two types of thematic anchors:
+
+1. **Global Awareness Festivals** — internationally recognised days (Software Freedom Day, Hardware Freedom Day, Document Freedom Day, Linux Birthday, etc.) that set focus and themes. Each has its own page at `/awareness/[slug]/` listing community events worldwide.
+
+2. **Themed Months** — community-chosen monthly focus areas (e.g. October = Robotics, December = DAOs) that shape sprints, gatherings, and network conversations for that period. Defined in `_data/thememonths.json`.
+
+The two together form the "shape of the year" — visible on the Calendar page as a 12-month grid.
+
+### Sprint Contribution Pathways
+
+There are two distinct ways to participate in Electron Sprints:
+
+1. **Bring a project** — Bring an open project (hackathon idea, community group tool, hobby project ready to work on in the open). Work on it during sprints, mentor participants, make real progress. The project owner is the anchor.
+
+2. **Contribute skills** — Bring time and skills to help existing open projects move forward. Work alongside project owners, learn from real use cases, no long-term commitment required.
+
+Both pathways are equally valid and should be clearly communicated in all sprint-related copy.
+
 **Target audience:** Community organisers, ecosystem thinkers, ecosystem enablers (policy makers, sponsors), and open innovators. Not passive visitors — active participants.
 
 ---
@@ -44,7 +72,7 @@ Defined in `src/_data/navbar.json`. Items with `"footer": true` also appear in t
 | Label | URL | In Footer |
 |---|---|---|
 | Home | `/` | No |
-| Offering | `/offering/` | No |
+| Network | `/network/` | No |
 | Calendar | `/calendar/` | Yes |
 | About | `/about/` | Yes |
 | Connect | `/connect/` | Yes |
@@ -54,7 +82,8 @@ Defined in `src/_data/navbar.json`. Items with `"footer": true` also appear in t
 
 ```
 /                           Homepage
-/offering/                  Services & tools offered by EW
+/network/                   The Electron Network — identity, offerings, and how to join
+/offering/[slug]/           Individual offering detail pages (keep at /offering/ for now)
 /calendar/                  Events calendar
 /about/                     About EW — history, timeline, initiatives
 /connect/                   Contact form + Get Involved / volunteer form
@@ -100,6 +129,7 @@ Defined in `src/_data/navbar.json`. Items with `"footer": true` also appear in t
 | `homeLogos.json` | Partner/logo groups on the homepage |
 | `awarenessdays.json` | Global awareness festival definitions — drives `/awareness/[slug]/` pages |
 | `awarenessevents.json` | Community-submitted events for each awareness day |
+| `thememonths.json` | Themed monthly focus areas (e.g. October = Robotics, December = DAOs) shown on Calendar page |
 | `sprints.json` | Sprint data for the Sprints initiative page |
 | `sprintHelpers.js` | Computed data helpers for sprints |
 | `initiatives.json` | Legacy — initiatives data (Sprints, Electron Network) |
@@ -169,6 +199,9 @@ Submitted awareness events are reviewed manually (via Netlify dashboard) and the
 ---
 
 ## How to Add Content
+
+### Add or update a themed month
+Edit `src/_data/thememonths.json`. Each entry needs a `month` (full name), `theme`, `icon` (Bootstrap icon class), `color` (Bootstrap colour name e.g. `warning`, `info`, `success`), and `description`. The month tile on the Calendar page and the themed months section are both driven from this file.
 
 ### Add a new awareness day
 1. Add an entry to `src/_data/awarenessdays.json` with a unique `slug`
