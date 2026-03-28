@@ -78,6 +78,11 @@ body {
   isolation: isolate;
 }
 
+.gear-transition.gear-transition--reversed {
+  --gear-url: url('/assets/ew-gear-transition-reversed.svg');
+  background: #D9532B;
+}
+
 
 .gear-transition::before {
   content: "";
