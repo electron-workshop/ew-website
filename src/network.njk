@@ -1,0 +1,46 @@
+---
+layout: base.njk
+title: "The Network — Electron Workshop"
+description: "The Electron Network connects community groups, open innovators, and ecosystem enablers — and provides tools, services, and collaborative support to help them do more together."
+permalink: "/network/"
+---
+
+<div class="mb-5">
+  <p class="text-primary fw-bold text-uppercase mb-2" style="letter-spacing:.08em; font-size:.8rem;">Electron Network</p>
+  <h1 class="display-6 fw-bold mb-3">Stronger Together</h1>
+  <p class="lead text-secondary">The Electron Network connects community groups, open tech organisations, and ecosystem enablers — so they can share capacity, co-activate their audiences, and pick up heavier weights together. Network members also access a set of shared tools and collaborative services, available on a pro-bono or minimal-cost basis for community groups and non-profits.</p>
+</div>
+
+<style>
+  .offering-logo { max-height: 36px; width: auto; }
+</style>
+
+<h2 class="fs-4 fw-semibold mb-1 border-bottom border-2 border-primary d-inline-block">Network Offerings</h2>
+<p class="text-secondary mb-4 mt-2">Tools and services available to network members — open-source, self-hosted, and built for community use.</p>
+
+<div class="row g-4 mb-5">
+  {% for item in offerings %}
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card h-100 border-primary border-opacity-25 shadow-sm border-primary-hover">
+        <div class="card-body d-flex flex-column">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            {% if item.logo %}
+              <img src="{{ item.logo }}" alt="{{ item.title }} logo" class="offering-logo">
+            {% else %}
+              <i class="bi bi-box-seam fs-4 text-primary flex-shrink-0"></i>
+            {% endif %}
+            <h2 class="h5 mb-0">{{ item.title }}</h2>
+          </div>
+          <p class="flex-grow-1 text-secondary">{{ item.text }}</p>
+          <a href="/offering/{{ item.slug }}/" class="stretched-link btn btn-outline-primary btn-sm align-self-start" aria-label="{{ item.title }}">Learn more</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="bg-body-tertiary border border-primary border-opacity-25 rounded p-4 text-center">
+  <p class="lead mb-2 fw-semibold">Want to access network offerings or join the network?</p>
+  <p class="text-secondary mb-3">Reach out — we'll figure out the right fit together.</p>
+  <a href="/connect/" class="btn btn-primary">Get in Touch</a>
+</div>

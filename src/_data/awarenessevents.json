@@ -1,0 +1,13 @@
+[
+  {
+    "daySlug": "software-freedom-day",
+    "name": "Melbourne Software Freedom Day",
+    "url": "",
+    "date": "2025-09-20",
+    "time": "14:00",
+    "location": { "city": "Melbourne", "country": "Australia" },
+    "timezone": "Australia/Melbourne",
+    "language": "English",
+    "description": "A local celebration of Software Freedom Day in Melbourne, featuring talks and demonstrations of free and open source software."
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "hardware-freedom-day",
+    "title": "Hardware Freedom Day",
+    "description": "Hardware Freedom Day celebrates free and open source hardware — designs that anyone can study, modify, distribute, and manufacture. It's a global movement to make the physical world as open as the software world.",
+    "banner": "https://digitalfreedoms.org/images/logo/logo_HFD_Colored.png",
+    "icon": "bi-cpu",
+    "dateRule": { "type": "nth", "week": 3, "weekday": "Saturday", "month": "April" },
+    "dateRuleText": "3rd Saturday of April",
+    "externalHref": "https://www.hardwarefreedomday.org",
+    "month": "April"
+  },
+  {
+    "slug": "software-freedom-day",
+    "title": "Software Freedom Day",
+    "description": "Software Freedom Day is a worldwide celebration of free and open source software. Communities around the world hold local events to educate the public about the benefits of free software and free software's role in a free society.",
+    "banner": "https://digitalfreedoms.org/images/logo/logo_SFD_Colored.png",
+    "icon": "bi-code-square",
+    "dateRule": { "type": "nth", "week": 3, "weekday": "Saturday", "month": "September" },
+    "dateRuleText": "3rd Saturday of September",
+    "externalHref": "https://www.softwarefreedomday.org",
+    "month": "September"
+  },
+  {
+    "slug": "document-freedom-day",
+    "title": "Document Freedom Day",
+    "description": "Document Freedom Day celebrates open document standards — the right of everyone to read, write, and share documents using the tools of their choice, free from lock-in. Led by the Free Software Foundation Europe.",
+    "banner": "https://digitalfreedoms.org/images/logo/logo_DFD_Colored.png",
+    "icon": "bi-file-text",
+    "dateRule": { "type": "nth", "week": 3, "weekday": "Wednesday", "month": "March" },
+    "dateRuleText": "3rd Wednesday of March",
+    "externalHref": "https://documentfreedom.org",
+    "month": "March"
+  }
+]

@@ -34,5 +34,11 @@
     "slug": "community-network",
     "logo": "",
     "text": "Be part of a federation of like‑minded groups—shared knowledge, co‑learning, and optional cross‑promotion opportunities."
+  },
+  {
+    "title": "Grant Assist",
+    "slug": "grant-assist",
+    "logo": "",
+    "text": "We help you and your collaborators get clarity together on a grant opportunity — using AI tools to strategise and draft, finding the right collaborators within and beyond the network, and identifying auspice or match funding options for a stronger application."
   }
 ]

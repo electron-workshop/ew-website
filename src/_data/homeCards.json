@@ -2,12 +2,20 @@
   {
     "cardType": "whatsOnEcosystem",
     "featured": true,
-    "title": "Un-forum 2026",
+    "title": "Un-forum — June 2026",
+    "text": "Social enterprise, local economy, privacy, and local AI — seminars, workshops, and an unconference | Online and in person | 20th–22nd June 2026",
+    "href": "/unforum-june-2026/",
+    "button": "See the program",
+    "tags": ["social-enterprise", "local-economy", "privacy", "local-ai", "free"]
+  },
+  {
+    "cardType": "whatsOnEcosystem",
+    "title": "Un-forum — March 2026",
     "text": "Discussions and hands-on workshops on AI and open technology for the everyday people | Online and in person | 21st to 23rd March 2026",
-    "href": "/un-forum",
-    "banner": "/assets/images/banners/Unforum-2026-Banner-V100.svg",
-    "button": "Attend",
-    "tags": ["tech", "open-source", "free"]
+    "href": "/un-forum/",
+    "button": "Learn more",
+    "tags": ["tech", "open-source", "free"],
+    "past": true
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -82,6 +90,46 @@
     "past": true
   },
   {
+    "cardType": "engage",
+    "title": "Shape a Gathering",
+    "text": "Have an idea for a chainference around an upcoming conference? Want to host or co-host an Un-forum session? Or simply volunteer to help an existing gathering happen? Reach out — gatherings are shaped by those who show up to make them.",
+    "href": "/connect/",
+    "button": "Propose or Volunteer",
+    "icon": "bi-calendar-event"
+  },
+  {
+    "cardType": "engage",
+    "title": "Bring Your Project to a Sprint",
+    "text": "Have an open project — from a hackathon, a community group, or a hobby — that you're ready to work on in the open? Bring it to a sprint, make progress together, and mentor those who join. You don't need a finished idea, just an open one.",
+    "href": "/initiatives/sprints/",
+    "button": "Bring a Project",
+    "icon": "bi-folder2-open"
+  },
+  {
+    "cardType": "engage",
+    "title": "Contribute Skills to Sprints",
+    "text": "Bring your time and skills to open community projects in a fortnightly sprint. Work alongside project owners, learn from real use cases, contribute meaningfully — no long-term commitment required beyond a session.",
+    "href": "/initiatives/sprints/",
+    "button": "Join a Sprint",
+    "icon": "bi-lightning-charge"
+  },
+  {
+    "cardType": "engage",
+    "title": "Connect Your Organisation",
+    "text": "Bring your community group into the Electron Network. Join forces with like-minded organisations, share capacity, co-activate your audiences, and pick up causes you couldn't carry alone.",
+    "href": "/connect/",
+    "button": "Get in Touch",
+    "icon": "bi-diagram-3"
+  },
+  {
+    "cardType": "engage",
+    "title": "Enable the Commons",
+    "text": "As a policy maker, funder, or ecosystem partner — your support helps the open tech commons grow. We work with enablers who want to amplify what communities are already building, not replace it.",
+    "href": "/connect/",
+    "button": "Reach Out",
+    "icon": "bi-stars"
+  },
+  {
     "cardType": "quickAccess",
     "title": "Calendar",
     "text": "Stay updated with all upcoming events in the Electron Workshop ecosystem. Check our community calendar for workshops, meetups, and conferences.",
@@ -92,7 +140,7 @@
   {
     "cardType": "quickAccess",
     "title": "Sprints",
-    "text": "Join our coding sprints to contribute to open-source projects. Collaborate with developers and learn new skills in a supportive environment.",
+    "text": "Fortnightly open work sessions for community and open projects. Learn skills, make friends, and contribute to something meaningful — together.",
     "href": "/initiatives/sprints/",
     "button": "Join Sprints",
     "icon": "bi-code-slash"
@@ -100,7 +148,7 @@
   {
     "cardType": "quickAccess",
     "title": "Chainference",
-    "text": "Explore blockchain and decentralized technologies at our annual Chainference. Discover innovations and connect with experts in the field.",
+    "text": "Local follow-on events and watch parties chained around major conferences. Keep the learning and community engagement going after the main event.",
     "href": "/chainference/",
     "button": "Learn More",
     "icon": "bi-link-45deg"
