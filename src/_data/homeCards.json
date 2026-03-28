@@ -2,12 +2,20 @@
   {
     "cardType": "whatsOnEcosystem",
     "featured": true,
-    "title": "Un-forum 2026",
+    "title": "Un-forum — June 2026",
+    "text": "Social enterprise, local economy, privacy, and local AI — seminars, workshops, and an unconference | Online and in person | 20th–22nd June 2026",
+    "href": "/unforum-june-2026/",
+    "button": "See the program",
+    "tags": ["social-enterprise", "local-economy", "privacy", "local-ai", "free"]
+  },
+  {
+    "cardType": "whatsOnEcosystem",
+    "title": "Un-forum — March 2026",
     "text": "Discussions and hands-on workshops on AI and open technology for the everyday people | Online and in person | 21st to 23rd March 2026",
-    "href": "/un-forum",
-    "banner": "/assets/images/banners/Unforum-2026-Banner-V100.svg",
-    "button": "Attend",
-    "tags": ["tech", "open-source", "free"]
+    "href": "/un-forum/",
+    "button": "Learn more",
+    "tags": ["tech", "open-source", "free"],
+    "past": true
   },
   {
     "cardType": "whatsOnEcosystem",

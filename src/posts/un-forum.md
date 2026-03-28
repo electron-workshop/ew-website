@@ -36,6 +36,12 @@ form:
 <h1 class="text-primary">{{title}}</h1>
 
 <p class="mb-1">
+  <a href="/unforum-june-2026/" class="text-primary">
+    <i class="bi bi-arrow-right-circle" aria-hidden="true"></i>
+    Next Un-forum: 2026-June
+  </a>
+</p>
+<p class="mb-1">
   <a href="/posts/canberra-unforum/" class="text-primary">
     <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
     Previous Un-forum: 2025-December
