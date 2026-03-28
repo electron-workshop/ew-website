@@ -1,20 +1,9 @@
 [
   {
-    "slug": "document-freedom-day",
-    "title": "Document Freedom Day",
-    "description": "Document Freedom Day celebrates open document standards — the right of everyone to read, write, and share documents using the tools of their choice, free from lock-in. Led by the Free Software Foundation Europe.",
-    "banner": "/assets/images/awareness/document-freedom-day.jpg",
-    "icon": "bi-file-text",
-    "dateRule": { "type": "nth", "week": 3, "weekday": "Wednesday", "month": "March" },
-    "dateRuleText": "3rd Wednesday of March",
-    "externalHref": "https://documentfreedom.org",
-    "month": "March"
-  },
-  {
     "slug": "hardware-freedom-day",
     "title": "Hardware Freedom Day",
     "description": "Hardware Freedom Day celebrates free and open source hardware — designs that anyone can study, modify, distribute, and manufacture. It's a global movement to make the physical world as open as the software world.",
-    "banner": "/assets/images/awareness/hardware-freedom-day.jpg",
+    "banner": "https://digitalfreedoms.org/images/logo/logo_HFD_Colored.png",
     "icon": "bi-cpu",
     "dateRule": { "type": "nth", "week": 3, "weekday": "Saturday", "month": "April" },
     "dateRuleText": "3rd Saturday of April",
@@ -22,36 +11,25 @@
     "month": "April"
   },
   {
-    "slug": "international-timebanking-day",
-    "title": "International Timebanking Day",
-    "description": "International Timebanking Day celebrates timebanking — a means of exchange where time is the currency. Everyone's hour is equal. Communities use timebanking to build reciprocity, mutual aid, and alternative economies grounded in human connection.",
-    "banner": "/assets/images/awareness/international-timebanking-day.jpg",
-    "icon": "bi-clock-history",
-    "dateRule": null,
-    "dateRuleText": "Date TBC — check timebanks.org",
-    "externalHref": "https://timebanks.org",
-    "month": "May"
-  },
-  {
-    "slug": "linux-birthday",
-    "title": "Linux Birthday",
-    "description": "On 25 August 1991, Linus Torvalds announced a 'free operating system (just a hobby, won't be big and professional like gnu)'. That hobby now powers the world. Linux Birthday celebrates over three decades of open source collaboration and the commons it created.",
-    "banner": "/assets/images/awareness/linux-birthday.jpg",
-    "icon": "bi-terminal",
-    "dateRule": { "type": "fixed", "month": "August", "day": 25 },
-    "dateRuleText": "August 25 — the anniversary of Linus's announcement",
-    "externalHref": "https://en.wikipedia.org/wiki/History_of_Linux",
-    "month": "August"
-  },
-  {
     "slug": "software-freedom-day",
     "title": "Software Freedom Day",
     "description": "Software Freedom Day is a worldwide celebration of free and open source software. Communities around the world hold local events to educate the public about the benefits of free software and free software's role in a free society.",
-    "banner": "/assets/images/awareness/software-freedom-day.jpg",
+    "banner": "https://digitalfreedoms.org/images/logo/logo_SFD_Colored.png",
     "icon": "bi-code-square",
     "dateRule": { "type": "nth", "week": 3, "weekday": "Saturday", "month": "September" },
     "dateRuleText": "3rd Saturday of September",
     "externalHref": "https://www.softwarefreedomday.org",
     "month": "September"
+  },
+  {
+    "slug": "document-freedom-day",
+    "title": "Document Freedom Day",
+    "description": "Document Freedom Day celebrates open document standards — the right of everyone to read, write, and share documents using the tools of their choice, free from lock-in. Led by the Free Software Foundation Europe.",
+    "banner": "https://digitalfreedoms.org/images/logo/logo_DFD_Colored.png",
+    "icon": "bi-file-text",
+    "dateRule": { "type": "nth", "week": 3, "weekday": "Wednesday", "month": "March" },
+    "dateRuleText": "3rd Wednesday of March",
+    "externalHref": "https://documentfreedom.org",
+    "month": "March"
   }
 ]
