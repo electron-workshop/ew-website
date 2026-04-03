@@ -87,7 +87,8 @@
         <span class="visually-hidden">
           {{ title | default(site.title) }} {{ description |
           default(site.description) }} {% if not description %} — {{ content |
-          striptags | replace("\n", " ") | truncate(240, true, "") }} {% endif %}
+          striptags | replace("\n", " ") | truncate(240, true, "") }} {% endif %} {% if tags %}
+          {{tags | join(' ')}} {% endif %}
         </span>
       </div>
 
