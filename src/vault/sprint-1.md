@@ -3,7 +3,6 @@ layout: base.njk
 title: Sprint 1
 description: Sprint One
 permalink: "/initiatives/sprints/sprint-1/"
-tags: ['coworking']
 ---
 
 # Sprint One
