@@ -8,6 +8,7 @@
     "dateRule": { "type": "nth", "week": 3, "weekday": "Saturday", "month": "April" },
     "dateRuleText": "3rd Saturday of April",
     "externalHref": "https://www.hardwarefreedomday.org",
+    "pdfHref": "https://cloud.electronworkshop.com.au/s/MoaHk4mkN2ojDYS",
     "month": "April"
   },
   {
