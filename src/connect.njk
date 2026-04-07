@@ -46,16 +46,15 @@ permalink: "/connect/"
         id="VolunteerForm"
         name="VolunteerForm"
         method="POST"
-        action="/.netlify/functions/createJiraIssue"
+        netlify
+        netlify-honeypot="bot-field"
         novalidate
         autocomplete="off">
-        <!-- HONEYPOT (bots fill this; humans don't see it) -->
+        <!-- HONEYPOT (Netlify + client-side – bots fill this; humans don't see it) -->
         <div class="visually-hidden" aria-hidden="true">
-          <label for="company">Company</label>
-          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+          <label for="bot-field">Don't fill this out</label>
+          <input type="text" id="bot-field" name="bot-field" tabindex="-1" autocomplete="off">
         </div>
-        <!-- TIME TRAP (set on load; reject ultra-fast submits server-side) -->
-        <input type="hidden" id="form_ts" name="form_ts" value="">
         <div class="mb-3">
           <label for="name" class="form-label">Full Name</label>
           <input type="text" class="form-control" id="name" name="name">
@@ -104,17 +103,14 @@ permalink: "/connect/"
 (() => {
   'use strict';
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const ts = document.getElementById('form_ts');
-    if (ts) ts.value = Date.now().toString();
-  });
+  document.addEventListener('DOMContentLoaded', () => {});
 
   const forms = document.querySelectorAll('.needs-validation');
   Array.from(forms).forEach(form => {
     form.addEventListener('submit', (event) => {
       if (form.id === 'VolunteerForm') {
-        const company = form.querySelector('#company');
-        if (company && company.value.trim() !== '') {
+        const botField = form.querySelector('#bot-field');
+        if (botField && botField.value.trim() !== '') {
           event.preventDefault();
           event.stopPropagation();
           return;
