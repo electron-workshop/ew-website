@@ -8,6 +8,9 @@
     "dateRule": { "type": "nth", "week": 3, "weekday": "Saturday", "month": "April" },
     "dateRuleText": "3rd Saturday of April",
     "externalHref": "https://www.hardwarefreedomday.org",
+    "pdfHref": "https://cloud.electronworkshop.com.au/s/MoaHk4mkN2ojDYS",
+    "pdfTitle": "Hardware Freedom Day Pamphlet",
+    "pdfDescription": "A pamphlet about Hardware Freedom Day with information about its annual traditions, event date and how to join the movement.",
     "month": "April"
   },
   {
