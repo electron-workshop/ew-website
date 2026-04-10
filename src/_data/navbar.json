@@ -5,7 +5,13 @@
   },
   {
     "title": "Network",
-    "href": "/network/"
+    "href": "/network/",
+    "footer": true
+  },
+  {
+    "title": "Sprints",
+    "href": "/initiatives/sprints/",
+    "footer": true
   },
   {
     "title": "Calendar",
