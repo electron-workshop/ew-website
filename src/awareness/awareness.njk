@@ -67,19 +67,6 @@ eleventyComputed:
   </div>
 {% endif %}
 
-{# ── EVENT LINK ─────────────────────────────────────────────────────── #}
-{% if day.externalHrefEvent %}
-  <div class="mb-4">
-  {%if day.externalHrefEventDescription %}<p class = "text-secondary mb-2">{{ day.externalHrefEventDescription }}</p>{% endif %}
-    <a href ="{{day.externalHrefEvent}}" target="__blank" rel="noopener noreferrer" 
-    class="btn-btn-outline-secondary btn-sm mb-3">
-      <i class = "bi bi-box-arrow-up-right me-1"></i> {{day.title}} Event 
-      </a>
-  </div>
-{% endif %}
-
-
-
 
 {# ── COMMUNITY EVENTS ─────────────────────────────────────────────────────── #}
 <section class="mb-5">

@@ -9,5 +9,17 @@
     "timezone": "Australia/Melbourne",
     "language": "English",
     "description": "A local celebration of Software Freedom Day in Melbourne, featuring talks and demonstrations of free and open source software."
+  },
+
+  {
+    "daySlug": "hardware-freedom-day",
+    "name": "Melbourne Hardware Freedom Day",
+    "url": "https://luma.com/e108e3pb",
+    "date": "2025-09-20",
+    "time": "14:00",
+    "location": { "city": "Melbourne", "country": "Australia" },
+    "timezone": "Australia/Melbourne",
+    "language": "English",
+    "description": "A local celebration of Hardware Freedom Day in Melbourne, featuring talks and demonstrations of free and open source hardware."
   }
 ]
