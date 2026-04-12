@@ -192,6 +192,12 @@ eleventyComputed:
   </form>
 </section>
 
+{# ── UPDATES FORM ────────────────────────────────────────────────────────── #}
+{% if day.form %}
+  {% set form = day.form %}
+  {% include "partials/updatesForm.njk" %}
+{% endif %}
+
 <script>
 (() => {
   'use strict';
