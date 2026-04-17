@@ -11,7 +11,15 @@
     "pdfHref": "https://cloud.electronworkshop.com.au/s/MoaHk4mkN2ojDYS",
     "pdfTitle": "Hardware Freedom Day Pamphlet",
     "pdfDescription": "A pamphlet about Hardware Freedom Day with information about its annual traditions, event date and how to join the movement.",
-    "month": "April"
+    "month": "April",
+    "form": {
+      "heading": "Subscribe to Hardware Freedom Day Updates",
+      "description": "Want to stay informed about Hardware Freedom Day events and activities? Enter your email below and we'll keep you updated.",
+      "formName": "hardwareFreedomDayForm",
+      "formId": "hardwareFreedomDayForm",
+      "emailId": "hardwareFreedomDayEmail",
+      "buttonText": "Subscribe"
+    }
   },
   {
     "slug": "software-freedom-day",

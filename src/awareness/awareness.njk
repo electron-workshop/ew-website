@@ -59,11 +59,11 @@ eleventyComputed:
 {# ── PDF LINK ─────────────────────────────────────────────────────── #}
 {% if day.pdfHref %}
   <div class="mb-4">
-    {% if day.pdfDescription %}<p class = "text-secondary mb-2">{{ day.pdfDescription }}</p>{% endif %}
-    <a href ="{{day.pdfHref}}" target="__blank" rel="noopener noreferrer" 
+    {% if day.pdfDescription %}<p class="text-secondary mb-2">{{ day.pdfDescription }}</p>{% endif %}
+    <a href="{{ day.pdfHref }}" target="__blank" rel="noopener noreferrer"
     class="btn-btn-outline-secondary btn-sm mb-3">
-      <i class = "bi bi-file-earmark-pdf me-1"></i> {{day.pdfTitle}} 
-      </a>
+      <i class="bi bi-file-earmark-pdf me-1"></i> {{ day.pdfTitle }}
+    </a>
   </div>
 {% endif %}
 
@@ -123,74 +123,96 @@ eleventyComputed:
 
 {# ── SUBMIT AN EVENT ──────────────────────────────────────────────────────── #}
 <section class="bg-body-tertiary border border-primary border-opacity-25 rounded p-4 mb-5">
-  <h2 class="fs-5 fw-semibold mb-1">Add an Event</h2>
-  <p class="text-secondary small mb-4">
-    Know of an event celebrating {{ day.title }}? Submit it here — after a quick review it'll appear on this page.
-    Include location and timezone so we can map events globally.
-  </p>
+  <h2 class="fs-5 fw-semibold mb-1">
+    <button class="btn btn-link text-decoration-none text-reset p-0 fs-5 fw-semibold d-flex align-items-center gap-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#add-event-form"
+            aria-expanded="false"
+            aria-controls="add-event-form">
+      Add an Event
+      <i class="bi bi-chevron-down small"></i>
+    </button>
+  </h2>
 
-  <form name="awareness-event-submission" method="POST" netlify novalidate class="needs-validation">
-    <input type="hidden" name="daySlug" value="{{ day.slug }}">
-    <input type="hidden" name="dayTitle" value="{{ day.title }}">
-    <div class="visually-hidden" aria-hidden="true">
-      <input type="text" name="company" tabindex="-1" autocomplete="off">
-    </div>
+  <div class="collapse" id="add-event-form">
+    <p class="text-secondary small mb-4 mt-2">
+      Know of an event celebrating {{ day.title }}? Submit it here — after a quick review it'll appear on this page.
+      Include location and timezone so we can map events globally.
+    </p>
 
-    <div class="row g-3">
-      <div class="col-12 col-md-6">
-        <label class="form-label" for="event-name">Event name *</label>
-        <input type="text" class="form-control" id="event-name" name="name" required>
-        <div class="invalid-feedback">Please enter the event name.</div>
+    <form name="awareness-event-submission" method="POST" netlify novalidate class="needs-validation">
+      <input type="hidden" name="daySlug" value="{{ day.slug }}">
+      <input type="hidden" name="dayTitle" value="{{ day.title }}">
+      <div class="visually-hidden" aria-hidden="true">
+        <input type="text" name="company" tabindex="-1" autocomplete="off">
       </div>
-      <div class="col-12 col-md-6">
-        <label class="form-label" for="event-url">Event URL</label>
-        <input type="url" class="form-control" id="event-url" name="url" placeholder="https://...">
+
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="event-name">Event name *</label>
+          <input type="text" class="form-control" id="event-name" name="name" required>
+          <div class="invalid-feedback">Please enter the event name.</div>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="event-url">Event URL</label>
+          <input type="url" class="form-control" id="event-url" name="url" placeholder="https://...">
+        </div>
+        <div class="col-6 col-md-3">
+          <label class="form-label" for="event-date">Date *</label>
+          <input type="date" class="form-control" id="event-date" name="date" required>
+          <div class="invalid-feedback">Please enter the date.</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <label class="form-label" for="event-time">Start time</label>
+          <input type="time" class="form-control" id="event-time" name="time">
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="event-timezone">Timezone *</label>
+          <input type="text" class="form-control" id="event-timezone" name="timezone"
+                 placeholder="e.g. Australia/Melbourne, UTC+10, EST" required>
+          <div class="invalid-feedback">Please enter the timezone.</div>
+        </div>
+        <div class="col-12 col-md-4">
+          <label class="form-label" for="event-city">City *</label>
+          <input type="text" class="form-control" id="event-city" name="city" required>
+          <div class="invalid-feedback">Please enter the city.</div>
+        </div>
+        <div class="col-12 col-md-4">
+          <label class="form-label" for="event-country">Country *</label>
+          <input type="text" class="form-control" id="event-country" name="country"
+                 value="Australia" required>
+          <div class="invalid-feedback">Please enter the country.</div>
+        </div>
+        <div class="col-12 col-md-4">
+          <label class="form-label" for="event-language">Language(s) *</label>
+          <input type="text" class="form-control" id="event-language" name="language"
+                 placeholder="e.g. English, Spanish" required>
+          <div class="invalid-feedback">Please enter the language(s).</div>
+        </div>
+        <div class="col-12">
+          <label class="form-label" for="event-description">Brief description</label>
+          <textarea class="form-control" id="event-description" name="description" rows="2"
+                    placeholder="What's happening at the event?"></textarea>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Submit Event</button>
+          <p class="text-secondary small mt-2 mb-0">
+            <i class="bi bi-info-circle me-1"></i>Submitted events are reviewed before appearing on this page.
+          </p>
+        </div>
       </div>
-      <div class="col-6 col-md-3">
-        <label class="form-label" for="event-date">Date *</label>
-        <input type="date" class="form-control" id="event-date" name="date" required>
-        <div class="invalid-feedback">Please enter the date.</div>
-      </div>
-      <div class="col-6 col-md-3">
-        <label class="form-label" for="event-time">Start time</label>
-        <input type="time" class="form-control" id="event-time" name="time">
-      </div>
-      <div class="col-12 col-md-6">
-        <label class="form-label" for="event-timezone">Timezone *</label>
-        <input type="text" class="form-control" id="event-timezone" name="timezone"
-               placeholder="e.g. Australia/Melbourne, UTC+10, EST" required>
-        <div class="invalid-feedback">Please enter the timezone.</div>
-      </div>
-      <div class="col-12 col-md-4">
-        <label class="form-label" for="event-city">City *</label>
-        <input type="text" class="form-control" id="event-city" name="city" required>
-        <div class="invalid-feedback">Please enter the city.</div>
-      </div>
-      <div class="col-12 col-md-4">
-        <label class="form-label" for="event-country">Country *</label>
-        <input type="text" class="form-control" id="event-country" name="country" required>
-        <div class="invalid-feedback">Please enter the country.</div>
-      </div>
-      <div class="col-12 col-md-4">
-        <label class="form-label" for="event-language">Language(s) *</label>
-        <input type="text" class="form-control" id="event-language" name="language"
-               placeholder="e.g. English, Spanish" required>
-        <div class="invalid-feedback">Please enter the language(s).</div>
-      </div>
-      <div class="col-12">
-        <label class="form-label" for="event-description">Brief description</label>
-        <textarea class="form-control" id="event-description" name="description" rows="2"
-                  placeholder="What's happening at the event?"></textarea>
-      </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary">Submit Event</button>
-        <p class="text-secondary small mt-2 mb-0">
-          <i class="bi bi-info-circle me-1"></i>Submitted events are reviewed before appearing on this page.
-        </p>
-      </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </section>
+
+{# ── UPDATES FORM ────────────────────────────────────────────────────────── #}
+{% if day.form %}
+  {% set form = day.form %}
+  <section id="subscribe">
+    {% include "partials/updatesForm.njk" %}
+  </section>
+{% endif %}
 
 <script>
 (() => {
