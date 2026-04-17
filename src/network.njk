@@ -39,8 +39,29 @@ permalink: "/network/"
   {% endfor %}
 </div>
 
+
+<section class="mt-5 mb-4">
+
+<h2 class="fs-4 fw-semibold mb-1 border-bottom border-2 border-primary d-inline-block">In the Network</h2>
+  <div class="row g-3 align-items-center justify-content-start">
+    {% for item in network %}
+
+        <div class="col-12 col-sm-auto">
+          <div class="d-flex align-items-center justify-content-center p-3" style="min-height: 80px;">
+            <img src="{{ item.logo }}"
+                alt="{{ item.alt }}"
+                class="img-fluid"
+                style="max-height: 60px; max-width: 100%; object-fit: contain; width:100%">
+          </div>
+        </div>
+
+    {% endfor %}
+  </div>
+</section>
+
 <div class="bg-body-tertiary border border-primary border-opacity-25 rounded p-4 text-center">
   <p class="lead mb-2 fw-semibold">Want to access network offerings or join the network?</p>
   <p class="text-secondary mb-3">Reach out — we'll figure out the right fit together.</p>
   <a href="/connect/" class="btn btn-primary">Get in Touch</a>
 </div>
+
