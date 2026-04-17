@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Melbourne Tech Guilds",
+    "slug": "MTG",
+    "logo": "/assets/images/network/mtg-logo-transparent.svg",
+    "text": ""
+  },
+  {
+    "title": "Linux Victoria",
+    "slug": "linux-victoria",
+    "logo": "/assets/images/network/LinuxVictoria.svg",
+    "text": "A community for Linux users in Victoria, sharing knowledge and resources."
+  }
+]
