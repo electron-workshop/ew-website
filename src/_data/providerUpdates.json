@@ -1,0 +1,11 @@
+[
+  {
+    "vendor": "Serversaurus",
+    "date": "2026-05-01",
+    "type": "Security",
+    "status": "Resolved",
+    "title": "CVE-2026-41940 — cPanel Security Advisory",
+    "summary": "A cPanel/WHM vulnerability was patched automatically on 30 April 2026 before disclosure. No exposure to EW-hosted services.",
+    "url": "/posts/cve-2026-41940/"
+  }
+]
