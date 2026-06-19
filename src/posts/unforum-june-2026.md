@@ -40,7 +40,7 @@ form:
   <i class="bi bi-calendar3" aria-hidden="true"></i> Saturday to Monday, 20th–22nd June 2026
 </p>
 <p class="mb-3">
-  <i class="bi bi-geo-alt" aria-hidden="true"></i> In person in Melbourne — CBD, Richmond and Docklands
+  <i class="bi bi-broadcast-pin" aria-hidden="true"></i> Online and in person in Melbourne (CBD / Docklands / Richmond)
 </p>
 
 {# ── THEMES ───────────────────────────────────────────────────────────────── #}
@@ -51,6 +51,8 @@ form:
     <span class="theme-pill bg-success bg-opacity-10 text-success"><i class="bi bi-shop me-1"></i>Local Economy</span>
     <span class="theme-pill bg-warning bg-opacity-10 text-warning-emphasis"><i class="bi bi-shield-lock me-1"></i>Privacy</span>
     <span class="theme-pill bg-info bg-opacity-10 text-info-emphasis"><i class="bi bi-cpu me-1"></i>Local AI</span>
+    <span class="theme-pill bg-secondary bg-opacity-10 text-secondary-emphasis"><i class="bi bi-diagram-3 me-1"></i>Cooperatives</span>
+    <span class="theme-pill bg-dark bg-opacity-10 text-dark"><i class="bi bi-globe me-1"></i>Internet Governance</span>
   </div>
   <p class="text-secondary small mt-3 mb-0">These themes run through the whole weekend — the unconference on Sunday is where the conversations happen.</p>
 </div>
