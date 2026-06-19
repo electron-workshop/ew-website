@@ -58,7 +58,7 @@ form:
 {# ── CALENDAR BUTTONS ─────────────────────────────────────────────────────── #}
 <div class="mt-3 mb-4">
   <a class="btn btn-outline-primary me-2 mb-2 mb-sm-0"
-     href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+June+2026&dates=20260620T060000Z/20260622T010000Z&details=Three+days+in+Melbourne.%0A%0ADay+1+(Sat)%3A+Dinner+at+Vinny%27s+Eastery%2C+Docklands+%E2%80%94+drop+in+from+4pm%0ADay+2+(Sun)%3A+EW+Touch+base+%2B+Unconference+at+Inspire9%2C+Richmond%0ADay+3+(Mon)%3A+Breakfast+%2B+volunteer+work+session+in+Richmond%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Melbourne+%E2%80%94+Docklands+and+Richmond&ctz=Australia/Sydney"
+     href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+June+2026&dates=20260620T060000Z/20260622T010000Z&details=Three+days+in+Melbourne.%0A%0ADay+1+(Sat)%3A+Dinner+at+Crossways+Food+for+Life%2C+123+Swanston+St+%E2%80%94+drop+in+from+4pm%0ADay+2+(Sun)%3A+EW+Touch+base+%2B+Unconference+at+Inspire9%2C+Richmond%0ADay+3+(Mon)%3A+Breakfast+at+Vinny%27s+Eatery%2C+860+Collins+St+Docklands+%2B+volunteer+work+session%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Melbourne+%E2%80%94+CBD+and+Docklands&ctz=Australia/Sydney"
      target="_blank" rel="noopener">
     <i class="bi bi-calendar2"></i> Add to Google Calendar
   </a>
@@ -95,12 +95,17 @@ form:
           </div>
           <p class="fw-semibold mb-1 small">
             <i class="bi bi-cup-hot me-1 text-primary"></i>
-            Dinner at Vinny's Eastery
+            Dinner at Crossways Food for Life
           </p>
           <p class="mb-1 small text-secondary">No agenda — just arrive, meet people, and get ready for Sunday's unconference.</p>
-          <p class="mb-0 small">
+          <p class="mb-1 small">
             <i class="bi bi-geo-alt me-1 text-primary"></i>
-            <a href="https://maps.app.goo.gl/Lcqwi45b693LQxtG9" target="_blank" rel="noopener">Vinny's Eastery, Docklands</a>
+            Level 1, 123 Swanston St, Melbourne CBD
+          </p>
+          <p class="mb-0 small">
+            <a href="https://www.google.com/maps/search/Crossways+Food+for+Life,+123+Swanston+St,+Melbourne+VIC+3000" target="_blank" rel="noopener">Google Maps</a>
+            &middot;
+            <a href="https://www.openstreetmap.org/node/2442071635" target="_blank" rel="noopener">OpenStreetMap</a>
           </p>
         </div>
 
@@ -207,9 +212,17 @@ form:
           </div>
           <p class="fw-semibold mb-1 small">
             <i class="bi bi-egg-fried me-1 text-warning-emphasis"></i>
-            Breakfast in Richmond
+            Breakfast at Vinny's Eatery
           </p>
-          <p class="mb-0 small text-secondary">Location TBC — subscribe for updates.</p>
+          <p class="mb-1 small">
+            <i class="bi bi-geo-alt me-1 text-primary"></i>
+            Shop 1/860 Collins St, Docklands
+          </p>
+          <p class="mb-0 small">
+            <a href="https://www.google.com/maps/search/Vinny's+Eatery,+860+Collins+St,+Docklands+VIC+3008" target="_blank" rel="noopener">Google Maps</a>
+            &middot;
+            <a href="https://www.openstreetmap.org/?mlat=-37.820957&mlon=144.94376&zoom=18" target="_blank" rel="noopener">OpenStreetMap</a>
+          </p>
         </div>
 
         <div class="p-3 bg-light">
