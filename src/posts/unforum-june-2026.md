@@ -3,7 +3,7 @@ layout: base.njk
 title: Un-forum — June 2026
 description: Two days exploring social enterprise, local economy, privacy, and local AI — through a dinner and an unconference
 permalink: "/unforum-june-2026/"
-preview_image: "https://electronworkshop.org/assets/images/banners/Unforum-2026-Banner-Preview-V100.webp"
+preview_image: "https://electronworkshop.org/assets/images/banners/Unforum-2026-Banner-Preview-V100-June.png"
 
 form:
   heading: "Subscribe to Un-forum Updates"
