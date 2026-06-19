@@ -59,7 +59,14 @@ form:
 
 {# ── CALENDAR BUTTONS ─────────────────────────────────────────────────────── #}
 <div class="mt-3 mb-4">
-  <p class="small text-secondary mb-2">Add each day to your calendar:</p>
+  <div class="mb-3">
+    <a class="btn btn-primary"
+       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+June+2026&dates=20260620T060000Z/20260622T040000Z&details=Three+days+in+Melbourne.%0A%0ASat+20+Jun%3A+Dinner+at+Crossways+Food+for+Life%2C+Level+1%2F123+Swanston+St%2C+Melbourne+CBD.+Drop+in+from+4pm.%0ASun+21+Jun%3A+EW+Touch+base+10am%E2%80%9311%3A30am+%2B+Unconference+2pm%E2%80%935pm+at+inspire9%2C+Level+1%2F41-43+Stewart+St%2C+Richmond.+Hybrid+sessions+online+via+evenue.electronworkshop.com.au%0AMon+22+Jun%3A+Breakfast+at+Vinny%27s+Eatery%2C+860+Collins+St%2C+Docklands+from+9am+%2B+volunteer+work+session.%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Melbourne+%E2%80%94+CBD%2C+Richmond+and+Docklands&ctz=Australia/Sydney"
+       target="_blank" rel="noopener">
+      <i class="bi bi-calendar2-plus"></i> Add all 3 days to Google Calendar
+    </a>
+  </div>
+  <p class="small text-secondary mb-2">Or add each day separately:</p>
   <div class="d-flex flex-wrap gap-2">
     <a class="btn btn-outline-primary btn-sm"
        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+Saturday+Dinner&dates=20260620T060000Z/20260620T100000Z&details=Dinner+at+Crossways+Food+for+Life.+Drop+in+from+4pm.+No+agenda+%E2%80%94+just+a+warm-up+for+Sunday.%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Level+1%2C+123+Swanston+St%2C+Melbourne+VIC+3000&ctz=Australia/Sydney"
@@ -150,12 +157,16 @@ form:
         {# Venue #}
         <div class="p-3 border-bottom dashed-border bg-light">
           <p class="text-primary fw-bold text-uppercase mb-2" style="letter-spacing:.06em; font-size:.75rem;">Venue</p>
-          <p class="fw-semibold mb-1 small">inspire9</p>
+          <p class="fw-semibold mb-1 small"><i class="bi bi-building me-1"></i>inspire9</p>
           <p class="mb-1 small text-secondary">Level 1, 41–43 Stewart St, Richmond VIC 3121</p>
-          <p class="mb-0 small">
+          <p class="mb-2 small">
             <a href="https://www.google.com/maps/search/inspire9,+41-43+Stewart+St,+Richmond+VIC+3121" target="_blank" rel="noopener">Google Maps</a>
             &middot;
             <a href="https://www.openstreetmap.org/search?query=inspire9+41+Stewart+Street+Richmond+Victoria" target="_blank" rel="noopener">OpenStreetMap</a>
+          </p>
+          <p class="fw-semibold mb-1 small"><i class="bi bi-camera-video me-1"></i>Online — Coworking Room</p>
+          <p class="mb-0 small">
+            <a href="https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join" target="_blank" rel="noopener">Join online</a>
           </p>
         </div>
 
