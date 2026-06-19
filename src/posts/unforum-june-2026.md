@@ -57,32 +57,35 @@ form:
   <p class="text-secondary small mt-3 mb-0">These themes run through the whole weekend — the unconference on Sunday is where the conversations happen.</p>
 </div>
 
-{# ── CALENDAR BUTTONS ─────────────────────────────────────────────────────── #}
+{# ── CALENDAR ──────────────────────────────────────────────────────────────── #}
 <div class="mt-3 mb-4">
-  <div class="mb-3">
-    <a class="btn btn-primary"
-       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+June+2026&dates=20260620T060000Z/20260622T040000Z&details=Three+days+in+Melbourne.%0A%0ASat+20+Jun%3A+Dinner+at+Crossways+Food+for+Life%2C+Level+1%2F123+Swanston+St%2C+Melbourne+CBD.+Drop+in+from+4pm.%0ASun+21+Jun%3A+EW+Touch+base+10am%E2%80%9311%3A30am+%2B+Unconference+2pm%E2%80%935pm+at+inspire9%2C+Level+1%2F41-43+Stewart+St%2C+Richmond.+Hybrid+sessions+online+via+evenue.electronworkshop.com.au%0AMon+22+Jun%3A+Breakfast+at+Vinny%27s+Eatery%2C+860+Collins+St%2C+Docklands+from+9am+%2B+volunteer+work+session.%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Melbourne+%E2%80%94+CBD%2C+Richmond+and+Docklands&ctz=Australia/Sydney"
-       target="_blank" rel="noopener">
-      <i class="bi bi-calendar2-plus"></i> Add all 3 days to Google Calendar
-    </a>
-  </div>
-  <p class="small text-secondary mb-2">Or add each day separately:</p>
-  <div class="d-flex flex-wrap gap-2">
-    <a class="btn btn-outline-primary btn-sm"
-       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+Saturday+Dinner&dates=20260620T060000Z/20260620T100000Z&details=Dinner+at+Crossways+Food+for+Life.+Drop+in+from+4pm.+No+agenda+%E2%80%94+just+a+warm-up+for+Sunday.%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Level+1%2C+123+Swanston+St%2C+Melbourne+VIC+3000&ctz=Australia/Sydney"
-       target="_blank" rel="noopener">
-      <i class="bi bi-calendar2"></i> Saturday &mdash; Dinner
-    </a>
-    <a class="btn btn-outline-primary btn-sm"
-       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+Sunday+Unconference&dates=20260621T000000Z/20260621T070000Z&details=EW+Touch+base+(Special+Edition+of+Project+Check-ins)+10am%E2%80%9311%3A30am%2C+then+lunch%2C+then+Unconference+2pm%E2%80%935pm+(also+online+4%E2%80%934%3A40pm).%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=inspire9%2C+Level+1%2F41-43+Stewart+St%2C+Richmond+VIC+3121&ctz=Australia/Sydney"
-       target="_blank" rel="noopener">
-      <i class="bi bi-calendar2"></i> Sunday &mdash; Unconference
-    </a>
-    <a class="btn btn-outline-primary btn-sm"
-       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+Monday+Breakfast+%26+Work+Session&dates=20260621T230000Z/20260622T040000Z&details=Breakfast+at+Vinny%27s+Eatery+from+9am%2C+then+a+volunteer+work+session+to+consolidate+notes%2C+action+plans%2C+and+follow-ups+from+the+unconference.%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Shop+1%2F860+Collins+St%2C+Docklands+VIC+3008&ctz=Australia/Sydney"
-       target="_blank" rel="noopener">
-      <i class="bi bi-calendar2"></i> Monday &mdash; Breakfast
-    </a>
+  <p class="small text-secondary mb-2"><i class="bi bi-calendar2-plus me-1"></i>Add to your calendar:</p>
+  <div class="d-flex flex-column gap-1">
+
+    <div class="d-flex align-items-center gap-2 flex-wrap">
+      <span class="small" style="min-width:11rem">All 3 days</span>
+      <a href="/assets/events/unforum-june-2026.ics" download class="btn btn-outline-secondary btn-sm py-0"><i class="bi bi-download me-1"></i>.ics</a>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+June+2026&dates=20260620T060000Z/20260622T040000Z&details=Three+days+in+Melbourne.%0A%0ASat+20+Jun%3A+Dinner+at+Crossways+Food+for+Life%2C+Level+1%2F123+Swanston+St%2C+Melbourne+CBD.+Drop+in+from+4pm.%0ASun+21+Jun%3A+EW+Touch+base+10am%E2%80%9311%3A30am+%2B+Unconference+2pm%E2%80%935pm+at+inspire9%2C+Richmond.%0AMon+22+Jun%3A+Breakfast+at+Vinny%27s+Eatery%2C+860+Collins+St%2C+Docklands+from+9am+%2B+volunteer+work+session.%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Melbourne&ctz=Australia/Sydney" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm py-0"><i class="bi bi-calendar2 me-1"></i>Google</a>
+    </div>
+
+    <div class="d-flex align-items-center gap-2 flex-wrap">
+      <span class="small" style="min-width:11rem">Saturday &mdash; Dinner</span>
+      <a href="/assets/events/unforum-june-2026.ics" download class="btn btn-outline-secondary btn-sm py-0"><i class="bi bi-download me-1"></i>.ics</a>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+Saturday+Dinner&dates=20260620T060000Z/20260620T100000Z&details=Dinner+at+Crossways+Food+for+Life.+Drop+in+from+4pm.+No+agenda+%E2%80%94+just+a+warm-up+for+Sunday.%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Level+1%2C+123+Swanston+St%2C+Melbourne+VIC+3000&ctz=Australia/Sydney" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm py-0"><i class="bi bi-calendar2 me-1"></i>Google</a>
+    </div>
+
+    <div class="d-flex align-items-center gap-2 flex-wrap">
+      <span class="small" style="min-width:11rem">Sunday &mdash; Unconference</span>
+      <a href="/assets/events/unforum-june-2026.ics" download class="btn btn-outline-secondary btn-sm py-0"><i class="bi bi-download me-1"></i>.ics</a>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+Sunday+Unconference&dates=20260621T000000Z/20260621T070000Z&details=EW+Touch+base+(Special+Edition+of+Project+Check-ins)+10am%E2%80%9311%3A30am%2C+then+lunch%2C+then+Unconference+2pm%E2%80%935pm+(also+online+4%E2%80%934%3A40pm).%0A%0AOnline%3A+https%3A%2F%2Fevenue.electronworkshop.com.au%2Frooms%2Fvpu-ci4-ut4-14k%2Fjoin%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=inspire9%2C+Level+1%2F41-43+Stewart+St%2C+Richmond+VIC+3121&ctz=Australia/Sydney" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm py-0"><i class="bi bi-calendar2 me-1"></i>Google</a>
+    </div>
+
+    <div class="d-flex align-items-center gap-2 flex-wrap">
+      <span class="small" style="min-width:11rem">Monday &mdash; Breakfast</span>
+      <a href="/assets/events/unforum-june-2026.ics" download class="btn btn-outline-secondary btn-sm py-0"><i class="bi bi-download me-1"></i>.ics</a>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+Monday+Breakfast+%26+Work+Session&dates=20260621T230000Z/20260622T040000Z&details=Breakfast+at+Vinny%27s+Eatery+from+9am%2C+then+a+volunteer+work+session+to+consolidate+notes%2C+action+plans%2C+and+follow-ups+from+the+unconference.%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Shop+1%2F860+Collins+St%2C+Docklands+VIC+3008&ctz=Australia/Sydney" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm py-0"><i class="bi bi-calendar2 me-1"></i>Google</a>
+    </div>
+
   </div>
 </div>
 
