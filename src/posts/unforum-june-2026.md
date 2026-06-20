@@ -187,6 +187,8 @@ form:
   <p class="small text-secondary mb-0">Working session — open to all, explicitly for getting things done. Consolidate notes, draft action plans, follow up on commitments from Sunday.</p>
 </div>
 
-<p class="mb-4 text-secondary">RSVP links will be added shortly. Subscribe below to stay across updates.</p>
+<div class="mb-4">
+  <a href="https://luma.com/54fhvnrt" target="_blank" rel="noopener" class="btn btn-primary">RSVP on Luma</a>
+</div>
 
 {% include "partials/updatesForm.njk" %}
