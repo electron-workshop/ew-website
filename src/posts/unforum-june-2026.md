@@ -63,13 +63,13 @@ form:
     Add to Calendar (.ics)
   </a>
   <a class="btn btn-outline-primary mb-2 mb-sm-0"
-     href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+June+2026&dates=20260620T060000Z/20260622T040000Z&details=Three+days+in+Melbourne.%0A%0ASat+20+Jun%3A+Dinner+at+Crossways+Food+for+Life%2C+Level+1%2F123+Swanston+St%2C+Melbourne+CBD.+Drop+in+from+4pm.%0ASun+21+Jun%3A+EW+Touch+base+10am%E2%80%9311%3A30am+%2B+Unconference+2pm%E2%80%935pm+at+inspire9%2C+Richmond.%0AMon+22+Jun%3A+Breakfast+at+Vinny%27s+Eatery%2C+860+Collins+St%2C+Docklands+from+9am+%2B+volunteer+work+session.%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Melbourne&ctz=Australia/Sydney"
+     href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+June+2026&dates=20260620T080000Z/20260622T040000Z&details=Three+days+in+Melbourne.%0A%0ASat+20+Jun%3A+Dinner+at+Crossways+Food+for+Life%2C+Level+1%2F123+Swanston+St%2C+Melbourne+CBD.+Drop+in+from+6pm.%0ASun+21+Jun%3A+EW+Touch+base+10am%E2%80%9311%3A30am+%2B+Unconference+2pm%E2%80%935pm+at+inspire9%2C+Richmond.%0AMon+22+Jun%3A+Breakfast+at+Vinny%27s+Eatery%2C+860+Collins+St%2C+Docklands+from+9am+%2B+volunteer+work+session.%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Melbourne&ctz=Australia/Sydney"
      target="_blank" rel="noopener">
     Add to Google Calendar
   </a>
   <p class="small text-secondary mt-2 mb-0">
     Individual days &mdash; Google Calendar:
-    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+Saturday+Dinner&dates=20260620T060000Z/20260620T100000Z&details=Dinner+at+Crossways+Food+for+Life.+Drop+in+from+4pm.%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Level+1%2C+123+Swanston+St%2C+Melbourne+VIC+3000&ctz=Australia/Sydney" target="_blank" rel="noopener">Saturday</a>,
+    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+Saturday+Dinner&dates=20260620T080000Z/20260620T120000Z&details=Dinner+at+Crossways+Food+for+Life.+Drop+in+from+6pm.%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Level+1%2C+123+Swanston+St%2C+Melbourne+VIC+3000&ctz=Australia/Sydney" target="_blank" rel="noopener">Saturday</a>,
     <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+Sunday+Unconference&dates=20260621T000000Z/20260621T070000Z&details=EW+Touch+base+10am%E2%80%9311%3A30am+%2B+Unconference+2pm%E2%80%935pm+(hybrid+from+4pm).%0AOnline%3A+https%3A%2F%2Fevenue.electronworkshop.com.au%2Frooms%2Fvpu-ci4-ut4-14k%2Fjoin%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=inspire9%2C+41-43+Stewart+St%2C+Richmond+VIC+3121&ctz=Australia/Sydney" target="_blank" rel="noopener">Sunday</a>,
     <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Un-forum+%E2%80%94+Monday+Breakfast+%26+Work+Session&dates=20260621T230000Z/20260622T040000Z&details=Breakfast+at+Vinny%27s+Eatery+from+9am%2C+then+volunteer+work+session.%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Funforum-june-2026%2F&location=Shop+1%2F860+Collins+St%2C+Docklands+VIC+3008&ctz=Australia/Sydney" target="_blank" rel="noopener">Monday</a>
   </p>
@@ -82,7 +82,7 @@ form:
   <div class="col-12 col-lg-4">
     <div class="card h-100 bg-light overflow-hidden">
       <div class="card-header bg-primary text-white">
-        <h5 class="card-title mb-0">Day 1 &mdash; Dinner</h5>
+        <h5 class="card-title mb-0">Pre-forum: Dinner</h5>
       </div>
       <div class="card-body p-0">
 
@@ -113,12 +113,12 @@ form:
           <p class="text-primary fw-bold text-uppercase mb-2" style="letter-spacing:.06em; font-size:.75rem;">Agenda</p>
           <div class="d-flex align-items-center gap-2 mb-2">
             <i class="bi bi-clock text-primary" aria-hidden="true"></i>
-            <span class="fw-bold">Drop in from 4:00pm</span>
+            <span class="fw-bold">Drop in from 6:00pm</span>
           </div>
           <div class="mb-2">
             <span class="badge text-bg-success">In person</span>
           </div>
-          <p class="mb-0 small text-secondary">No agenda — just arrive, meet people, and get ready for Sunday's unconference.</p>
+          <p class="mb-0 small text-secondary">No agenda — just arrive, eat, and meet people.</p>
         </div>
 
       </div>
@@ -129,7 +129,7 @@ form:
   <div class="col-12 col-lg-4">
     <div class="card h-100 bg-light overflow-hidden">
       <div class="card-header bg-primary text-white">
-        <h5 class="card-title mb-0">Day 2 &mdash; Unconference</h5>
+        <h5 class="card-title mb-0">Un-forum</h5>
       </div>
       <div class="card-body p-0">
 
@@ -212,7 +212,7 @@ form:
   <div class="col-12 col-lg-4">
     <div class="card h-100 bg-light overflow-hidden">
       <div class="card-header bg-primary text-white">
-        <h5 class="card-title mb-0">Day 3 &mdash; Breakfast</h5>
+        <h5 class="card-title mb-0">Post-forum: Breakfast</h5>
       </div>
       <div class="card-body p-0">
 
