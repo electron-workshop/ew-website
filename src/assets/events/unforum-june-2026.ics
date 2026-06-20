@@ -45,13 +45,14 @@ BEGIN:VEVENT
 UID:unforum-june-2026-sun@electronworkshop.org
 DTSTAMP:20260619T000000Z
 DTSTART;TZID=Australia/Sydney:20260621T100000
-DTEND;TZID=Australia/Sydney:20260621T170000
+DTEND;TZID=Australia/Sydney:20260621T180000
 SUMMARY:Un-forum — Sunday
 LOCATION:inspire9\, Level 1/41-43 Stewart St\, Richmond VIC 3121
-DESCRIPTION:EW Touch base (Special Edition of Project Check-ins) 10am–11:3
- 0am\, then lunch\, then Unconference 2pm–5pm.\n\nOnline participants: https
- ://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join\n\nMore info:
-  https://electronworkshop.org/unforum-june-2026/
+DESCRIPTION:Morning: Project Check-ins 10am–11:30am (hybrid).\nAfternoon:
+  Unconference 2pm–4pm (parallel in-person & online).\nIGF submissions ses
+ sion 5pm–6pm (hybrid).\n\nOnline: https://evenue.electronworkshop.com.au/r
+ ooms/vpu-ci4-ut4-14k/join\n\nMore info: https://electronworkshop.org/unfor
+ um-june-2026/
 URL:https://electronworkshop.org/unforum-june-2026/
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -68,9 +69,10 @@ DTSTART;TZID=Australia/Sydney:20260622T090000
 DTEND;TZID=Australia/Sydney:20260622T130000
 SUMMARY:Un-forum — Post-forum: Breakfast
 LOCATION:Vinny's Eatery\, Shop 1/860 Collins St\, Docklands VIC 3008
-DESCRIPTION:Breakfast at Vinny's Eatery from 9am\, then a volunteer work s
- ession to consolidate notes\, action plans\, and follow-ups from the unconfe
- rence.\n\nMore info: https://electronworkshop.org/unforum-june-2026/
+DESCRIPTION:Working breakfast at Vinny's Eatery from 9am. Open to all\, ex
+ plicitly for getting things done — consolidate notes\, draft action plans\,
+  follow up on commitments from Sunday.\n\nMore info: https://electronworksh
+ op.org/unforum-june-2026/
 URL:https://electronworkshop.org/unforum-june-2026/
 STATUS:CONFIRMED
 SEQUENCE:0
