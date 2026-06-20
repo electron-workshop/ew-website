@@ -25,13 +25,13 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:unforum-june-2026-sat@electronworkshop.org
 DTSTAMP:20260619T000000Z
-DTSTART;TZID=Australia/Sydney:20260620T160000
-DTEND;TZID=Australia/Sydney:20260620T200000
-SUMMARY:Un-forum — Saturday Dinner
+DTSTART;TZID=Australia/Sydney:20260620T180000
+DTEND;TZID=Australia/Sydney:20260620T220000
+SUMMARY:Un-forum — Pre-forum: Dinner
 LOCATION:Crossways Food for Life\, Level 1/123 Swanston St\, Melbourne VIC 3000
-DESCRIPTION:Dinner at Crossways Food for Life. Drop in from 4pm. No agenda
- — just a warm-up for Sunday's unconference.\n\nMore info: https://electron
- workshop.org/unforum-june-2026/
+DESCRIPTION:Dinner at Crossways Food for Life. Drop in from 6pm. No agenda
+ — just a warm-up for Sunday's un-forum.\n\nMore info: https://electronwork
+ shop.org/unforum-june-2026/
 URL:https://electronworkshop.org/unforum-june-2026/
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -46,7 +46,7 @@ UID:unforum-june-2026-sun@electronworkshop.org
 DTSTAMP:20260619T000000Z
 DTSTART;TZID=Australia/Sydney:20260621T100000
 DTEND;TZID=Australia/Sydney:20260621T170000
-SUMMARY:Un-forum — Sunday Unconference
+SUMMARY:Un-forum — Sunday
 LOCATION:inspire9\, Level 1/41-43 Stewart St\, Richmond VIC 3121
 DESCRIPTION:EW Touch base (Special Edition of Project Check-ins) 10am–11:3
  0am\, then lunch\, then Unconference 2pm–5pm.\n\nOnline participants: https
@@ -66,7 +66,7 @@ UID:unforum-june-2026-mon@electronworkshop.org
 DTSTAMP:20260619T000000Z
 DTSTART;TZID=Australia/Sydney:20260622T090000
 DTEND;TZID=Australia/Sydney:20260622T130000
-SUMMARY:Un-forum — Monday Breakfast & Work Session
+SUMMARY:Un-forum — Post-forum: Breakfast
 LOCATION:Vinny's Eatery\, Shop 1/860 Collins St\, Docklands VIC 3008
 DESCRIPTION:Breakfast at Vinny's Eatery from 9am\, then a volunteer work s
  ession to consolidate notes\, action plans\, and follow-ups from the unconfe
