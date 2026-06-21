@@ -1,79 +1,64 @@
 {
   "defaults": {
     "online": "https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join",
-    "physical": "Inspire9",
     "time": "10:00",
-    "retroTime": "18:00"
+    "dayOfWeek": "Sunday"
   },
+  "venues": [
+    {
+      "name": "Inspire9",
+      "city": "Richmond, Melbourne",
+      "mapUrl": "https://maps.app.goo.gl/8xYPAuvpN2q1s5xc6"
+    }
+  ],
   "items": [
     {
       "title": "Sprint 0",
       "startDate": "2025-12-11",
       "endDate": "2025-12-23",
-      "description": "Planning for the year, mapping grants, conferences and which sprints they fall under.",
-      "midReview": "2025-12-18"
+      "description": "Planning for the year, mapping grants, conferences and which sprints they fall under."
     },
     {
       "title": "Sprint 1",
       "startDate": "2026-01-04",
       "endDate": "2026-01-16",
-      "description": "Sprint One!",
-      "midReview": "2026-01-11"
+      "description": "Sprint One!"
     },
     {
       "title": "Sprint 2",
       "startDate": "2026-01-18",
       "endDate": "2026-01-30",
-      "description": "January second sprint",
-      "midReview": "2026-01-25"
+      "description": "January second sprint"
     },
     {
       "title": "Sprint 3",
       "startDate": "2026-02-01",
       "endDate": "2026-02-13",
-      "description": "Leading to Love Sprint",
-      "midReview": "2026-02-08"
+      "description": "Leading to Love Sprint"
     },
     {
       "title": "Sprint 4",
       "startDate": "2026-02-15",
       "endDate": "2026-02-27",
-      "description": "New Chapter Sprint",
-      "midReview": {
-        "date": "2026-02-22",
-        "physicalUrl": "https://maps.app.goo.gl/8xYPAuvpN2q1s5xc6"
-      }
+      "description": "New Chapter Sprint"
     },
     {
       "title": "Sprint 5",
       "startDate": "2026-03-01",
       "endDate": "2026-03-13",
-      "description": "Meta Sprint",
-      "midReview": {
-        "date": "2026-03-08",
-        "physicalUrl": "https://maps.app.goo.gl/8xYPAuvpN2q1s5xc6"
-      }
-    }
-    ,
+      "description": "Meta Sprint"
+    },
     {
       "title": "Sprint 6",
       "startDate": "2026-03-15",
       "endDate": "2026-03-27",
-      "description": "March Final Sprint",
-      "midReview": {
-        "date": "2026-03-22",
-        "physicalUrl": "https://maps.app.goo.gl/8xYPAuvpN2q1s5xc6"
-      }
+      "description": "March Final Sprint"
     },
     {
       "title": "Sprint 7",
       "startDate": "2026-03-29",
       "endDate": "2026-04-10",
-      "description": "April Opening Sprint",
-      "midReview": {
-        "date": "2026-04-05",
-        "physicalUrl": "https://maps.app.goo.gl/8xYPAuvpN2q1s5xc6"
-      }
+      "description": "April Opening Sprint"
     }
   ]
 }
