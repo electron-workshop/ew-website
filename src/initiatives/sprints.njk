@@ -1,161 +1,186 @@
 ---
 layout: base.njk
 title: Sprints
-description: Sprint timeline and schedule
+description: Weekly Sunday check-ins — join online or from a venue near you
 permalink: "/initiatives/sprints/"
 tags: ['coworking']
 ---
 
-{# ─── Macro: renders one session card (Opening / Mid-Review / Retro) ─────── #}
-{% macro sessionCard(label, icon, color, session) %}
-<div class="col-sm-6 col-lg-4">
-  <div class="card h-100 bg-light border-0">
-    <div class="card-header border-0 bg-light pb-1">
-      <h5 class="card-title mb-0 text-{{ color }}">
-        <i class="bi {{ icon }}"></i> {{ label }}
-      </h5>
-    </div>
-    <div class="card-body py-2">
-      <p class="small mb-2">
-        <i class="bi bi-clock"></i>
-        <strong data-date="{{ session.date }}" data-time="{{ session.time }}">{{ session.date }}</strong>
-      </p>
-      <div class="btn-group btn-group-sm" role="group">
-        <a href="{{ session.online }}" target="_blank" rel="noopener noreferrer"
-           class="btn btn-outline-{{ color }}">
-          <i class="bi bi-camera-video"></i> Online
-        </a>
-        {% if session.physicalUrl %}
-        <a href="{{ session.physicalUrl }}" target="_blank" rel="noopener noreferrer"
-           class="btn btn-outline-secondary">
-          <i class="bi bi-geo-alt"></i> {{ session.physical }}
-        </a>
-        {% else %}
-        <button class="btn btn-outline-secondary" disabled>
-          <i class="bi bi-geo-alt"></i> {{ session.physical }}
-        </button>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</div>
-{% endmacro %}
-
 {# ─── Page header ─────────────────────────────────────────────────────────── #}
-<div class="d-flex justify-content-between align-items-center mb-4">
-  <h1 class="mb-0">Sprints</h1>
+<div class="d-flex justify-content-between align-items-center mb-1">
+  <div>
+    <p class="text-primary fw-bold text-uppercase mb-1" style="letter-spacing:.08em;font-size:.8rem">Electron Workshop</p>
+    <h1 class="mb-0">Weekly Check-in</h1>
+  </div>
   <a href="{{ sprintHelpers.defaults.online }}" class="btn btn-primary"
      target="_blank" rel="noopener noreferrer">
-    <i class="bi bi-camera-video"></i> Join Coworking
+    <i class="bi bi-camera-video"></i> Join on eVenue
   </a>
 </div>
+<p class="text-muted mb-4">Every Sunday — online and at select venues, all using eVenue as the shared workspace.</p>
 
-{# ─── Past sprints (collapsed) ────────────────────────────────────────────── #}
-{% if sprintHelpers.past.length %}
-<div class="card mb-4">
-  <div class="card-header bg-light" style="cursor:pointer"
-       data-bs-toggle="collapse" data-bs-target="#pastSprints" aria-expanded="false">
-    <div class="d-flex justify-content-between align-items-center">
-      <span class="h6 mb-0"><i class="bi bi-archive"></i> Past Sprints</span>
-      <i class="bi bi-chevron-down"></i>
-    </div>
-  </div>
-  <div id="pastSprints" class="collapse">
-    <ul class="list-group list-group-flush">
-      {% for sprint in sprintHelpers.past %}
-      <li class="list-group-item py-1 small">
-        <strong>{{ sprint.title }}</strong>
-        <span class="text-muted ms-2">
-          <span data-date="{{ sprint.startDate }}">{{ sprint.startDate }}</span>
-          –
-          <span data-date="{{ sprint.endDate }}">{{ sprint.endDate }}</span>
-        </span>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</div>
-{% endif %}
-
-{# ─── Current sprint ───────────────────────────────────────────────────────── #}
-{% if sprintHelpers.current %}
-{% set s = sprintHelpers.current %}
-<div class="card border-success border-2 mb-4">
-  <div class="card-header bg-success text-white">
-    <div class="d-flex justify-content-between align-items-center flex-wrap gap-1">
-      <h2 class="h5 mb-0"><i class="bi bi-fire"></i> {{ s.title }} <span class="fw-normal opacity-75">(Current)</span></h2>
-      <small>
-        <span data-date="{{ s.startDate }}">{{ s.startDate }}</span>
-        –
-        <span data-date="{{ s.endDate }}">{{ s.endDate }}</span>
-      </small>
-    </div>
+{# ─── Next check-in ────────────────────────────────────────────────────────── #}
+<div class="card border-primary border-2 mb-4">
+  <div class="card-header bg-primary text-white py-2">
+    <span class="fw-semibold"><i class="bi bi-calendar-check"></i> Next Check-in</span>
   </div>
   <div class="card-body">
-    {% if s.description %}
-    <p class="text-muted small mb-3">{{ s.description }}</p>
-    {% endif %}
-    <div class="row g-3">
-      {{ sessionCard("Sprint Opening",    "bi-play-circle",           "primary", {date: s.startDate, time: sprintHelpers.defaults.time, online: sprintHelpers.defaults.online, physical: sprintHelpers.defaults.physical}) }}
-      {{ sessionCard("Mid-Sprint Review", "bi-chat-dots",             "info",    s.midReview) }}
-      {{ sessionCard("Retro",             "bi-arrow-counterclockwise","warning", s.retro) }}
+    <p class="fs-5 fw-semibold mb-3">
+      <span data-date="{{ sprintHelpers.nextCheckin }}" data-time="{{ sprintHelpers.defaults.time }}">{{ sprintHelpers.nextCheckin }}</span>
+    </p>
+    <div class="d-flex flex-wrap gap-2">
+      <a href="{{ sprintHelpers.defaults.online }}" target="_blank" rel="noopener noreferrer"
+         class="btn btn-primary">
+        <i class="bi bi-camera-video"></i> Join on eVenue
+      </a>
+      {% for venue in sprintHelpers.venues %}
+      <a href="{{ venue.mapUrl }}" target="_blank" rel="noopener noreferrer"
+         class="btn btn-outline-secondary">
+        <i class="bi bi-geo-alt"></i> {{ venue.name }}
+        <span class="text-muted small ms-1">{{ venue.city }}</span>
+      </a>
+      {% endfor %}
     </div>
   </div>
 </div>
+
+{# ─── How it works ─────────────────────────────────────────────────────────── #}
+<h2 class="h5 border-bottom border-2 border-primary d-inline-block pb-1 mb-3">How it works</h2>
+<div class="row g-3 mb-4">
+  <div class="col-sm-4">
+    <div class="card h-100 border-0 bg-light">
+      <div class="card-body">
+        <h3 class="h6 text-primary fw-bold text-uppercase mb-2" style="letter-spacing:.08em;font-size:.75rem">Before</h3>
+        <p class="small mb-0">Each participant shares what they worked on during the week — progress, blockers, learnings.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card h-100 border-0 bg-light">
+      <div class="card-body">
+        <h3 class="h6 text-primary fw-bold text-uppercase mb-2" style="letter-spacing:.08em;font-size:.75rem">Today</h3>
+        <p class="small mb-0">Projects are visible and open. Bring your work, offer skills, or simply observe and connect.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card h-100 border-0 bg-light">
+      <div class="card-body">
+        <h3 class="h6 text-primary fw-bold text-uppercase mb-2" style="letter-spacing:.08em;font-size:.75rem">After</h3>
+        <p class="small mb-0">Upcoming events, themed months, and anything the group wants to flag for the week ahead.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ─── Upcoming Sundays ─────────────────────────────────────────────────────── #}
+<h2 class="h5 border-bottom border-2 border-primary d-inline-block pb-1 mb-3">Upcoming</h2>
+<ul class="list-group mb-4">
+  {% for date in sprintHelpers.laterCheckins %}
+  <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+    <span class="small" data-date="{{ date }}">{{ date }}</span>
+    <a href="{{ sprintHelpers.defaults.online }}" target="_blank" rel="noopener noreferrer"
+       class="btn btn-sm btn-outline-primary">
+      <i class="bi bi-camera-video"></i> eVenue
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+{# ─── In-person venues ─────────────────────────────────────────────────────── #}
+{% if sprintHelpers.venues.length %}
+<h2 class="h5 border-bottom border-2 border-primary d-inline-block pb-1 mb-3">In-Person Venues</h2>
+<div class="row g-3 mb-4">
+  {% for venue in sprintHelpers.venues %}
+  <div class="col-sm-6 col-lg-4">
+    <div class="card h-100 border-0 bg-light">
+      <div class="card-body d-flex flex-column">
+        <h3 class="h6 fw-semibold mb-1">{{ venue.name }}</h3>
+        <p class="small text-muted flex-grow-1 mb-2">{{ venue.city }}</p>
+        <a href="{{ venue.mapUrl }}" target="_blank" rel="noopener noreferrer"
+           class="btn btn-outline-secondary btn-sm align-self-start">
+          <i class="bi bi-geo-alt"></i> Get directions
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 {% endif %}
 
-{# ─── Upcoming sprints ─────────────────────────────────────────────────────── #}
-{% if sprintHelpers.upcoming.length %}
+{# ─── Sprint arcs ──────────────────────────────────────────────────────────── #}
+{% if sprintHelpers.current %}
+<div class="alert alert-success mb-4">
+  <strong><i class="bi bi-fire"></i> {{ sprintHelpers.current.title }}</strong> is the active sprint arc.
+  {% if sprintHelpers.current.description %}<span class="ms-1">{{ sprintHelpers.current.description }}</span>{% endif %}
+</div>
+{% endif %}
+
+{% if sprintHelpers.past.length or sprintHelpers.upcoming.length %}
 <div class="card mb-4">
-  <div class="card-header bg-light py-2">
-    <span class="h6 mb-0"><i class="bi bi-calendar-event"></i> Upcoming</span>
+  <div class="card-header bg-light py-2" style="cursor:pointer"
+       data-bs-toggle="collapse" data-bs-target="#sprintArcs" aria-expanded="false">
+    <div class="d-flex justify-content-between align-items-center">
+      <span class="h6 mb-0"><i class="bi bi-layers"></i> Sprint Arcs</span>
+      <i class="bi bi-chevron-down small"></i>
+    </div>
   </div>
-  <ul class="list-group list-group-flush">
-    {% for sprint in sprintHelpers.upcoming %}
-    <li class="list-group-item d-flex justify-content-between align-items-center py-2">
-      <div>
-        <strong class="small">{{ sprint.title }}</strong>
-        {% if sprint.description %}
-        <span class="text-muted small ms-2">— {{ sprint.description }}</span>
-        {% endif %}
-      </div>
-      <span class="text-muted small text-nowrap ms-3">
-        <span data-date="{{ sprint.startDate }}">{{ sprint.startDate }}</span>
-        –
-        <span data-date="{{ sprint.endDate }}">{{ sprint.endDate }}</span>
-      </span>
-    </li>
-    {% endfor %}
-  </ul>
+  <div id="sprintArcs" class="collapse">
+    {% if sprintHelpers.upcoming.length %}
+    <div class="px-3 pt-3 pb-1">
+      <p class="small text-muted fw-semibold mb-2 text-uppercase" style="letter-spacing:.06em;font-size:.75rem">Upcoming</p>
+      <ul class="list-group list-group-flush mb-2">
+        {% for s in sprintHelpers.upcoming %}
+        <li class="list-group-item px-0 py-1 small">
+          <strong>{{ s.title }}</strong>
+          {% if s.description %}<span class="text-muted ms-1">— {{ s.description }}</span>{% endif %}
+          <span class="text-muted ms-2">
+            <span data-date="{{ s.startDate }}">{{ s.startDate }}</span>–<span data-date="{{ s.endDate }}">{{ s.endDate }}</span>
+          </span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% if sprintHelpers.past.length %}
+    <div class="px-3 pt-2 pb-3">
+      <p class="small text-muted fw-semibold mb-2 text-uppercase" style="letter-spacing:.06em;font-size:.75rem">Round 1 — completed</p>
+      <ul class="list-group list-group-flush">
+        {% for s in sprintHelpers.past %}
+        <li class="list-group-item px-0 py-1 small text-muted">
+          <strong>{{ s.title }}</strong>
+          {% if s.description %}<span class="ms-1">— {{ s.description }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
 </div>
 {% endif %}
 
 {# ─── Resources ────────────────────────────────────────────────────────────── #}
-<h2 class="h5 mt-5 mb-3">Sprint Resources</h2>
-<div class="row g-3 mb-5">
+<h2 class="h5 border-bottom border-2 border-primary d-inline-block pb-1 mb-3">Resources</h2>
+<div class="row g-3 mb-4">
   <div class="col-sm-6">
-    <div class="card h-100 border-primary">
-      <div class="card-header bg-primary text-white">
-        <h3 class="h6 mb-0"><i class="bi bi-kanban"></i> Kanban Board</h3>
-      </div>
+    <div class="card h-100 border-primary border-opacity-25 shadow-sm">
       <div class="card-body d-flex flex-column">
-        <p class="card-text small flex-grow-1">Track sprint tasks and project progress.</p>
+        <h3 class="h6 fw-semibold mb-1"><i class="bi bi-kanban text-primary"></i> Kanban Board</h3>
+        <p class="card-text small flex-grow-1 text-muted">Track project tasks and sprint progress.</p>
         <a href="https://tasks.xdeca.com" target="_blank" rel="noopener noreferrer"
-           class="btn btn-primary btn-sm align-self-start">
+           class="btn btn-outline-primary btn-sm align-self-start">
           <i class="bi bi-arrow-up-right"></i> tasks.xdeca.com
         </a>
       </div>
     </div>
   </div>
   <div class="col-sm-6">
-    <div class="card h-100 border-info">
-      <div class="card-header bg-info text-white">
-        <h3 class="h6 mb-0"><i class="bi bi-book"></i> Knowledge Base</h3>
-      </div>
+    <div class="card h-100 border-primary border-opacity-25 shadow-sm">
       <div class="card-body d-flex flex-column">
-        <p class="card-text small flex-grow-1">Access sprint documentation and shared knowledge.</p>
+        <h3 class="h6 fw-semibold mb-1"><i class="bi bi-book text-info"></i> Knowledge Base</h3>
+        <p class="card-text small flex-grow-1 text-muted">Sprint documentation and shared knowledge.</p>
         <a href="https://kb.xdeca.com" target="_blank" rel="noopener noreferrer"
-           class="btn btn-info btn-sm align-self-start">
+           class="btn btn-outline-info btn-sm align-self-start">
           <i class="bi bi-arrow-up-right"></i> kb.xdeca.com
         </a>
       </div>
@@ -168,24 +193,24 @@ tags: ['coworking']
   <div class="card-body py-3">
     <h2 class="h6 mb-1">Questions &amp; Access</h2>
     <p class="small mb-0">
-      Need help with sprints or access to resources? Email
+      Need help or access to resources? Email
       <a href="mailto:sprints@electronworkshop.com.au"><strong>sprints@electronworkshop.com.au</strong></a>
     </p>
   </div>
 </div>
 
-{# ─── Single date-formatting script ───────────────────────────────────────── #}
+{# ─── Date formatting ──────────────────────────────────────────────────────── #}
 <script>
 (function () {
   const fmtDate = (iso) =>
     new Date(iso + "T00:00:00").toLocaleDateString("en-AU", {
-      weekday: "short", year: "numeric", month: "short", day: "numeric",
+      weekday: "long", year: "numeric", month: "long", day: "numeric",
     });
 
   const fmtTime = (t) => {
     const [h, m] = t.split(":");
     const hr = parseInt(h, 10);
-    return `${hr % 12 || 12}:${m}\u202f${hr >= 12 ? "PM" : "AM"}`;
+    return `${hr % 12 || 12}:${m} ${hr >= 12 ? "PM" : "AM"}`;
   };
 
   document.querySelectorAll("[data-date]").forEach((el) => {
