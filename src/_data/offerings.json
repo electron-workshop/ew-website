@@ -1,5 +1,18 @@
 [
   {
+    "title": "Superbridge",
+    "slug": "superbridge",
+    "logo": "",
+    "icon": "bi-chat-dots-fill",
+    "text": "One conversation, every platform. Messages from any connected app reach everyone else; people just keep using the app they like."
+  },
+  {
+    "title": "BigBlueButton — Video Conferencing",
+    "slug": "bigbluebutton",
+    "logo": "/assets/images/logos/bigbluebutton.svg",
+    "text": "Open‑source virtual classroom and web conferencing. Real‑time audio, video, slides with whiteboard annotation, breakout rooms, and recordings — self‑hosted and privacy‑respecting."
+  },
+  {
     "title": "Mautic — Email & Journeys",
     "slug": "mautic",
     "logo": "/assets/images/logos/mautic.svg",
