@@ -1,6 +1,6 @@
 ---
 title: Update site copy for Sunday Check-in Round 2 (open source / community projects focus)
-status: open
+status: closed
 type: enhancement
 created: 2026-07-13
 author: cael
@@ -19,10 +19,10 @@ The README now documents the rounds (see "Sunday Check-in (Sprints) — rounds")
 
 - ~~`src/initiatives/sprints.njk`~~ **Done 2026-07-13** — Round 2 banner added, "How it works" cards reframed around open source / community projects, history card renamed to "Past Rounds" with Round 1 marked completed.
 - ~~`src/_data/sprints.json`~~ **Done 2026-07-13** — added a `rounds` array (Round 1 completed, Round 2 current with 2026-07-05 → 2026-12-27); `sprintHelpers.js` now exposes `currentRound` / `pastRounds`. A round with no `endDate` is treated as ongoing.
-- `src/_data/homeCards.json` — "Bring Your Project to a Sprint" and "Contribute Skills to Sprints" cards: check copy against the Round 2 focus (the "Contribute Skills" card also still says "fortnightly sprint" rather than weekly Sunday check-in).
-- `src/about.njk` — Sprints blurb mentions "time-boxed collaborative work cycles"; align with the weekly check-in format and Round 2 focus.
-- `src/_data/initiatives.json` — check the Sprints initiative description.
-- `src/index.njk` — "Electron Sprints" section; check copy.
+- ~~`src/_data/homeCards.json`~~ **Done 2026-07-13** — both engage cards and the quick-access card reframed around the weekly Sunday check-in and open source / community projects; "fortnightly" removed.
+- ~~`src/about.njk`~~ **Done 2026-07-13** — blurb now describes the weekly Sunday check-in format.
+- ~~`src/_data/initiatives.json`~~ **Done 2026-07-13** — Sprints description filled in (was empty).
+- ~~`src/index.njk`~~ **Done 2026-07-13** — "Electron Sprints" card updated to weekly check-ins; button now "Join a Check-in".
 
 ## Expected behaviour
 
