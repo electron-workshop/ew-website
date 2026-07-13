@@ -2,6 +2,15 @@
 
 A static website for Electron Workshop, built with Eleventy (11ty) and Bootstrap. This site showcases initiatives, offerings, and community events.
 
+## Sunday Check-in (Sprints) — rounds
+
+The `/initiatives/sprints/` page hosts the weekly Sunday Check-in, which runs in six-month rounds:
+
+- **Round 1 (completed)** — first Sunday of January to last Sunday of June 2026 (2026-01-04 → 2026-06-28, 26 weeks). Focus: giving people working on a project space to demo it, share a progress report, and find collaborators.
+- **Round 2 (current)** — from the first Sunday of July 2026 (2026-07-05). Focus: open source and/or community projects.
+
+Site copy about the check-in (the sprints page, home cards, about page) should reflect the current round's focus. Schedule data lives in `src/_data/sprints.json`; derived dates in `src/_data/sprintHelpers.js`.
+
 ## Prerequisites
 
 - Node.js (version 18 or higher)
