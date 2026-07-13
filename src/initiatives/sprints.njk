@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Sprints
-description: Weekly Sunday check-ins — join online or from a venue near you
+description: Weekly Sunday check-ins for open source and community projects — join online or from a venue near you
 permalink: "/initiatives/sprints/"
 tags: ['coworking']
 ---
@@ -17,7 +17,18 @@ tags: ['coworking']
     <i class="bi bi-camera-video"></i> Join on eVenue
   </a>
 </div>
-<p class="text-muted mb-4">Every Sunday — online and at select venues, all using eVenue as the shared workspace.</p>
+<p class="text-muted mb-3">Every Sunday — online and at select venues, all using eVenue as the shared workspace.</p>
+
+{# ─── Current round ────────────────────────────────────────────────────────── #}
+{% if sprintHelpers.currentRound %}
+<div class="alert alert-success d-flex flex-wrap align-items-baseline column-gap-2 mb-4">
+  <strong><i class="bi bi-flag"></i> {{ sprintHelpers.currentRound.title }}</strong>
+  <span>{{ sprintHelpers.currentRound.focus }}</span>
+  <span class="small text-muted w-100 mt-1">
+    <span data-date="{{ sprintHelpers.currentRound.startDate }}">{{ sprintHelpers.currentRound.startDate }}</span>{% if sprintHelpers.currentRound.endDate %} — <span data-date="{{ sprintHelpers.currentRound.endDate }}">{{ sprintHelpers.currentRound.endDate }}</span>{% endif %}
+  </span>
+</div>
+{% endif %}
 
 {# ─── Next check-in ────────────────────────────────────────────────────────── #}
 <div class="card border-primary border-2 mb-4">
@@ -51,7 +62,7 @@ tags: ['coworking']
     <div class="card h-100 border-0 bg-light">
       <div class="card-body">
         <h3 class="h6 text-primary fw-bold text-uppercase mb-2" style="letter-spacing:.08em;font-size:.75rem">Before</h3>
-        <p class="small mb-0">Each participant shares what they worked on during the week — progress, blockers, learnings.</p>
+        <p class="small mb-0">Each participant shares what moved on their open source or community project during the week — progress, blockers, learnings.</p>
       </div>
     </div>
   </div>
@@ -59,7 +70,7 @@ tags: ['coworking']
     <div class="card h-100 border-0 bg-light">
       <div class="card-body">
         <h3 class="h6 text-primary fw-bold text-uppercase mb-2" style="letter-spacing:.08em;font-size:.75rem">Today</h3>
-        <p class="small mb-0">Projects are visible and open. Bring your work, offer skills, or simply observe and connect.</p>
+        <p class="small mb-0">Projects are visible and open. Bring an open source or community project, lend your skills to one, or simply observe and connect.</p>
       </div>
     </div>
   </div>
@@ -116,19 +127,32 @@ tags: ['coworking']
 </div>
 {% endif %}
 
-{% if sprintHelpers.past.length or sprintHelpers.upcoming.length %}
+{% if sprintHelpers.pastRounds.length or sprintHelpers.past.length or sprintHelpers.upcoming.length %}
 <div class="card mb-4">
   <div class="card-header bg-light py-2" style="cursor:pointer"
        data-bs-toggle="collapse" data-bs-target="#sprintArcs" aria-expanded="false">
     <div class="d-flex justify-content-between align-items-center">
-      <span class="h6 mb-0"><i class="bi bi-layers"></i> Sprint Arcs</span>
+      <span class="h6 mb-0"><i class="bi bi-layers"></i> Past Rounds</span>
       <i class="bi bi-chevron-down small"></i>
     </div>
   </div>
   <div id="sprintArcs" class="collapse">
-    {% if sprintHelpers.upcoming.length %}
+    {% for r in sprintHelpers.pastRounds %}
     <div class="px-3 pt-3 pb-1">
-      <p class="small text-muted fw-semibold mb-2 text-uppercase" style="letter-spacing:.06em;font-size:.75rem">Upcoming</p>
+      <p class="small fw-semibold mb-1 text-uppercase" style="letter-spacing:.06em;font-size:.75rem">
+        <i class="bi bi-check-circle text-success"></i> {{ r.title }} — completed
+      </p>
+      <p class="small text-muted mb-2">
+        {{ r.focus }}
+        <span class="ms-1">
+          (<span data-date="{{ r.startDate }}">{{ r.startDate }}</span> — <span data-date="{{ r.endDate }}">{{ r.endDate }}</span>)
+        </span>
+      </p>
+    </div>
+    {% endfor %}
+    {% if sprintHelpers.upcoming.length %}
+    <div class="px-3 pt-2 pb-1">
+      <p class="small text-muted fw-semibold mb-2 text-uppercase" style="letter-spacing:.06em;font-size:.75rem">Upcoming sprint arcs</p>
       <ul class="list-group list-group-flush mb-2">
         {% for s in sprintHelpers.upcoming %}
         <li class="list-group-item px-0 py-1 small">
@@ -144,7 +168,7 @@ tags: ['coworking']
     {% endif %}
     {% if sprintHelpers.past.length %}
     <div class="px-3 pt-2 pb-3">
-      <p class="small text-muted fw-semibold mb-2 text-uppercase" style="letter-spacing:.06em;font-size:.75rem">Round 1 — completed</p>
+      <p class="small text-muted fw-semibold mb-2 text-uppercase" style="letter-spacing:.06em;font-size:.75rem">Round 1 sprint arcs</p>
       <ul class="list-group list-group-flush">
         {% for s in sprintHelpers.past %}
         <li class="list-group-item px-0 py-1 small text-muted">

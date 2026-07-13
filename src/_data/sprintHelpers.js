@@ -24,7 +24,18 @@ module.exports = function () {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  const { defaults, venues, items } = sprintsData;
+  const { defaults, venues, items, rounds = [] } = sprintsData;
+
+  // Round logic — a round with no endDate is treated as ongoing
+  const currentRound = rounds.find((r) => {
+    const start = new Date(r.startDate + "T00:00:00");
+    const end = r.endDate ? new Date(r.endDate + "T00:00:00") : null;
+    return today >= start && (!end || today <= end);
+  }) ?? null;
+
+  const pastRounds = rounds.filter((r) => {
+    return r.endDate && new Date(r.endDate + "T00:00:00") < today;
+  });
 
   // Sprint arc logic — arcs can be absent (between rounds)
   const sprints = items.map((s) => ({ ...s }));
@@ -54,6 +65,8 @@ module.exports = function () {
     venues,
     nextCheckin,
     laterCheckins,
+    currentRound,
+    pastRounds,
     current,
     past,
     upcoming,

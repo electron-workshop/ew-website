@@ -4,6 +4,20 @@
     "time": "10:00",
     "dayOfWeek": "Sunday"
   },
+  "rounds": [
+    {
+      "title": "Round 1",
+      "startDate": "2026-01-04",
+      "endDate": "2026-06-28",
+      "focus": "Space for anyone working on a project to demo it, share a progress report, and find collaborators."
+    },
+    {
+      "title": "Round 2",
+      "startDate": "2026-07-05",
+      "endDate": "2026-12-27",
+      "focus": "Open source and community projects — bring one, join one, or lend your skills to one."
+    }
+  ],
   "venues": [
     {
       "name": "Inspire9",

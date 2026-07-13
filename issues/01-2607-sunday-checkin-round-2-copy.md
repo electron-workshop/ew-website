@@ -17,8 +17,8 @@ The README now documents the rounds (see "Sunday Check-in (Sprints) — rounds")
 
 ## Pages to update
 
-- `src/initiatives/sprints.njk` — page header/intro and the "How it works" cards still describe the Round 1 format (generic project demos and progress reports). Reframe around open source and/or community projects; consider a visible "Round 2" marker and note Round 1 as completed.
-- `src/_data/sprints.json` — `items` only covers Round 1 sprint arcs (Sprint 0–7, ending 2026-04-10). Add Round 2 entries or restructure to represent rounds.
+- ~~`src/initiatives/sprints.njk`~~ **Done 2026-07-13** — Round 2 banner added, "How it works" cards reframed around open source / community projects, history card renamed to "Past Rounds" with Round 1 marked completed.
+- ~~`src/_data/sprints.json`~~ **Done 2026-07-13** — added a `rounds` array (Round 1 completed, Round 2 current with 2026-07-05 → 2026-12-27); `sprintHelpers.js` now exposes `currentRound` / `pastRounds`. A round with no `endDate` is treated as ongoing.
 - `src/_data/homeCards.json` — "Bring Your Project to a Sprint" and "Contribute Skills to Sprints" cards: check copy against the Round 2 focus (the "Contribute Skills" card also still says "fortnightly sprint" rather than weekly Sunday check-in).
 - `src/about.njk` — Sprints blurb mentions "time-boxed collaborative work cycles"; align with the weekly check-in format and Round 2 focus.
 - `src/_data/initiatives.json` — check the Sprints initiative description.
