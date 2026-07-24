@@ -24,7 +24,18 @@ module.exports = function () {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  const { defaults, venues, items } = sprintsData;
+  const { defaults, venues, items, rounds = [], activities = [] } = sprintsData;
+
+  // Round logic — a round with no endDate is treated as ongoing
+  const currentRound = rounds.find((r) => {
+    const start = new Date(r.startDate + "T00:00:00");
+    const end = r.endDate ? new Date(r.endDate + "T00:00:00") : null;
+    return today >= start && (!end || today <= end);
+  }) ?? null;
+
+  const pastRounds = rounds.filter((r) => {
+    return r.endDate && new Date(r.endDate + "T00:00:00") < today;
+  });
 
   // Sprint arc logic — arcs can be absent (between rounds)
   const sprints = items.map((s) => ({ ...s }));
@@ -45,15 +56,21 @@ module.exports = function () {
     return start > today;
   });
 
-  // Weekly check-ins — next 8 Sundays (includes today if today is Sunday)
-  const sundayDates = nextSundays(8, today);
-  const [nextCheckin, ...laterCheckins] = sundayDates;
+  // Weekly check-ins run every Sunday indefinitely, so the page only names the
+  // next few and says the rest continues. Each one carries its activity, if any.
+  const withActivity = (date) => ({
+    date,
+    activity: activities.find((a) => a.date === date) ?? null,
+  });
+  const [nextCheckin, ...laterCheckins] = nextSundays(3, today).map(withActivity);
 
   return {
     defaults,
     venues,
     nextCheckin,
     laterCheckins,
+    currentRound,
+    pastRounds,
     current,
     past,
     upcoming,

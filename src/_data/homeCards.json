@@ -99,18 +99,18 @@
   },
   {
     "cardType": "engage",
-    "title": "Bring Your Project to a Sprint",
-    "text": "Have an open project — from a hackathon, a community group, or a hobby — that you're ready to work on in the open? Bring it to a sprint, make progress together, and mentor those who join. You don't need a finished idea, just an open one.",
+    "title": "Bring Your Project to a Check-in",
+    "text": "Working on an open source or community project — from a hackathon, a community group, or a hobby? Bring it to the weekly Sunday check-in: demo it, make progress together, and find collaborators. You don't need a finished idea, just an open one.",
     "href": "/initiatives/sprints/",
     "button": "Bring a Project",
     "icon": "bi-folder2-open"
   },
   {
     "cardType": "engage",
-    "title": "Contribute Skills to Sprints",
-    "text": "Bring your time and skills to open community projects in a fortnightly sprint. Work alongside project owners, learn from real use cases, contribute meaningfully — no long-term commitment required beyond a session.",
+    "title": "Contribute Skills at Check-ins",
+    "text": "Bring your time and skills to open source and community projects at the weekly Sunday check-in. Work alongside project owners, learn from real use cases, contribute meaningfully — no long-term commitment required beyond a Sunday.",
     "href": "/initiatives/sprints/",
-    "button": "Join a Sprint",
+    "button": "Join a Check-in",
     "icon": "bi-lightning-charge"
   },
   {
@@ -140,9 +140,9 @@
   {
     "cardType": "quickAccess",
     "title": "Sprints",
-    "text": "Fortnightly open work sessions for community and open projects. Learn skills, make friends, and contribute to something meaningful — together.",
+    "text": "Weekly Sunday check-ins for open source and community projects. Learn skills, make friends, and contribute to something meaningful — together.",
     "href": "/initiatives/sprints/",
-    "button": "Join Sprints",
+    "button": "Join a Check-in",
     "icon": "bi-code-slash"
   },
   {
