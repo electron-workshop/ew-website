@@ -44,7 +44,11 @@ tags: ['coworking']
     <div class="alert alert-info d-flex gap-2 py-2 mb-3">
       <i class="bi bi-signpost-split mt-1"></i>
       <div>
-        <strong>{{ act.title }}</strong>
+        <strong>
+          {% if act.url %}
+          <a href="{{ act.url }}" target="_blank" rel="noopener noreferrer">{{ act.title }} <i class="bi bi-arrow-up-right small"></i></a>
+          {% else %}{{ act.title }}{% endif %}
+        </strong>
         {% if act.when %}<span class="text-muted small ms-1">— {{ act.when }}</span>{% endif %}
         {% if act.description %}<p class="small mb-0 mt-1">{{ act.description }}</p>{% endif %}
       </div>
@@ -102,7 +106,11 @@ tags: ['coworking']
   <li class="list-group-item py-2">
     <span class="small" data-date="{{ checkin.date }}">{{ checkin.date }}</span>
     {% if checkin.activity %}
-    <span class="small text-muted ms-1">— {{ checkin.activity.title }}</span>
+    <span class="small text-muted ms-1">—
+      {% if checkin.activity.url %}
+      <a href="{{ checkin.activity.url }}" target="_blank" rel="noopener noreferrer">{{ checkin.activity.title }}</a>
+      {% else %}{{ checkin.activity.title }}{% endif %}
+    </span>
     {% endif %}
   </li>
   {% endfor %}
