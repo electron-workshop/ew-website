@@ -1,0 +1,85 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Electron Workshop//Un-forum September 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Un-forum September 2026
+X-WR-TIMEZONE:Australia/Sydney
+BEGIN:VTIMEZONE
+TZID:Australia/Sydney
+BEGIN:STANDARD
+TZOFFSETFROM:+1100
+TZOFFSETTO:+1000
+TZNAME:AEST
+DTSTART:19700405T030000
+RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=1SU
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+1000
+TZOFFSETTO:+1100
+TZNAME:AEDT
+DTSTART:19701004T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=1SU
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:unforum-sept-2026-sat@electronworkshop.org
+DTSTAMP:20260918T000000Z
+DTSTART;TZID=Australia/Sydney:20260919T180000
+DTEND;TZID=Australia/Sydney:20260919T220000
+SUMMARY:Un-forum — Pre-forum: Dinner
+LOCATION:Crossways Food for Life\, Level 1/123 Swanston St\, Melbourne VIC 3000
+DESCRIPTION:Dinner at Crossways Food for Life. Drop in from 6pm. No agenda
+ — just a warm-up for Sunday's un-forum.\n\nMore info: https://electronwork
+ shop.org/unforum-sept-2026/
+URL:https://electronworkshop.org/unforum-sept-2026/
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Un-forum dinner starts in 1 hour
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:unforum-sept-2026-sun@electronworkshop.org
+DTSTAMP:20260918T000000Z
+DTSTART;TZID=Australia/Sydney:20260920T100000
+DTEND;TZID=Australia/Sydney:20260920T180000
+SUMMARY:Un-forum — Sunday
+LOCATION:inspire9\, Level 1/41-43 Stewart St\, Richmond VIC 3121
+DESCRIPTION:Morning: Project Check-ins 10am–11:30am (hybrid).\nAfternoon:
+  Unconference 2pm–4pm (parallel in-person & online).\nIGF submissions ses
+ sion 5pm–6pm (hybrid).\n\nOnline: https://evenue.electronworkshop.com.au/r
+ ooms/vpu-ci4-ut4-14k/join\n\nMore info: https://electronworkshop.org/unfor
+ um-sept-2026/
+URL:https://electronworkshop.org/unforum-sept-2026/
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Un-forum unconference starts in 30 minutes
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:unforum-sept-2026-mon@electronworkshop.org
+DTSTAMP:20260918T000000Z
+DTSTART;TZID=Australia/Sydney:20260921T090000
+DTEND;TZID=Australia/Sydney:20260921T130000
+SUMMARY:Un-forum — Post-forum: Breakfast
+LOCATION:Vinny's Eatery\, Shop 1/860 Collins St\, Docklands VIC 3008
+DESCRIPTION:Working breakfast at Vinny's Eatery from 9am. Open to all\, ex
+ plicitly for getting things done — consolidate notes\, draft action plans\,
+  follow up on commitments from Sunday.\n\nMore info: https://electronworksh
+ op.org/unforum-sept-2026/
+URL:https://electronworkshop.org/unforum-sept-2026/
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Un-forum breakfast in 30 minutes
+END:VALARM
+END:VEVENT
+END:VCALENDAR
