@@ -9,13 +9,27 @@
       "title": "Round 1",
       "startDate": "2026-01-04",
       "endDate": "2026-06-28",
-      "focus": "Space for anyone working on a project to demo it, share a progress report, and find collaborators."
+      "period": "January to June",
+      "focus": "Individual project support — demo what you were working on, share a progress report, find collaborators.",
+      "phases": [
+        { "period": "January to March", "focus": "Individual project support" },
+        { "period": "April to June", "focus": "Individual project support" }
+      ]
     },
     {
       "title": "Round 2",
       "startDate": "2026-07-05",
       "endDate": "2026-12-27",
+      "period": "From July",
       "focus": "Open source and community projects — bring one, join one, or lend your skills to one."
+    }
+  ],
+  "activities": [
+    {
+      "date": "2026-07-26",
+      "when": "Sunday afternoon",
+      "title": "Bendigo Makerlab inauguration",
+      "description": "We're planning to head up to Bendigo for the inaugural opening of Bendigo Makerlab."
     }
   ],
   "venues": [

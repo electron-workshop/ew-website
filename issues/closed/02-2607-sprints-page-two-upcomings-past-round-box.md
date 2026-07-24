@@ -1,6 +1,6 @@
 ---
 title: Sprints page — show only two upcoming Sundays; show Round 1 in a Past box
-status: open
+status: closed
 type: enhancement
 created: 2026-07-13
 author: cael

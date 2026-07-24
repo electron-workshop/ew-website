@@ -24,9 +24,9 @@ tags: ['coworking']
 <div class="alert alert-success d-flex flex-wrap align-items-baseline column-gap-2 mb-4">
   <strong><i class="bi bi-flag"></i> {{ sprintHelpers.currentRound.title }}</strong>
   <span>{{ sprintHelpers.currentRound.focus }}</span>
-  <span class="small text-muted w-100 mt-1">
-    <span data-date="{{ sprintHelpers.currentRound.startDate }}">{{ sprintHelpers.currentRound.startDate }}</span>{% if sprintHelpers.currentRound.endDate %} — <span data-date="{{ sprintHelpers.currentRound.endDate }}">{{ sprintHelpers.currentRound.endDate }}</span>{% endif %}
-  </span>
+  {% if sprintHelpers.currentRound.period %}
+  <span class="small text-muted w-100 mt-1">{{ sprintHelpers.currentRound.period }}</span>
+  {% endif %}
 </div>
 {% endif %}
 
@@ -37,8 +37,19 @@ tags: ['coworking']
   </div>
   <div class="card-body">
     <p class="fs-5 fw-semibold mb-3">
-      <span data-date="{{ sprintHelpers.nextCheckin }}" data-time="{{ sprintHelpers.defaults.time }}">{{ sprintHelpers.nextCheckin }}</span>
+      <span data-date="{{ sprintHelpers.nextCheckin.date }}" data-time="{{ sprintHelpers.defaults.time }}">{{ sprintHelpers.nextCheckin.date }}</span>
     </p>
+    {% if sprintHelpers.nextCheckin.activity %}
+    {% set act = sprintHelpers.nextCheckin.activity %}
+    <div class="alert alert-info d-flex gap-2 py-2 mb-3">
+      <i class="bi bi-signpost-split mt-1"></i>
+      <div>
+        <strong>{{ act.title }}</strong>
+        {% if act.when %}<span class="text-muted small ms-1">— {{ act.when }}</span>{% endif %}
+        {% if act.description %}<p class="small mb-0 mt-1">{{ act.description }}</p>{% endif %}
+      </div>
+    </div>
+    {% endif %}
     <div class="d-flex flex-wrap gap-2">
       <a href="{{ sprintHelpers.defaults.online }}" target="_blank" rel="noopener noreferrer"
          class="btn btn-primary">
@@ -86,17 +97,22 @@ tags: ['coworking']
 
 {# ─── Upcoming Sundays ─────────────────────────────────────────────────────── #}
 <h2 class="h5 border-bottom border-2 border-primary d-inline-block pb-1 mb-3">Upcoming</h2>
-<ul class="list-group mb-4">
-  {% for date in sprintHelpers.laterCheckins %}
-  <li class="list-group-item d-flex justify-content-between align-items-center py-2">
-    <span class="small" data-date="{{ date }}">{{ date }}</span>
-    <a href="{{ sprintHelpers.defaults.online }}" target="_blank" rel="noopener noreferrer"
-       class="btn btn-sm btn-outline-primary">
-      <i class="bi bi-camera-video"></i> eVenue
-    </a>
+<ul class="list-group mb-2">
+  {% for checkin in sprintHelpers.laterCheckins %}
+  <li class="list-group-item py-2">
+    <span class="small" data-date="{{ checkin.date }}">{{ checkin.date }}</span>
+    {% if checkin.activity %}
+    <span class="small text-muted ms-1">— {{ checkin.activity.title }}</span>
+    {% endif %}
   </li>
   {% endfor %}
 </ul>
+<p class="small text-muted mb-4">
+  …and every Sunday after that. Same time, same places — online on eVenue and in person at
+  {% for venue in sprintHelpers.venues %}{{ venue.name }}{% if not loop.last %}, {% endif %}{% endfor %},
+  so there's nothing new to check each week.
+  Every so often we plan something for the Sunday afternoon — those get called out above when they're coming up.
+</p>
 
 {# ─── In-person venues ─────────────────────────────────────────────────────── #}
 {% if sprintHelpers.venues.length %}
@@ -127,48 +143,60 @@ tags: ['coworking']
 </div>
 {% endif %}
 
-{% if sprintHelpers.pastRounds.length or sprintHelpers.past.length or sprintHelpers.upcoming.length %}
+{% if sprintHelpers.pastRounds.length %}
+<h2 class="h5 border-bottom border-2 border-primary d-inline-block pb-1 mb-3">How we got here</h2>
+{% for r in sprintHelpers.pastRounds %}
+<div class="card bg-light border-0 mb-3">
+  <div class="card-body">
+    <h3 class="h6 fw-semibold mb-1">
+      <i class="bi bi-check-circle text-success"></i> {{ r.title }}
+      {% if r.period %}<span class="text-muted fw-normal ms-1">— {{ r.period }}</span>{% endif %}
+    </h3>
+    <p class="small text-muted mb-0">{{ r.focus }}</p>
+    {% if r.phases.length %}
+    <ul class="small text-muted mb-0 mt-2 ps-3">
+      {% for p in r.phases %}
+      <li>{{ p.period }} — {{ p.focus }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</div>
+{% endfor %}
+{% if sprintHelpers.currentRound %}
+<p class="small text-muted mb-4">
+  {{ sprintHelpers.currentRound.period }} we started {{ sprintHelpers.currentRound.title }},
+  shifting the focus to open source and community projects.
+</p>
+{% endif %}
+{% endif %}
+
+{% if sprintHelpers.past.length or sprintHelpers.upcoming.length %}
 <div class="card mb-4">
   <div class="card-header bg-light py-2" style="cursor:pointer"
        data-bs-toggle="collapse" data-bs-target="#sprintArcs" aria-expanded="false">
     <div class="d-flex justify-content-between align-items-center">
-      <span class="h6 mb-0"><i class="bi bi-layers"></i> Past Rounds</span>
+      <span class="h6 mb-0"><i class="bi bi-layers"></i> Sprint arc history</span>
       <i class="bi bi-chevron-down small"></i>
     </div>
   </div>
   <div id="sprintArcs" class="collapse">
-    {% for r in sprintHelpers.pastRounds %}
-    <div class="px-3 pt-3 pb-1">
-      <p class="small fw-semibold mb-1 text-uppercase" style="letter-spacing:.06em;font-size:.75rem">
-        <i class="bi bi-check-circle text-success"></i> {{ r.title }} — completed
-      </p>
-      <p class="small text-muted mb-2">
-        {{ r.focus }}
-        <span class="ms-1">
-          (<span data-date="{{ r.startDate }}">{{ r.startDate }}</span> — <span data-date="{{ r.endDate }}">{{ r.endDate }}</span>)
-        </span>
-      </p>
-    </div>
-    {% endfor %}
     {% if sprintHelpers.upcoming.length %}
-    <div class="px-3 pt-2 pb-1">
-      <p class="small text-muted fw-semibold mb-2 text-uppercase" style="letter-spacing:.06em;font-size:.75rem">Upcoming sprint arcs</p>
+    <div class="px-3 pt-3 pb-1">
+      <p class="small text-muted fw-semibold mb-2 text-uppercase" style="letter-spacing:.06em;font-size:.75rem">Upcoming</p>
       <ul class="list-group list-group-flush mb-2">
         {% for s in sprintHelpers.upcoming %}
         <li class="list-group-item px-0 py-1 small">
           <strong>{{ s.title }}</strong>
           {% if s.description %}<span class="text-muted ms-1">— {{ s.description }}</span>{% endif %}
-          <span class="text-muted ms-2">
-            <span data-date="{{ s.startDate }}">{{ s.startDate }}</span>–<span data-date="{{ s.endDate }}">{{ s.endDate }}</span>
-          </span>
         </li>
         {% endfor %}
       </ul>
     </div>
     {% endif %}
     {% if sprintHelpers.past.length %}
-    <div class="px-3 pt-2 pb-3">
-      <p class="small text-muted fw-semibold mb-2 text-uppercase" style="letter-spacing:.06em;font-size:.75rem">Round 1 sprint arcs</p>
+    <div class="px-3 pt-3 pb-3">
+      <p class="small text-muted fw-semibold mb-2 text-uppercase" style="letter-spacing:.06em;font-size:.75rem">Completed</p>
       <ul class="list-group list-group-flush">
         {% for s in sprintHelpers.past %}
         <li class="list-group-item px-0 py-1 small text-muted">
