@@ -128,3 +128,7 @@ ew-website/
 ## Support
 
 If you have questions or need help, please open an issue on GitHub or contact the maintainers.
+
+---
+
+Build for Aug 2.
