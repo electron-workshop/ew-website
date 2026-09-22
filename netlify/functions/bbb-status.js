@@ -13,8 +13,6 @@ exports.handler = async function () {
   const queryString = `meetingID=${MEETING_ID}`;
   const checksumString = `${apiCall}${queryString}${BBB_SECRET}`;
 
-  console.log("Checksum string:", checksumString);
-
   const checksum = crypto
     .createHash("sha1")
     .update(checksumString)
@@ -23,14 +21,10 @@ exports.handler = async function () {
   console.log("Generated checksum:", checksum);
 
   const url = `${BBB_URL}${apiCall}?${queryString}&checksum=${checksum}`;
-  console.log("Final BBB URL:", url);
 
   try {
     const response = await fetch(url);
     const xml = await response.text();
-
-    console.log("BBB RAW XML RESPONSE:");
-    console.log(xml);
 
     // EXACT checks so we can see what's happening
     const containsNotFound = xml.includes("<messageKey>notFound</messageKey>");
@@ -62,8 +56,7 @@ exports.handler = async function () {
     return json({
       status,
       running: containsRunning,
-      participantCount,
-      rawXML: xml // optional: you can remove this later
+      participantCount
     });
 
   } catch (err) {
@@ -71,8 +64,7 @@ exports.handler = async function () {
 
     return json({
       status: "error",
-      detail: "Network or parsing error",
-      error: err.toString()
+      detail: "Network or parsing error"
     });
   }
 };
