@@ -186,6 +186,12 @@ Set `"dateRule": null` and use `dateRuleText` for a human-readable fallback when
 
 ---
 
+## BigBlueButton integration
+
+Room status (sprints coworking, `/live/` watch party) comes from `netlify/functions/bbb-status.js`. Setup for BBB volunteers and developers: [`docs/README.md`](docs/README.md).
+
+---
+
 ## Netlify Forms
 
 | Form `name` | Page | Purpose |
