@@ -5,5 +5,26 @@
     "room": "watchparty",
     "force": false
   },
-  "streams": []
+  "streams": [
+    {
+      "title": "auIGF 2026 — Day 1",
+      "broadcaster": "Australian Internet Governance Forum (auIGF)",
+      "platform": "youtube",
+      "videoId": "ETI3ABZX0WE",
+      "url": "https://www.youtube.com/live/ETI3ABZX0WE",
+      "starts": "2026-09-22T00:00:00+10:00",
+      "ends": "2026-09-22T23:59:00+10:00",
+      "watchParty": true
+    },
+    {
+      "title": "auIGF 2026 — Day 2",
+      "broadcaster": "Australian Internet Governance Forum (auIGF)",
+      "platform": "youtube",
+      "videoId": "",
+      "url": "",
+      "starts": "2026-09-23T00:00:00+10:00",
+      "ends": "2026-09-23T23:59:00+10:00",
+      "watchParty": true
+    }
+  ]
 }
