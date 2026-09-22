@@ -1,16 +1,30 @@
 const crypto = require("crypto");
 
-exports.handler = async function () {
+// Rooms the browser may ask about, by key (?room=<key>). The key maps to an
+// env var holding the real meetingID, so callers can never probe arbitrary
+// meetings on the server. No ?room → the sprints coworking room, as before.
+const ROOMS = {
+  coworking: "BBB_MEETING_ID",
+  watchparty: "BBB_MEETING_ID_WATCHPARTY",
+};
+
+exports.handler = async function (event) {
   const BBB_URL = process.env.BBB_URL;
   const BBB_SECRET = process.env.BBB_SECRET;
-  const MEETING_ID = process.env.BBB_MEETING_ID;
+
+  const room = (event && event.queryStringParameters && event.queryStringParameters.room) || "coworking";
+  const envKey = Object.hasOwn(ROOMS, room) ? ROOMS[room] : null;
+  const MEETING_ID = envKey && process.env[envKey];
+  if (!BBB_URL || !BBB_SECRET || !MEETING_ID) {
+    return json({ status: "unconfigured", running: false, participantCount: 0 });
+  }
 
   console.log("=== BBB STATUS DEBUG START ===");
   console.log("BBB_URL:", BBB_URL);
-  console.log("MEETING_ID:", MEETING_ID);
+  console.log("room:", room, "MEETING_ID:", MEETING_ID);
 
   const apiCall = "getMeetingInfo";
-  const queryString = `meetingID=${MEETING_ID}`;
+  const queryString = `meetingID=${encodeURIComponent(MEETING_ID)}`;
   const checksumString = `${apiCall}${queryString}${BBB_SECRET}`;
 
   const checksum = crypto

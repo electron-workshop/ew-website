@@ -87,6 +87,7 @@ Defined in `src/_data/navbar.json`. Items with `"footer": true` also appear in t
 /calendar/                  Events calendar
 /about/                     About EW — history, timeline, initiatives
 /connect/                   Contact form + Get Involved / volunteer form
+/live/                      What's streaming now + watch-party prompt (not in navbar; link to it directly)
 /chainference/              Chainference sub-brand (see branch: feature/chainference)
 
 /awareness/                 Global awareness festivals (auto-generated from awarenessdays.json)
@@ -131,6 +132,7 @@ Defined in `src/_data/navbar.json`. Items with `"footer": true` also appear in t
 | `awarenessevents.json` | Community-submitted events for each awareness day |
 | `thememonths.json` | Themed monthly focus areas (e.g. October = Robotics, December = DAOs) shown on Calendar page |
 | `sprints.json` | Sprint data for the Sprints initiative page |
+| `live.json` | Streams for `/live/` — the one whose `starts`–`ends` window contains now is shown (picked in the browser) |
 | `sprintHelpers.js` | Computed data helpers for sprints |
 | `initiatives.json` | Legacy — initiatives data (Sprints, Electron Network) |
 
@@ -219,6 +221,9 @@ Either:
 
 ### Add or update a homepage card
 Edit `src/_data/homeCards.json`. See cardType reference above.
+
+### Put a stream on /live
+Add an entry to `streams` in `src/_data/live.json` (`title`, `broadcaster`, `platform`, `videoId`/`embedUrl`, `url` of the original, `starts`/`ends` with a UTC offset). To show the watch-party prompt, set `watchParty.url` to the BBB room link and `BBB_MEETING_ID_WATCHPARTY` in Netlify env; the prompt appears only while `netlify/functions/bbb-status.js?room=watchparty` reports the room running, or always if `watchParty.force` is `true`.
 
 ### Update navigation
 Edit `src/_data/navbar.json`. Add `"footer": true` to also show the item in the footer.

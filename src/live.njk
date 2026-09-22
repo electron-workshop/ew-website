@@ -1,0 +1,86 @@
+---
+layout: base.njk
+title: Live
+description: What's streaming now that's worth watching together — with a link to the original, and a watch party when one is on
+permalink: "/live/"
+---
+
+{# ─── Page header ─────────────────────────────────────────────────────────── #}
+<div class="mb-4">
+  <p class="text-primary fw-bold text-uppercase mb-1" style="letter-spacing:.08em;font-size:.8rem">Electron Workshop</p>
+  <h1 class="mb-1">Live</h1>
+  <p class="text-secondary mb-0">Streams from across the commons, gathered in one place. We don't run them — every stream links back to its source.</p>
+</div>
+
+{# ─── Watch party prompt (revealed by /assets/js/live.js) ─────────────────── #}
+{% if live.watchParty.url %}
+<div id="watch-party" class="alert alert-success d-none d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2 mb-4" role="status"
+     data-room="{{ live.watchParty.room }}" data-force="{{ 'true' if live.watchParty.force else 'false' }}">
+  <div>
+    <i class="bi bi-people-fill me-1"></i>
+    <strong>A watch party is on.</strong>
+    Join the discussion while you watch — or just watch here, either is fine.
+    <span id="watch-party-count" class="small text-body-secondary"></span>
+  </div>
+  <a class="btn btn-success btn-sm text-nowrap" href="{{ live.watchParty.url }}" target="_blank" rel="noopener">
+    Join the watch party <i class="bi bi-box-arrow-up-right ms-1"></i>
+  </a>
+</div>
+{% endif %}
+
+{# ─── Streams — all rendered, the live one revealed client-side ───────────── #}
+{% for s in live.streams %}
+<article class="live-stream d-none mb-4" data-title="{{ s.title }}"
+         data-starts="{{ s.starts }}" data-ends="{{ s.ends }}"
+         data-watch-party="{{ 'true' if s.watchParty else 'false' }}">
+  <div class="d-flex align-items-center gap-2 mb-2">
+    <span class="badge text-bg-danger"><i class="bi bi-broadcast me-1"></i>Live</span>
+    <h2 class="h4 mb-0">{{ s.title }}</h2>
+  </div>
+  <p class="text-secondary mb-3">
+    Broadcast by <strong>{{ s.broadcaster }}</strong>{% if s.url %} ·
+    <a href="{{ s.url }}" target="_blank" rel="noopener">Watch on the original <i class="bi bi-box-arrow-up-right"></i></a>{% endif %}
+  </p>
+
+  {% if s.platform == "youtube" and s.videoId %}
+    {% set embed = "https://www.youtube-nocookie.com/embed/" + s.videoId %}
+  {% elif s.platform == "peertube" and s.host and s.videoId %}
+    {% set embed = "https://" + s.host + "/videos/embed/" + s.videoId %}
+  {% elif s.platform == "embed" and s.embedUrl %}
+    {% set embed = s.embedUrl %}
+  {% else %}
+    {% set embed = "" %}
+  {% endif %}
+
+  {% if embed %}
+  <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm bg-dark">
+    <iframe data-src="{{ embed }}" title="{{ s.title }}" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen"
+            allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+  {% elif s.url %}
+  <a class="btn btn-outline-primary" href="{{ s.url }}" target="_blank" rel="noopener">Open the stream <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+  {% else %}
+  <div class="bg-body-tertiary rounded-3 p-4 text-secondary">The stream link isn't up yet — check back shortly, or look for it on {{ s.broadcaster }}'s own channels.</div>
+  {% endif %}
+</article>
+{% endfor %}
+
+{# ─── Nothing live ─────────────────────────────────────────────────────────── #}
+<div id="live-empty" class="d-none bg-body-tertiary rounded-3 px-4 py-4 mb-4">
+  <h2 class="h5 mb-2"><i class="bi bi-circle me-1 text-secondary"></i>Nothing streaming right now</h2>
+  <p id="live-next" class="text-secondary mb-0">Nothing scheduled yet. Keep an eye on the <a href="/calendar/">calendar</a>.</p>
+</div>
+
+<noscript>
+  <div class="bg-body-tertiary rounded-3 px-4 py-4 mb-4">
+    <h2 class="h5">Streams</h2>
+    <ul class="mb-0">
+      {% for s in live.streams %}
+      <li>{{ s.title }} — {{ s.broadcaster }}{% if s.url %} · <a href="{{ s.url }}">watch on the original</a>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</noscript>
+
+<script src="/assets/js/live.js" defer></script>

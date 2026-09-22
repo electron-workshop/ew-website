@@ -1,0 +1,9 @@
+{
+  "_readme": "Streams EW is pointing people at, for /live. The page picks whichever entry's starts–ends window contains the viewer's current time, in the browser, so no rebuild is needed when a stream starts or ends — only when this file changes. platform: youtube (videoId) | peertube (host + videoId) | embed (embedUrl, any iframe-able player) | link (no embed, url only). url is always the original, shown as a link out. watchParty.room is a key in netlify/functions/bbb-status.js ROOMS; leave url empty to hide the prompt. watchParty.force: true shows the prompt without asking the server (manual override).",
+  "watchParty": {
+    "url": "",
+    "room": "watchparty",
+    "force": false
+  },
+  "streams": []
+}
