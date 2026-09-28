@@ -1,14 +1,26 @@
 [
   {
     "daySlug": "software-freedom-day",
-    "name": "Melbourne Software Freedom Day",
-    "url": "",
-    "date": "2025-09-20",
-    "time": "14:00",
-    "location": { "city": "Melbourne", "country": "Australia" },
+    "name": "Software Freedom Day Moorabbin",
+    "url": "https://luma.com/ddu1xicy/?utm_source=Electron-Workshop",
+    "date": "2026-09-19",
+    "time": "10:00",
+    "location": { "city": "Moorabbin, Melbourne", "country": "Australia" },
     "timezone": "Australia/Melbourne",
     "language": "English",
-    "description": "A local celebration of Software Freedom Day in Melbourne, featuring talks and demonstrations of free and open source software."
+    "description": "Install fest at Melbourne PC User Group, 10am to 12pm. Free to attend, no technical experience needed."
+  },
+
+  {
+    "daySlug": "software-freedom-day",
+    "name": "Software Freedom Day Richmond",
+    "url": "https://luma.com/fyak8ny1/?utm_source=Electron-Workshop",
+    "date": "2026-09-19",
+    "time": "14:00",
+    "location": { "city": "Richmond, Melbourne", "country": "Australia" },
+    "timezone": "Australia/Melbourne",
+    "language": "English",
+    "description": "Install fest, open exchange and lightning talks at Inspire9, 2pm to 4pm. Free to attend, no technical experience needed."
   },
 
   {
