@@ -2,8 +2,7 @@
   {
     "title": "Superbridge",
     "slug": "superbridge",
-    "logo": "",
-    "icon": "bi-chat-dots-fill",
+    "logo": "/assets/images/logos/superbridge.svg",
     "text": "One conversation, every platform. Messages from any connected app reach everyone else; people just keep using the app they like."
   },
   {

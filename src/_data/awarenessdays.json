@@ -24,12 +24,12 @@
   {
     "slug": "software-freedom-day",
     "title": "Software Freedom Day",
-    "description": "Software Freedom Day is a worldwide celebration of free and open source software. Communities around the world hold local events to educate the public about the benefits of free software and free software's role in a free society.",
+    "description": "Software Freedom Day is a worldwide celebration of free and open source software. In Australia it is run by volunteers from Electron Workshop, Open Source Industry Australia, Linux Victoria and Free Software Melbourne, with free local events showing how open source tools work in everyday life. No technical experience needed.",
     "banner": "https://digitalfreedoms.org/images/logo/logo_SFD_Colored.png",
     "icon": "bi-code-square",
     "dateRule": { "type": "nth", "week": 3, "weekday": "Saturday", "month": "September" },
     "dateRuleText": "3rd Saturday of September",
-    "externalHref": "https://www.softwarefreedomday.org",
+    "externalHref": "https://sfd.org.au",
     "month": "September"
   },
   {
