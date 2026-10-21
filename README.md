@@ -131,4 +131,4 @@ If you have questions or need help, please open an issue on GitHub or contact th
 
 ---
 
-Build for October 18.
+Build for October 25.
