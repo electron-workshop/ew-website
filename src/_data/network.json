@@ -3,7 +3,7 @@
     "title": "Melbourne Tech Guilds",
     "slug": "MTG",
     "logo": "/assets/images/network/mtg-logo-transparent.svg",
-    "url": "https://melbourne.techguilds.au",
+    "url": "https://techguilds.au/",
     "text": ""
   },
   {
@@ -14,9 +14,16 @@
     "text": "A community for Linux users in Victoria, sharing knowledge and resources."
   },
   {
+    "title": "Product Melbourne",
+    "slug": "product-melbourne",
+    "logo": "/assets/images/network/product-melbourne.png",
+    "url": "https://engage.electronworkshop.com.au/product-melbourne",
+    "text": ""
+  },
+  {
     "title": "Local AI",
     "slug": "local-ai",
-    "logo": "/assets/images/network/localai-logo.svg",
+    "logo": "/assets/images/network/localai.png",
     "url": "https://localai.xdeca.com",
     "text": ""
   }
