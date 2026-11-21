@@ -2,11 +2,20 @@
   {
     "cardType": "whatsOnEcosystem",
     "featured": true,
+    "title": "Canberra Un-forum — December 2026",
+    "text": "Saturday 19 to Monday 21 December 2026 | Canberra and online, venue to be announced | Workshops, conversations and an unconference",
+    "href": "/canberra-unforum-2026/",
+    "button": "Details and updates",
+    "tags": ["tech", "open-source", "local-ai", "free"]
+  },
+  {
+    "cardType": "whatsOnEcosystem",
     "title": "Un-forum — September 2026",
     "text": "Unconference on Sunday 20 September (Online and Richmond) | Dinner Saturday evening, breakfast Monday | Software Freedom Day weekend",
     "href": "/unforum-sept-2026/",
     "button": "See the program",
-    "tags": ["software-freedom", "open-source", "privacy", "right-to-repair", "cooperatives", "internet-governance", "free"]
+    "tags": ["software-freedom", "open-source", "privacy", "right-to-repair", "cooperatives", "internet-governance", "free"],
+    "past": true
   },
   {
     "cardType": "whatsOnEcosystem",
@@ -30,10 +39,11 @@
     "cardType": "whatsOnEcosystem",
     "title": "Canberra Un-forum",
     "text": "Discussions and hands-on workshops on AI and open technology for the everyday people | Skill Studio, Civic Center | 20th to 22nd December 2025",
-    "href": "/posts/canberra-unforum",
+    "href": "/canberra-unforum-2025/",
     "banner": "/assets/images/banners/Canberra_Un-forum_2025_Banner_V101.svg",
     "button": "Learn more",
-    "tags": ["tech", "open-source", "free"]
+    "tags": ["tech", "open-source", "free"],
+    "past": true
   },
   {
     "cardType": "chainference",

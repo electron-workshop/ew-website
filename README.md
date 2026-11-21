@@ -87,6 +87,7 @@ Site copy about the check-in (the sprints page, home cards, about page) should r
 - **Initiatives**: Update `src/_data/initiatives.json` and related markdown files in `src/initiatives/`.
 - **Navbar**: Change navigation links in `src/_data/navbar.json`.
 - **Site Info**: Update global site data in `src/_data/site.json`.
+- **Redirects**: When a page moves, add `from` and `to` to `src/_data/redirects.json` (see SITE.md, "Move a page or add a redirect").
 
 ### Adding New Content
 - **Pages**: Create new `.njk` templates in `src/` and add routes via frontmatter.
@@ -111,6 +112,7 @@ ew-website/
 │   ├── _includes/        # Layouts and partials
 │   ├── assets/           # CSS, JS, images
 │   ├── posts/            # Blog posts
+│   ├── redirects/        # Builds redirect pages from _data/redirects.json
 │   └── *.njk             # Page templates
 ├── netlify/              # Serverless functions
 │   └── functions/        # Function files
