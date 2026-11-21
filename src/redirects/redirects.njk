@@ -1,0 +1,21 @@
+---
+pagination:
+  data: redirects
+  size: 1
+  alias: r
+permalink: "{{ r.from }}"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Moved — Electron Workshop</title>
+  <meta http-equiv="refresh" content="0; url={{ r.to }}">
+  <link rel="canonical" href="https://electronworkshop.org{{ r.to }}">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <p>This page is now at <a href="{{ r.to }}">{{ r.to }}</a>.</p>
+</body>
+</html>

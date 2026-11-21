@@ -113,6 +113,7 @@ Defined in `src/_data/navbar.json`. Items with `"footer": true` also appear in t
 | Static `.njk` files | Homepage, About, Connect, Offering, Calendar, Chainference |
 | Static `.md` files | Individual chainference pages |
 | **Eleventy pagination** from JSON | Awareness day pages (`/awareness/[slug]/`) |
+| **Eleventy pagination** from JSON | Redirects: one small page per entry in `redirects.json` (`src/redirects/redirects.njk`) |
 
 ---
 
@@ -133,6 +134,7 @@ Defined in `src/_data/navbar.json`. Items with `"footer": true` also appear in t
 | `sprints.json` | Sprint data for the Sprints initiative page |
 | `sprintHelpers.js` | Computed data helpers for sprints |
 | `initiatives.json` | Legacy — initiatives data (Sprints, Electron Network) |
+| `redirects.json` | Old or moving addresses and where they lead — see "Move a page or add a redirect" |
 
 ### `homeCards.json` — cardType reference
 
@@ -222,6 +224,21 @@ Edit `src/_data/homeCards.json`. See cardType reference above.
 
 ### Update navigation
 Edit `src/_data/navbar.json`. Add `"footer": true` to also show the item in the footer.
+
+### Move a page or add a redirect
+Add an entry to `src/_data/redirects.json`:
+
+```json
+{ "from": "/old-address/", "to": "/new-address/", "note": "why it moved" }
+```
+
+Eleventy builds a small page at `from` that sends visitors on to `to` (an instant refresh, a
+canonical link for search engines, and a plain link as a fallback). Because they are built
+pages, redirects work in local previews and on any host, not only on Netlify.
+
+- `from` must not be the address of a page that still exists: two outputs at one address fail the build.
+- For an address that always means "the current one" (e.g. `/canberra-unforum/`), update `to` when the next one is announced.
+- Prefer this over `[[redirects]]` in `netlify.toml`. Netlify skips its rules when a file exists at the path, and they do nothing in a local preview.
 
 ---
 
