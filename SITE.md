@@ -101,6 +101,13 @@ Defined in `src/_data/navbar.json`. Items with `"footer": true` also appear in t
   /chainferences/pycon/
   /chainferences/sxsw/
 
+/un-forum/                  Un-forum, March 2026 (third weekend of each quarter's last month)
+  /unforum-june-2026/
+  /unforum-sept-2026/
+  /canberra-unforum-2025/   December 2025, Canberra
+  /canberra-unforum-2026/   December 2026, Canberra
+  /canberra-unforum/        → the current Canberra edition (redirects.json)
+
 /initiatives/
   /initiatives/sprints/     Electron Sprints programme
   /initiatives/electron-network/   Electron Network (stub)

@@ -42,7 +42,7 @@ form:
   </a>
 </p>
 <p class="mb-1">
-  <a href="/posts/canberra-unforum/" class="text-primary">
+  <a href="/canberra-unforum-2025/" class="text-primary">
     <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
     Previous Un-forum: 2025-December
   </a>

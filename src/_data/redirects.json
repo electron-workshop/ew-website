@@ -1,1 +1,4 @@
-[]
+[
+  { "from": "/canberra-unforum/", "to": "/canberra-unforum-2026/", "note": "Always the current Canberra Un-forum: move it when the next edition is announced" },
+  { "from": "/posts/canberra-unforum/", "to": "/canberra-unforum-2026/", "note": "Old address of the 2025 page" }
+]

@@ -1,8 +1,8 @@
 ---
 layout: base.njk
-title: Canberra Un-forum
+title: Canberra Un-forum — December 2025
 description: Discussions and hands-on workshops on AI and open technology for the everyday people
-permalink: "/posts/canberra-unforum/"
+permalink: "/canberra-unforum-2025/"
 preview_image: "https://electronworkshop.org/assets/images/banners/Canberra-Unforum-2025-Banner-Preview-V102.webp"
 
 form:
@@ -37,9 +37,9 @@ form:
 <h1 class="text-primary">{{title}}</h1>
 
 <p class="mb-1">
-  <a href="/un-forum/" class="text-primary">
+  <a href="/canberra-unforum-2026/" class="text-primary">
     <i class="bi bi-arrow-right-circle" aria-hidden="true"></i>
-    Next Un-forum: 2026-March
+    Next Canberra Un-forum: 19–21 December 2026
   </a>
 </p>
 
@@ -60,7 +60,7 @@ form:
         Add to Calendar (download .ics)
     </a>
     <a class="btn btn-outline-primary me-2  mb-3 mb-sm-0"
-         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Canberra+Un-forum&dates=20251220T020000Z/20251222T060000Z&details=Discussions+and+hands-on+workshops+on+AI+and+open+technology+for+the+everyday+people.%0A%0ASaturday+20th+December+to+Monday+22nd+December+2025%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Fposts%2Fcanberra-unforum%2F&location=Canberra+Tech+Hub%2C+Civic+Center%2C+Canberra&ctz=Australia/Sydney" target="_blank" rel="noopener">
+         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Canberra+Un-forum&dates=20251220T020000Z/20251222T060000Z&details=Discussions+and+hands-on+workshops+on+AI+and+open+technology+for+the+everyday+people.%0A%0ASaturday+20th+December+to+Monday+22nd+December+2025%0A%0AMore+info%3A+https%3A%2F%2Felectronworkshop.org%2Fcanberra-unforum-2025%2F&location=Canberra+Tech+Hub%2C+Civic+Center%2C+Canberra&ctz=Australia/Sydney" target="_blank" rel="noopener">
         Add to Google Calendar
     </a>
 </div>
